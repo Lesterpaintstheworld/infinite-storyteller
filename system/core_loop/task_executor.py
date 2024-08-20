@@ -1,9 +1,9 @@
-from system.core_loop.task_manager import TaskManager
-from system.services.world_state_manager import WorldStateManager
-from system.services.feedback_analyzer import FeedbackAnalyzer
-from system.story_generation.story_generator import StoryGenerator
-from system.world_simulation.city_evolution import evolve_city
-from system.world_simulation.event_scheduler import schedule_events
+from core_loop.task_manager import TaskManager
+from services.world_state_manager import WorldStateManager
+from services.feedback_analyzer import FeedbackAnalyzer
+from story_generation.story_generator import StoryGenerator
+from world_simulation.city_evolution import evolve_city
+from world_simulation.event_scheduler import schedule_events
 from assets.asset_manager import AssetManager
 
 class TaskExecutor:
