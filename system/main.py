@@ -60,6 +60,7 @@ class InfiniteStoryteller:
         # TODO: Implémenter la collecte de feedback réel
         # Pour le moment, retournons un feedback de test
         return {
+            "story_id": "test_story_001",  # Ajout d'un story_id de test
             "text": "L'histoire était intéressante, mais un peu confuse par moments.",
             "engagement": 7,
             "content_quality": 6,

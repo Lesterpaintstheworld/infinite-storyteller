@@ -63,7 +63,8 @@ class FeedbackAnalyzer:
 
     def _update_feedback_history(self, feedback, analysis_results):
         # Store feedback and analysis results for long-term trend analysis
-        self.feedback_history[feedback['story_id']].append({
+        story_id = feedback.get('story_id', 'unknown_story')
+        self.feedback_history[story_id].append({
             'feedback': feedback,
             'analysis': analysis_results
         })
