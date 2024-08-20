@@ -38,3 +38,10 @@
 ## Notes
 - Revoir régulièrement cette liste et la mettre à jour en fonction de l'avancement du projet
 - Prioriser les tâches qui enrichissent le plus l'univers et offrent le plus de potentiel narratif
+
+## Nouvelles tâches
+1. Implémenter le système de gestion des tâches (task_manager.py)
+2. Développer la file d'attente prioritaire (priority_queue.json)
+3. Créer l'exécuteur de tâches (task_executor.py)
+4. Mettre en place l'analyseur de retours (feedback_analyzer.py)
+5. Intégrer les LLM dans le processus central de création et de gestion
