@@ -3,6 +3,40 @@ from queue import PriorityQueue
 
 class TaskManager:
     def __init__(self):
+        self.tasks = []
+
+    def create_task(self, task_type, details, priority=None):
+        task = {
+            'id': len(self.tasks) + 1,
+            'type': task_type,
+            'details': details,
+            'priority': priority or self.assign_priority(task_type),
+            'status': 'pending'
+        }
+        self.add_task(task)
+        return task
+
+    def assign_priority(self, task_type):
+        # TODO: Implement more sophisticated priority assignment
+        return 1
+
+    def add_task(self, task):
+        self.tasks.append(task)
+
+    def get_next_task(self):
+        if not self.tasks:
+            return None
+        return min(self.tasks, key=lambda x: x['priority'])
+
+    def update_task_status(self, task_id, status):
+        for task in self.tasks:
+            if task['id'] == task_id:
+                task['status'] = status
+                break
+
+    def update_priorities(self, adjustments):
+        # TODO: Implement priority updating based on feedback
+        pass
         self.task_queue = PriorityQueue()
 
     def create_task(self, task_type, details, priority=None):
