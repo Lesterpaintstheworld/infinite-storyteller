@@ -7,8 +7,10 @@
    - ✅ Créer une carte conceptuelle des principales zones de la première Cité de Lumière
    - ✅ Élaborer un guide de style visuel pour assurer la cohérence esthétique
 2. Créer la première Cité de Lumière
-   - Nommer la ville et décrire ses caractéristiques uniques
-   - Identifier les principaux quartiers et points d'intérêt
+   - ✅ Nommer la ville et décrire ses caractéristiques uniques
+   - ✅ Identifier les principaux quartiers et points d'intérêt
+   - Développer l'histoire et la culture spécifiques de la ville
+   - Créer des personnages IA emblématiques pour la ville
 3. Développer les personnages IA principaux
    - Créer 3-5 personnages IA avec des rôles et des personnalités distincts
    - Établir leurs histoires personnelles et leurs motivations
