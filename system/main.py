@@ -14,7 +14,7 @@ class InfiniteStoryteller:
         self.feedback_analyzer = FeedbackAnalyzer()
         self.world_state_manager = WorldStateManager()
         self.asset_manager = AssetManager(os.path.join(os.path.dirname(__file__), '..', '..', 'assets'))
-        self.story_generator = StoryGenerator(self.asset_manager)
+        self.story_generator = StoryGenerator(self.asset_manager, self.task_manager, self.feedback_analyzer)
         
         self.task_executor = TaskExecutor(self.task_manager, self.feedback_analyzer, self.world_state_manager, self.story_generator)
 
