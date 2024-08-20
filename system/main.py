@@ -4,10 +4,9 @@ from .core_loop.task_manager import TaskManager
 from .core_loop.task_executor import TaskExecutor
 from .core_loop.feedback_analyzer import FeedbackAnalyzer
 
-# Importations temporaires pour éviter les erreurs
-WorldStateManager = None
-AssetManager = None
-StoryGenerator = None
+from .world_simulation.world_state_manager import WorldStateManager
+from assets.asset_manager import AssetManager
+from .story_generation.story_generator import StoryGenerator
 
 class InfiniteStoryteller:
     def __init__(self):
@@ -15,10 +14,9 @@ class InfiniteStoryteller:
         self.feedback_analyzer = FeedbackAnalyzer()
         self.task_executor = TaskExecutor(self.task_manager, self.feedback_analyzer)
         
-        # Temporairement commenté pour éviter les erreurs
-        # self.world_state_manager = WorldStateManager()
-        # self.asset_manager = AssetManager(os.path.join(os.path.dirname(__file__), '..', 'assets'))
-        # self.story_generator = StoryGenerator(self.asset_manager)
+        self.world_state_manager = WorldStateManager()
+        self.asset_manager = AssetManager(os.path.join(os.path.dirname(__file__), '..', 'assets'))
+        self.story_generator = StoryGenerator(self.asset_manager)
 
     def run(self):
         """
@@ -28,7 +26,7 @@ class InfiniteStoryteller:
         try:
             while True:
                 # Créer et prioriser les tâches
-                task = self.task_manager.create_task()
+                task = self.task_manager.create_task("default_task", {"description": "Tâche par défaut"})
                 
                 if task:
                     # Exécuter la tâche de plus haute priorité
