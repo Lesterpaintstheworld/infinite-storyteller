@@ -42,7 +42,8 @@ class TaskExecutor:
         """
         # Temporairement commenté pour éviter les erreurs
         # self.world_state_manager.update_state(task, result)
-        self.feedback_analyzer.analyze_task_result(task, result)
+        feedback = {"task": task, "result": result}
+        self.feedback_analyzer.analyze_feedback(feedback)
         self.task_manager.update_task_status(task['id'], 'completed')
 
     def run_core_loop(self):
