@@ -25,6 +25,8 @@ class TaskExecutor:
             result = evolve_city(task_details['city'], task_details['time_period'], task_details['events'])
         elif task_type == 'schedule_events':
             result = schedule_events(task_details['city'], task_details['time_period'])
+        elif task_type == 'default_task':
+            result = f"Executed default task: {task_details['description']}"
         else:
             raise ValueError(f"Unknown task type: {task_type}")
 
