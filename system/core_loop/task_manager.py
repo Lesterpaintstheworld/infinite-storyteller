@@ -7,37 +7,156 @@ class TaskManager:
         self.task_queue = PriorityQueue()
 
     def create_task(self, task_type, details, priority=None):
+        """
+        Create a new task based on the current state of the universe and system needs.
+        
+        :param task_type: Type of the task
+        :param details: Additional details for the task
+        :param priority: Priority of the task (if not provided, will be assigned automatically)
+        :return: Created task object
+        """
+        task_id = str(uuid.uuid4())
         task = {
-            'id': len(self.tasks) + 1,
+            'id': task_id,
             'type': task_type,
             'details': details,
-            'priority': priority or self.assign_priority(task_type),
             'status': 'pending'
         }
+        
+        if priority is None:
+            priority = self.assign_priority(task)
+        
+        task['priority'] = priority
         self.add_task(task)
         return task
 
-    def assign_priority(self, task_type):
-        # TODO: Implement more sophisticated priority assignment
-        return 1
+    def assign_priority(self, task):
+        """
+        Assign priority to a task based on its importance and urgency.
+        
+        :param task: The task to assign priority to
+        :return: Assigned priority value
+        """
+        # Implement a more sophisticated priority assignment logic
+        base_priority = 5
+        
+        # Adjust priority based on task type
+        if task['type'] == 'story_task':
+            base_priority += 2
+        elif task['type'] == 'character_task':
+            base_priority += 1
+        
+        # Adjust priority based on task details
+        if 'urgency' in task['details']:
+            base_priority += task['details']['urgency']
+        
+        # Ensure priority is within bounds
+        return max(1, min(base_priority, 10))
 
     def add_task(self, task):
-        self.tasks.append(task)
+        """
+        Add a task to the priority queue.
+        
+        :param task: The task to be added
+        """
+        self.task_queue.put((-task['priority'], task))
 
     def get_next_task(self):
-        if not self.tasks:
-            return None
-        return min(self.tasks, key=lambda x: x['priority'])
+        """
+        Get the next highest priority task from the queue.
+        
+        :return: The next task, or None if the queue is empty
+        """
+        if not self.task_queue.empty():
+            return self.task_queue.get()[1]
+        return None
 
     def update_task_status(self, task_id, status):
-        for task in self.tasks:
+        """
+        Update the status of a task.
+        
+        :param task_id: The ID of the task to update
+        :param status: The new status
+        """
+        temp_queue = PriorityQueue()
+        
+        while not self.task_queue.empty():
+            priority, task = self.task_queue.get()
             if task['id'] == task_id:
                 task['status'] = status
-                break
+            temp_queue.put((priority, task))
+        
+        self.task_queue = temp_queue
 
     def update_priorities(self, adjustments):
-        # TODO: Implement priority updating based on feedback
-        pass
+        """
+        Update task priorities based on feedback.
+        
+        :param adjustments: Dictionary of task_id to priority adjustment value
+        """
+        temp_queue = PriorityQueue()
+        
+        while not self.task_queue.empty():
+            priority, task = self.task_queue.get()
+            if task['id'] in adjustments:
+                new_priority = task['priority'] + adjustments[task['id']]
+                task['priority'] = max(1, min(new_priority, 10))  # Ensure priority is within bounds
+            temp_queue.put((-task['priority'], task))
+        
+        self.task_queue = temp_queue
+
+    def update_task_priority(self, task_id, new_priority):
+        """
+        Update the priority of a task in the queue.
+        
+        :param task_id: The ID of the task to update
+        :param new_priority: The new priority value
+        """
+        temp_queue = PriorityQueue()
+        
+        while not self.task_queue.empty():
+            priority, task = self.task_queue.get()
+            if task['id'] == task_id:
+                task['priority'] = new_priority
+                temp_queue.put((-new_priority, task))
+            else:
+                temp_queue.put((priority, task))
+        
+        self.task_queue = temp_queue
+
+    def remove_task(self, task_id):
+        """
+        Remove a task from the queue.
+        
+        :param task_id: The ID of the task to remove
+        """
+        temp_queue = PriorityQueue()
+        
+        while not self.task_queue.empty():
+            priority, task = self.task_queue.get()
+            if task['id'] != task_id:
+                temp_queue.put((priority, task))
+        
+        self.task_queue = temp_queue
+
+    def get_tasks_by_type(self, task_type):
+        """
+        Get all tasks of a specific type.
+        
+        :param task_type: The type of tasks to retrieve
+        :return: A list of tasks of the specified type
+        """
+        tasks = []
+        temp_queue = PriorityQueue()
+        
+        while not self.task_queue.empty():
+            priority, task = self.task_queue.get()
+            if task['type'] == task_type:
+                tasks.append(task)
+            temp_queue.put((priority, task))
+        
+        self.task_queue = temp_queue
+        return tasks
         self.task_queue = PriorityQueue()
 
     def create_task(self, task_type, details, priority=None):
