@@ -2,6 +2,8 @@ from .task_manager import TaskManager
 from .feedback_analyzer import FeedbackAnalyzer
 from ..world_simulation.city_evolution import evolve_city
 from ..world_simulation.event_scheduler import schedule_events
+from ..world_simulation.world_state_manager import WorldStateManager
+from ..story_generation.story_generator import StoryGenerator
 
 class TaskExecutor:
     def __init__(self, task_manager: TaskManager, feedback_analyzer: FeedbackAnalyzer, world_state_manager: WorldStateManager, story_generator: StoryGenerator):
