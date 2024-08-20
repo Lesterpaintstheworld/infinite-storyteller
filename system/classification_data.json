@@ -19,7 +19,71 @@
         {
             "name": "Conflict Type",
             "values": ["Man vs. Machine", "Individual vs. Society", "Ethics Dilemma", "Technological Challenge"]
+        },
+        {
+            "name": "Artist Support",
+            "values": ["Web3 Support", "NFT Strategy", "Technical Support", "Agency Support", "Marketing", "Funding", "Visibility", "Community Access"]
+        },
+        {
+            "name": "Content Type",
+            "values": ["Wearables", "Avatars", "Sculptures", "Architecture", "Performances", "Flat Art", "VR Experiences", "Videos"]
+        },
+        {
+            "name": "Program Type",
+            "values": ["Artist Residency", "Coaching", "NFT Sales Course"]
+        },
+        {
+            "name": "Patron Type",
+            "values": ["Patron", "Grand Patron"]
         }
     ],
-    "classified_elements": []
+    "classified_elements": [
+        {
+            "name": "Artist-in-Metaverse",
+            "type": "Program",
+            "description": "An artist residency in the Metaverse, located in the Floating cities of light",
+            "categories": {
+                "Program Type": ["Artist Residency", "Coaching", "NFT Sales Course"],
+                "Setting": ["Virtual Workspace"],
+                "Theme": ["Technological Advancement"]
+            }
+        },
+        {
+            "name": "The Boost",
+            "type": "Program",
+            "description": "A 1 month program in VR with 4 spots available, including daily work sessions and personalized coaching",
+            "categories": {
+                "Program Type": ["Artist Residency", "Coaching"],
+                "Setting": ["Virtual Workspace"],
+                "Theme": ["Technological Advancement"]
+            }
+        },
+        {
+            "name": "Patron Role",
+            "type": "Support Structure",
+            "description": "A support role for the program with different tiers and benefits",
+            "categories": {
+                "Patron Type": ["Patron", "Grand Patron"],
+                "Theme": ["Social Evolution"]
+            }
+        },
+        {
+            "name": "Le_meta_poete",
+            "type": "Artist",
+            "description": "French poet who created a poem ensemble of 63 poems with 870 verses",
+            "categories": {
+                "Content Type": ["Flat Art"],
+                "Theme": ["Social Evolution"]
+            }
+        },
+        {
+            "name": "La Galerie Pellegrin",
+            "type": "Artist",
+            "description": "Organization safeguarding the work of French painter Jacques Pellegrin, creating digitized reinterpretations",
+            "categories": {
+                "Content Type": ["Flat Art"],
+                "Theme": ["Technological Advancement"]
+            }
+        }
+    ]
 }
