@@ -37,6 +37,9 @@ class FeedbackAnalyzer:
             'conflict_resolution': self._adjust_conflict_priority(analysis_results)
         }
         
+        # Filter out None values
+        adjustments = {k: v for k, v in adjustments.items() if v is not None}
+        
         self._update_priority_adjustments(adjustments)
         return adjustments
 
@@ -71,19 +74,23 @@ class FeedbackAnalyzer:
 
     def _adjust_character_priority(self, analysis_results):
         # Adjust priority for character development tasks
-        pass
+        # For now, return a default adjustment
+        return 0
 
     def _adjust_plot_priority(self, analysis_results):
         # Adjust priority for plot-related tasks
-        pass
+        # For now, return a default adjustment
+        return 0
 
     def _adjust_world_building_priority(self, analysis_results):
         # Adjust priority for world-building tasks
-        pass
+        # For now, return a default adjustment
+        return 0
 
     def _adjust_conflict_priority(self, analysis_results):
         # Adjust priority for conflict creation/resolution tasks
-        pass
+        # For now, return a default adjustment
+        return 0
 
     def _update_priority_adjustments(self, adjustments):
         # Update the cumulative priority adjustments
