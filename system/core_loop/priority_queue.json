@@ -1,0 +1,15 @@
+{
+    "tasks": [
+        {
+            "id": "unique_task_id",
+            "type": "task_type",
+            "priority": 0,
+            "details": {
+                "description": "Task description",
+                "deadline": "Task deadline if applicable",
+                "dependencies": ["dependent_task_ids"]
+            },
+            "status": "pending"
+        }
+    ]
+}

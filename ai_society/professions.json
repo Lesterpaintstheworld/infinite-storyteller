@@ -1,0 +1,10 @@
+{
+    "professions": [
+        {
+            "name": "Profession 1",
+            "description": "Description of Profession 1",
+            "required_skills": ["Skill 1", "Skill 2"],
+            "societal_impact": "Description of impact"
+        }
+    ]
+}

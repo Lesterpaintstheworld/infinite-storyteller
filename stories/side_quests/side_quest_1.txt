@@ -1,0 +1,3 @@
+# Side Quest 1
+
+[This file will contain the content of a side quest in the Cities of Lights universe.]

@@ -1,0 +1,11 @@
+{
+    "experiences": [
+        {
+            "name": "Experience 1",
+            "description": "Description of Experience 1",
+            "duration": "Duration",
+            "impact_on_visitor": "Description of impact",
+            "impact_on_city": "Description of impact"
+        }
+    ]
+}

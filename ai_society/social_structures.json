@@ -1,0 +1,6 @@
+{
+    "social_classes": ["Class 1", "Class 2", "Class 3"],
+    "social_mobility": "Description of social mobility",
+    "community_structures": ["Structure 1", "Structure 2"],
+    "relationship_types": ["Type 1", "Type 2", "Type 3"]
+}

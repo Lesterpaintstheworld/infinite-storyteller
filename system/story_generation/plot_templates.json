@@ -1,0 +1,11 @@
+{
+    "plot_templates": [
+        {
+            "name": "Template 1",
+            "description": "Description of Template 1",
+            "key_elements": ["Element 1", "Element 2", "Element 3"],
+            "typical_conflicts": ["Conflict 1", "Conflict 2"],
+            "resolution_types": ["Resolution 1", "Resolution 2"]
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "type": "story_task",
+    "template": {
+        "task_name": "Generate Story",
+        "description": "Generate a new story or update an existing one",
+        "required_inputs": [
+            "story_type",
+            "characters_involved",
+            "setting",
+            "desired_length"
+        ],
+        "optional_inputs": [
+            "specific_themes",
+            "plot_elements"
+        ],
+        "output_format": "Text file or JSON object",
+        "estimated_duration": "Time estimate for task completion"
+    }
+}

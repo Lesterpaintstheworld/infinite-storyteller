@@ -1,0 +1,11 @@
+{
+    "visitor_types": [
+        {
+            "type": "Visitor Type 1",
+            "description": "Description of Visitor Type 1",
+            "typical_duration": "Duration",
+            "common_activities": ["Activity 1", "Activity 2"],
+            "impact_on_cities": "Description of impact"
+        }
+    ]
+}

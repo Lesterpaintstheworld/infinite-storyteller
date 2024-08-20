@@ -1,0 +1,7 @@
+{
+    "currency": "Name of currency",
+    "exchange_rate": "Value",
+    "economic_system": "Description",
+    "major_industries": ["Industry 1", "Industry 2", "Industry 3"],
+    "resource_management": "Description"
+}

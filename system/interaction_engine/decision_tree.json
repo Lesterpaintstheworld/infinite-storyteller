@@ -1,0 +1,29 @@
+{
+    "decision_trees": [
+        {
+            "name": "Decision Tree 1",
+            "description": "Description of Decision Tree 1",
+            "root_node": {
+                "question": "Root question",
+                "options": [
+                    {
+                        "answer": "Option 1",
+                        "next_node": "Node ID or null if leaf"
+                    },
+                    {
+                        "answer": "Option 2",
+                        "next_node": "Node ID or null if leaf"
+                    }
+                ]
+            },
+            "nodes": {
+                "Node ID": {
+                    "question": "Node question",
+                    "options": [
+                        // Similar structure to root_node options
+                    ]
+                }
+            }
+        }
+    ]
+}

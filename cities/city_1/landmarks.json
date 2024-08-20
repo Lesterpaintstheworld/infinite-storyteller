@@ -1,0 +1,9 @@
+{
+    "landmarks": [
+        {
+            "name": "Landmark 1",
+            "description": "Description of Landmark 1",
+            "significance": "Significance of Landmark 1"
+        }
+    ]
+}

@@ -1,0 +1,10 @@
+{
+    "events": [
+        {
+            "name": "Event 1",
+            "description": "Description of Event 1",
+            "date": "Date of Event 1",
+            "impact": "Impact of Event 1"
+        }
+    ]
+}
