@@ -4,6 +4,7 @@ from queue import PriorityQueue
 class TaskManager:
     def __init__(self):
         self.tasks = []
+        self.task_queue = PriorityQueue()
 
     def create_task(self, task_type, details, priority=None):
         task = {
