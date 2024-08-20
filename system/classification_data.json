@@ -1,0 +1,25 @@
+{
+    "classification_categories": [
+        {
+            "name": "Story Type",
+            "values": ["Main Narrative", "Side Quest", "Character Arc"]
+        },
+        {
+            "name": "Theme",
+            "values": ["AI-Human Interaction", "Technological Advancement", "Social Evolution", "Ethics in AI"]
+        },
+        {
+            "name": "Setting",
+            "values": ["City Center", "Virtual Workspace", "Entertainment District", "Educational Hub"]
+        },
+        {
+            "name": "Character Type",
+            "values": ["AI Resident", "Human Visitor", "Hybrid Entity"]
+        },
+        {
+            "name": "Conflict Type",
+            "values": ["Man vs. Machine", "Individual vs. Society", "Ethics Dilemma", "Technological Challenge"]
+        }
+    ],
+    "classified_elements": []
+}
