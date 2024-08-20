@@ -1,5 +1,8 @@
 import os
 import json
+import base64
+from PIL import Image
+import io
 
 class AssetManager:
     def __init__(self, asset_directory):
@@ -57,8 +60,40 @@ class AssetManager:
         else:
             raise ValueError(f"Asset not found: {asset_type}/{asset_name}")
 
+    def encode_image_to_base64(self, asset_name):
+        asset_info = self.get_asset('images', asset_name)
+        if asset_info is None:
+            raise ValueError(f"Image not found: {asset_name}")
+        
+        image_path = asset_info['file_path']
+        with Image.open(image_path) as img:
+            # Convert image to RGB mode if it's not
+            if img.mode != 'RGB':
+                img = img.convert('RGB')
+            
+            # Resize image if it's too large (optional)
+            max_size = (1024, 1024)  # You can adjust this
+            img.thumbnail(max_size, Image.LANCZOS)
+            
+            # Save image to bytes
+            buffered = io.BytesIO()
+            img.save(buffered, format="JPEG")
+        
+        # Encode the image
+        img_str = base64.b64encode(buffered.getvalue()).decode()
+        return f"data:image/jpeg;base64,{img_str}"
+
+    def get_image_for_llm(self, asset_name):
+        base64_image = self.encode_image_to_base64(asset_name)
+        asset_info = self.get_asset('images', asset_name)
+        return {
+            'image': base64_image,
+            'metadata': asset_info['metadata']
+        }
+
 # Example usage:
 # asset_manager = AssetManager('path/to/assets')
 # asset_manager.add_asset('images', 'city_skyline', 'path/to/skyline.jpg', {'author': 'Lesterpaintstheworld', 'description': 'Futuristic city skyline'})
-# asset_info = asset_manager.get_asset('images', 'city_skyline')
-# print(asset_info)
+# image_data = asset_manager.get_image_for_llm('city_skyline')
+# print(image_data['metadata'])
+# print(image_data['image'][:100])  # Print first 100 characters of base64 string
