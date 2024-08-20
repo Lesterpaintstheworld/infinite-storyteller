@@ -4,10 +4,11 @@ from ..world_simulation.city_evolution import evolve_city
 from ..world_simulation.event_scheduler import schedule_events
 
 class TaskExecutor:
-    def __init__(self, task_manager: TaskManager, feedback_analyzer: FeedbackAnalyzer):
+    def __init__(self, task_manager: TaskManager, feedback_analyzer: FeedbackAnalyzer, world_state_manager: WorldStateManager, story_generator: StoryGenerator):
         self.task_manager = task_manager
         self.feedback_analyzer = feedback_analyzer
-        self.world_state_manager = None  # À initialiser plus tard
+        self.world_state_manager = world_state_manager
+        self.story_generator = story_generator
 
     def execute_task(self, task):
         """
