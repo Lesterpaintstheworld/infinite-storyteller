@@ -213,7 +213,8 @@ class TaskManager:
         
         :param task: The task to be added
         """
-        self.task_queue.put((-task['priority'], task))
+        # Use a tuple with a unique identifier to avoid comparing dictionaries
+        self.task_queue.put((-task['priority'], id(task), task))
 
     def get_next_task(self):
         """
@@ -222,7 +223,7 @@ class TaskManager:
         :return: The next task, or None if the queue is empty
         """
         if not self.task_queue.empty():
-            return self.task_queue.get()[1]
+            return self.task_queue.get()[2]  # Return the task, not the priority or id
         return None
 
     def update_task_priority(self, task_id, new_priority):
