@@ -2,18 +2,34 @@
     "type": "story_task",
     "template": {
         "task_name": "Generate Story",
-        "description": "Generate a new story or update an existing one",
+        "description": "Generate a new story or update an existing one in the Cities of Lights universe",
         "required_inputs": [
             "story_type",
             "characters_involved",
             "setting",
-            "desired_length"
+            "desired_length",
+            "conflict_type"
         ],
         "optional_inputs": [
             "specific_themes",
-            "plot_elements"
+            "plot_elements",
+            "related_events",
+            "character_arcs"
         ],
-        "output_format": "Text file or JSON object",
-        "estimated_duration": "Time estimate for task completion"
+        "output_format": {
+            "main_content": "Text file",
+            "metadata": "JSON object"
+        },
+        "estimated_duration": "2-4 hours",
+        "priority_factors": [
+            "narrative_urgency",
+            "character_development_needs",
+            "reader_engagement_metrics"
+        ],
+        "dependencies": [
+            "world_state",
+            "character_profiles",
+            "recent_events"
+        ]
     }
 }

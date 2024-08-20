@@ -1,0 +1,35 @@
+{
+    "type": "city_update_task",
+    "template": {
+        "task_name": "Update City",
+        "description": "Update the state and events of a city in the Cities of Lights universe",
+        "required_inputs": [
+            "city_name",
+            "time_period",
+            "major_events"
+        ],
+        "optional_inputs": [
+            "population_changes",
+            "economic_shifts",
+            "technological_advancements",
+            "cultural_developments"
+        ],
+        "output_format": {
+            "city_state": "JSON object",
+            "event_log": "Text file",
+            "visual_updates": "Image files"
+        },
+        "estimated_duration": "3-5 hours",
+        "priority_factors": [
+            "event_significance",
+            "time_since_last_update",
+            "reader_interest_in_location"
+        ],
+        "dependencies": [
+            "world_state",
+            "character_movements",
+            "ongoing_stories",
+            "metaverse_rules"
+        ]
+    }
+}
