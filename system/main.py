@@ -1,8 +1,8 @@
 import time
 import os
-from core_loop.task_manager import TaskManager
-from core_loop.task_executor import TaskExecutor
-from core_loop.feedback_analyzer import FeedbackAnalyzer
+from .core_loop.task_manager import TaskManager
+from .core_loop.task_executor import TaskExecutor
+from .core_loop.feedback_analyzer import FeedbackAnalyzer
 from interaction_engine.services.world_state_manager import WorldStateManager
 from interaction_engine.assets.asset_manager import AssetManager
 from interaction_engine.story_generation.story_generator import StoryGenerator
