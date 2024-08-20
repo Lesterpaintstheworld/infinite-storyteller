@@ -4,9 +4,9 @@ from .core_loop.task_manager import TaskManager
 from .core_loop.task_executor import TaskExecutor
 from .core_loop.feedback_analyzer import FeedbackAnalyzer
 
-from .world_simulation.world_state_manager import WorldStateManager
+from world_simulation.world_state_manager import WorldStateManager
 from assets.asset_manager import AssetManager
-from .story_generation.story_generator import StoryGenerator
+from story_generation.story_generator import StoryGenerator
 
 class InfiniteStoryteller:
     def __init__(self):
