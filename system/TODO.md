@@ -43,28 +43,38 @@
 - Revoir régulièrement cette liste et la mettre à jour en fonction de l'avancement du projet
 - Prioriser les tâches qui enrichissent le plus l'univers et offrent le plus de potentiel narratif
 
+## Tâches accomplies
+1. ✅ Préparer une histoire courte d'introduction (30 pages environ)
+   - ✅ Définir la structure narrative de l'histoire
+   - ✅ Choisir les personnages principaux et leurs arcs narratifs
+   - ✅ Identifier les éléments clés du monde à introduire
+   - ✅ Rédiger un premier jet de l'histoire
+   - ✅ Réviser et peaufiner l'histoire
+   - ✅ Intégrer des éléments visuels ou descriptifs pour renforcer l'immersion
+
+## Tâches en cours
+2. Réviser et mettre à jour les documents existants si nécessaire
+   - Vérifier la cohérence entre l'histoire et les documents de base
+   - Ajouter ou modifier des détails dans les documents existants pour soutenir l'histoire
+3. Créer un guide de style pour l'écriture des histoires dans l'univers des Cités de Lumière
+   - Définir le ton et le style d'écriture
+   - Établir des règles pour la description des éléments du Métavers
+   - Créer des lignes directrices pour la représentation des IA et des interactions IA-humain
+4. Développer un plan de promotion pour l'histoire courte
+   - Identifier les plateformes de publication potentielles
+   - Créer un résumé accrocheur et des éléments de marketing
+   - Planifier une stratégie de communication sur les réseaux sociaux
+
 ## Nouvelles tâches
-1. Implémenter le système de gestion des tâches (task_manager.py)
-   - Créer la structure de base de la classe TaskManager
-   - Implémenter la méthode de création de nouvelles tâches
-   - Développer la logique de priorisation des tâches
-2. Développer la file d'attente prioritaire (priority_queue.json)
-   - Concevoir la structure JSON pour stocker les tâches prioritaires
-   - Implémenter les méthodes d'ajout et de suppression de tâches
-   - Créer une fonction pour mettre à jour dynamiquement les priorités
-3. Créer l'exécuteur de tâches (task_executor.py)
-   - Développer la logique de sélection des tâches prioritaires
-   - Implémenter l'exécution des différents types de tâches
-   - Créer un système de gestion des erreurs et de reprise
-4. Mettre en place l'analyseur de retours (feedback_analyzer.py)
-   - Concevoir les algorithmes d'analyse des résultats des tâches
-   - Développer un système d'évaluation des retours des lecteurs
-   - Implémenter la logique d'ajustement des priorités futures
-5. Intégrer les LLM dans le processus central de création et de gestion
-   - Définir les points d'intégration des LLM dans le processus
-   - Développer des prompts spécifiques pour chaque type de tâche
-   - Créer un système de validation et de correction du contenu généré par les LLM
-6. Développer un tableau de bord pour le suivi du processus central
-   - Concevoir l'interface utilisateur du tableau de bord
-   - Implémenter l'affichage en temps réel de l'état du processus
-   - Créer des fonctionnalités de génération de rapports
+5. Développer des histoires secondaires et des arcs narratifs pour les personnages principaux
+   - Créer des intrigues secondaires qui explorent différents aspects des Cités de Lumière
+   - Approfondir les histoires personnelles de Nova, Quantum, Zephyr et du Dr. Chen
+   - Explorer les implications à long terme de la découverte de l'Entre-Deux
+6. Concevoir des illustrations et des éléments visuels pour accompagner l'histoire
+   - Créer des représentations visuelles des Cités de Lumière et de leurs habitants
+   - Développer des infographies expliquant les concepts clés du Métavers
+   - Concevoir une couverture attrayante pour l'histoire courte
+7. Élaborer un glossaire détaillé des termes et concepts introduits dans l'histoire
+   - Définir clairement les termes techniques et les concepts uniques au Métavers
+   - Inclure des explications sur les différentes Cités de Lumière et leurs spécificités
+   - Créer des entrées pour les personnages principaux et secondaires
