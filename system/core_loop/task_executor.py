@@ -3,19 +3,11 @@ from .feedback_analyzer import FeedbackAnalyzer
 from ..world_simulation.city_evolution import evolve_city
 from ..world_simulation.event_scheduler import schedule_events
 
-# Importations temporaires pour éviter les erreurs
-WorldStateManager = None
-StoryGenerator = None
-AssetManager = None
-
 class TaskExecutor:
     def __init__(self, task_manager: TaskManager, feedback_analyzer: FeedbackAnalyzer):
         self.task_manager = task_manager
         self.feedback_analyzer = feedback_analyzer
-        # Temporairement commenté pour éviter les erreurs
-        # self.world_state_manager = None
-        # self.asset_manager = None
-        # self.story_generator = None
+        self.world_state_manager = None  # À initialiser plus tard
 
     def execute_task(self, task):
         """
@@ -46,7 +38,8 @@ class TaskExecutor:
         :param task: The executed task
         :param result: The result of the task execution
         """
-        self.world_state_manager.update_state(task, result)
+        # Temporairement commenté pour éviter les erreurs
+        # self.world_state_manager.update_state(task, result)
         self.feedback_analyzer.analyze_task_result(task, result)
         self.task_manager.update_task_status(task['id'], 'completed')
 
