@@ -41,7 +41,26 @@
 
 ## Nouvelles tâches
 1. Implémenter le système de gestion des tâches (task_manager.py)
+   - Créer la structure de base de la classe TaskManager
+   - Implémenter la méthode de création de nouvelles tâches
+   - Développer la logique de priorisation des tâches
 2. Développer la file d'attente prioritaire (priority_queue.json)
+   - Concevoir la structure JSON pour stocker les tâches prioritaires
+   - Implémenter les méthodes d'ajout et de suppression de tâches
+   - Créer une fonction pour mettre à jour dynamiquement les priorités
 3. Créer l'exécuteur de tâches (task_executor.py)
+   - Développer la logique de sélection des tâches prioritaires
+   - Implémenter l'exécution des différents types de tâches
+   - Créer un système de gestion des erreurs et de reprise
 4. Mettre en place l'analyseur de retours (feedback_analyzer.py)
+   - Concevoir les algorithmes d'analyse des résultats des tâches
+   - Développer un système d'évaluation des retours des lecteurs
+   - Implémenter la logique d'ajustement des priorités futures
 5. Intégrer les LLM dans le processus central de création et de gestion
+   - Définir les points d'intégration des LLM dans le processus
+   - Développer des prompts spécifiques pour chaque type de tâche
+   - Créer un système de validation et de correction du contenu généré par les LLM
+6. Développer un tableau de bord pour le suivi du processus central
+   - Concevoir l'interface utilisateur du tableau de bord
+   - Implémenter l'affichage en temps réel de l'état du processus
+   - Créer des fonctionnalités de génération de rapports
