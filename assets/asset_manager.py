@@ -91,9 +91,71 @@ class AssetManager:
             'metadata': asset_info['metadata']
         }
 
+    def input_image_to_chatgpt(self, asset_name):
+        import requests
+        import json
+        
+        image_data = self.get_image_for_llm(asset_name)
+        
+        # Replace with your actual API endpoint and key
+        api_endpoint = "https://api.openai.com/v1/chat/completions"
+        api_key = "your_openai_api_key_here"
+        
+        headers = {
+            "Content-Type": "application/json",
+            "Authorization": f"Bearer {api_key}"
+        }
+        
+        payload = {
+            "model": "gpt-4-vision-preview",
+            "messages": [
+                {
+                    "role": "user",
+                    "content": [
+                        {
+                            "type": "text",
+                            "text": "Please provide a detailed description of this image."
+                        },
+                        {
+                            "type": "image_url",
+                            "image_url": {
+                                "url": f"data:image/jpeg;base64,{image_data['image']}"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "max_tokens": 300
+        }
+        
+        response = requests.post(api_endpoint, headers=headers, data=json.dumps(payload))
+        
+        if response.status_code == 200:
+            description = response.json()['choices'][0]['message']['content']
+            self.add_image_description(asset_name, description)
+            return description
+        else:
+            raise Exception(f"Error in API call: {response.status_code} - {response.text}")
+
+    def add_image_description(self, asset_name, description):
+        import json
+        import os
+        
+        descriptions_file = os.path.join(self.asset_directory, 'image_descriptions.json')
+        
+        if os.path.exists(descriptions_file):
+            with open(descriptions_file, 'r') as f:
+                descriptions = json.load(f)
+        else:
+            descriptions = {}
+        
+        descriptions[asset_name] = description
+        
+        with open(descriptions_file, 'w') as f:
+            json.dump(descriptions, f, indent=2)
+
 # Example usage:
 # asset_manager = AssetManager('path/to/assets')
 # asset_manager.add_asset('images', 'city_skyline', 'path/to/skyline.jpg', {'author': 'Lesterpaintstheworld', 'description': 'Futuristic city skyline'})
-# image_data = asset_manager.get_image_for_llm('city_skyline')
-# print(image_data['metadata'])
-# print(image_data['image'][:100])  # Print first 100 characters of base64 string
+# description = asset_manager.input_image_to_chatgpt('city_skyline')
+# print(description)
