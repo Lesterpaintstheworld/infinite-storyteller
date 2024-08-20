@@ -82,10 +82,10 @@ class TaskManager:
         temp_queue = PriorityQueue()
         
         while not self.task_queue.empty():
-            priority, task = self.task_queue.get()
+            priority, _, task = self.task_queue.get()
             if task['id'] == task_id:
                 task['status'] = status
-            temp_queue.put((priority, task))
+            temp_queue.put((priority, id(task), task))
         
         self.task_queue = temp_queue
 
