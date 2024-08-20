@@ -1,12 +1,12 @@
 import time
 import os
-from .core_loop.task_manager import TaskManager
-from .core_loop.task_executor import TaskExecutor
-from .core_loop.feedback_analyzer import FeedbackAnalyzer
+from system.core_loop.task_manager import TaskManager
+from system.core_loop.task_executor import TaskExecutor
+from system.core_loop.feedback_analyzer import FeedbackAnalyzer
 
-from .world_simulation.world_state_manager import WorldStateManager
-from .assets.asset_manager import AssetManager
-from .story_generation.story_generator import StoryGenerator
+from system.world_simulation.world_state_manager import WorldStateManager
+from system.assets.asset_manager import AssetManager
+from system.story_generation.story_generator import StoryGenerator
 
 class InfiniteStoryteller:
     def __init__(self):
@@ -15,7 +15,7 @@ class InfiniteStoryteller:
         self.task_executor = TaskExecutor(self.task_manager, self.feedback_analyzer)
         
         self.world_state_manager = WorldStateManager()
-        self.asset_manager = AssetManager(os.path.join(os.path.dirname(__file__), 'assets'))
+        self.asset_manager = AssetManager(os.path.join(os.path.dirname(__file__), '..', 'assets'))
         self.story_generator = StoryGenerator(self.asset_manager)
 
     def run(self):
