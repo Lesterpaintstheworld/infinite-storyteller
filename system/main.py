@@ -57,8 +57,15 @@ class InfiniteStoryteller:
         Collecter le feedback de diverses sources.
         Cette méthode devrait être implémentée pour recueillir le feedback des lecteurs, les métriques du système, etc.
         """
-        # TODO: Implémenter la collecte de feedback
-        return {}
+        # TODO: Implémenter la collecte de feedback réel
+        # Pour le moment, retournons un feedback de test
+        return {
+            "text": "L'histoire était intéressante, mais un peu confuse par moments.",
+            "engagement": 7,
+            "content_quality": 6,
+            "character_popularity": {"protagonist": 8, "antagonist": 7},
+            "plot_coherence": 6
+        }
 
     def cleanup(self):
         """
