@@ -1,15 +1,18 @@
 import time
+import os
 from core_loop.task_manager import TaskManager
 from core_loop.task_executor import TaskExecutor
 from core_loop.feedback_analyzer import FeedbackAnalyzer
 from system.services.world_state_manager import WorldStateManager
+from assets.asset_manager import AssetManager
 
 class InfiniteStoryteller:
     def __init__(self):
         self.world_state_manager = WorldStateManager()
         self.task_manager = TaskManager()
-        self.task_executor = TaskExecutor(self.task_manager, self.world_state_manager, self.feedback_analyzer)
         self.feedback_analyzer = FeedbackAnalyzer()
+        self.asset_manager = AssetManager(os.path.join(os.path.dirname(__file__), '..', 'assets'))
+        self.task_executor = TaskExecutor(self.task_manager, self.world_state_manager, self.feedback_analyzer, self.asset_manager)
 
     def run(self):
         """

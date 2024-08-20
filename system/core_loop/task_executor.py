@@ -4,13 +4,15 @@ from system.services.feedback_analyzer import FeedbackAnalyzer
 from system.story_generation.story_generator import StoryGenerator
 from system.world_simulation.city_evolution import evolve_city
 from system.world_simulation.event_scheduler import schedule_events
+from assets.asset_manager import AssetManager
 
 class TaskExecutor:
-    def __init__(self, task_manager: TaskManager, world_state_manager: WorldStateManager, feedback_analyzer: FeedbackAnalyzer):
+    def __init__(self, task_manager: TaskManager, world_state_manager: WorldStateManager, feedback_analyzer: FeedbackAnalyzer, asset_manager: AssetManager):
         self.task_manager = task_manager
         self.world_state_manager = world_state_manager
         self.feedback_analyzer = feedback_analyzer
-        self.story_generator = StoryGenerator()
+        self.asset_manager = asset_manager
+        self.story_generator = StoryGenerator(self.asset_manager)
 
     def execute_task(self, task):
         """
