@@ -98,11 +98,11 @@ class TaskManager:
         temp_queue = PriorityQueue()
         
         while not self.task_queue.empty():
-            priority, task = self.task_queue.get()
+            priority, _, task = self.task_queue.get()
             if task['id'] in adjustments:
                 new_priority = task['priority'] + adjustments[task['id']]
                 task['priority'] = max(1, min(new_priority, 10))  # Ensure priority is within bounds
-            temp_queue.put((-task['priority'], task))
+            temp_queue.put((-task['priority'], id(task), task))
         
         self.task_queue = temp_queue
 

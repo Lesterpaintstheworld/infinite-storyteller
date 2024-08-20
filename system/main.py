@@ -26,11 +26,18 @@ class InfiniteStoryteller:
         try:
             while True:
                 # Créer et prioriser les tâches
-                task = self.task_manager.create_task("default_task", {"description": "Tâche par défaut"})
+                task = self.task_manager.create_task("generate_story", {
+                    "story_elements": ["un héros courageux", "une quête périlleuse", "un artefact magique"],
+                    "world_state": self.world_state_manager.world_state
+                })
                 
                 if task:
                     # Exécuter la tâche de plus haute priorité
                     result = self.task_executor.execute_task(task)
+                    
+                    # Afficher l'histoire générée
+                    print("\nNouvelle histoire générée :")
+                    print(result)
                     
                     # Analyser le feedback et ajuster les priorités
                     feedback = self.get_feedback()
@@ -43,7 +50,7 @@ class InfiniteStoryteller:
                     # Mettre à jour l'état du monde
                     self.world_state_manager.update_state(task, result)
                     
-                    print(f"Tâche exécutée : {task['type']}")
+                    print(f"\nTâche exécutée : {task['type']}")
                 else:
                     print("Aucune tâche à exécuter. En attente...")
                     time.sleep(5)  # Attendre 5 secondes avant de vérifier de nouvelles tâches
