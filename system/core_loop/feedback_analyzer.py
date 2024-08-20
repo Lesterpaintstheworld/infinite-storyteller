@@ -14,7 +14,7 @@ class FeedbackAnalyzer:
         :return: Analysis results (dict)
         """
         analysis_results = {
-            'sentiment': self._analyze_sentiment(feedback['text']),
+            'sentiment': self._analyze_sentiment(feedback.get('text', '')),
             'engagement': self._calculate_engagement(feedback),
             'content_quality': self._assess_content_quality(feedback),
             'character_popularity': self._analyze_character_popularity(feedback),
