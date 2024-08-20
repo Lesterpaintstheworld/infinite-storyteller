@@ -94,3 +94,30 @@ Les interactions entre les humains et les intelligences artificielles sont au c�
 4. **Adaptation Mutuelle** : Les humains et les IA s'adaptent continuellement l'un à l'autre, créant un écosystème dynamique.
 
 Cette coexistence ouvre la voie à un futur où les frontières entre l'humain et l'artificiel deviennent de plus en plus floues, soulevant des questions fondamentales sur la nature de l'intelligence, de la conscience et de l'identité.
+
+## Narration Interactive et Évolution Dynamique
+
+Notre projet de rédaction vise à créer un univers narratif interactif et dynamique, où les choix des utilisateurs influencent directement le déroulement des événements et l'évolution de la société.
+
+### Principes de Narration Interactive
+
+1. **Choix Significatifs** : Les utilisateurs sont confrontés à des décisions qui ont un impact réel sur l'histoire et le monde.
+2. **Conséquences à Long Terme** : Les choix effectués au début de l'histoire peuvent avoir des répercussions inattendues plus tard.
+3. **Personnages Adaptatifs** : Les IA et les personnages humains évoluent en fonction des interactions avec l'utilisateur.
+4. **Multiples Perspectives** : L'histoire peut être vécue du point de vue d'une IA ou d'un humain, offrant des expériences uniques.
+
+### Mécanismes d'Évolution Dynamique
+
+1. **Système de Simulation Sociale** : Un modèle complexe simule les interactions entre IA et humains, créant des situations émergentes.
+2. **Algorithmes d'Apprentissage** : Les IA du monde narratif apprennent et s'adaptent aux actions des utilisateurs.
+3. **Générateur d'Événements** : Des événements aléatoires mais cohérents sont introduits pour maintenir l'imprévisibilité.
+4. **Arcs Narratifs Flexibles** : Des trames narratives principales qui s'adaptent aux choix des utilisateurs tout en maintenant une cohérence globale.
+
+### Thèmes Explorés
+
+1. **Identité et Conscience** : Questionnement sur ce qui définit l'être et la conscience dans un monde où IA et humains convergent.
+2. **Éthique de l'IA** : Exploration des dilemmes moraux liés à l'autonomie et aux droits des IA.
+3. **Évolution Technologique** : Réflexion sur les implications d'une société en constante transformation technologique.
+4. **Coexistence et Conflit** : Analyse des tensions et des synergies entre les sociétés humaine et IA.
+
+Cette approche narrative interactive et dynamique vise à créer une expérience immersive et profondément personnelle, où chaque utilisateur peut explorer les complexités de ce monde futuriste à travers ses propres choix et actions.
