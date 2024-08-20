@@ -122,20 +122,20 @@ Notre projet de rédaction vise à créer un univers narratif interactif et dyna
 
 Cette approche narrative interactive et dynamique vise à créer une expérience immersive et profondément personnelle, où chaque utilisateur peut explorer les complexités de ce monde futuriste à travers ses propres choix et actions.
 
-## Développement Technique
+## Développement des Personnages
 
-Pour réaliser ce projet ambitieux, nous devrons mettre en place une infrastructure technique robuste et flexible. Voici les principaux aspects techniques à considérer :
+Pour donner vie à notre univers narratif, il est crucial de créer des personnages complexes et crédibles, qu'ils soient des IA ou des humains. Cette section explorera les éléments clés du développement des personnages :
 
-1. **Moteur de Simulation** : Développement d'un moteur capable de gérer les interactions complexes entre les entités IA et les utilisateurs humains.
+1. **Profils Psychologiques** : Création de personnalités uniques et cohérentes pour chaque personnage principal.
 
-2. **Système de Gestion de l'IA** : Création d'un système permettant aux IA de prendre des décisions autonomes basées sur leur personnalité, leurs expériences et le contexte.
+2. **Historiques et Motivations** : Élaboration de backstories détaillées qui influencent les actions et les décisions des personnages.
 
-3. **Interface Utilisateur** : Conception d'une interface intuitive permettant aux utilisateurs d'interagir de manière fluide avec le monde virtuel.
+3. **Évolution des Personnages** : Définition des arcs de développement pour montrer comment les personnages changent au fil de l'histoire.
 
-4. **Base de Données Dynamique** : Mise en place d'une base de données capable de stocker et de mettre à jour en temps réel l'état du monde et les historiques des interactions.
+4. **Relations Interpersonnelles** : Exploration des dynamiques complexes entre les personnages IA et humains.
 
-5. **Système de Génération de Contenu** : Développement d'algorithmes capables de générer du contenu narratif, des dialogues et des événements de manière procédurale.
+5. **Conflits Internes et Externes** : Identification des luttes personnelles et des défis auxquels les personnages sont confrontés.
 
-6. **Outils d'Analyse et de Suivi** : Création d'outils permettant de suivre l'évolution du monde virtuel et d'analyser les comportements des utilisateurs et des IA.
+6. **Traits Distinctifs** : Création de caractéristiques uniques qui rendent chaque personnage mémorable.
 
-Dans les prochaines sections, nous détaillerons chacun de ces aspects techniques et explorerons les défis et les solutions potentielles pour leur mise en œuvre.
+Dans les sections suivantes, nous approfondirons chacun de ces aspects et explorerons comment ils contribuent à créer un univers narratif riche et engageant.
