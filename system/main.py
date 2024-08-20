@@ -5,6 +5,7 @@ from system.story_generation.story_generator import StoryGenerator
 from system.core_loop.feedback_analyzer import FeedbackAnalyzer
 
 import openai
+import time
 
 class InfiniteStoryteller:
     def __init__(self):
