@@ -6,7 +6,7 @@ from system.core_loop.feedback_analyzer import FeedbackAnalyzer
 
 from system.world_simulation.world_state_manager import WorldStateManager
 from assets.asset_manager import AssetManager
-from story_generation.story_generator import StoryGenerator
+from system.story_generation.story_generator import StoryGenerator
 
 class InfiniteStoryteller:
     def __init__(self):
