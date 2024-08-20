@@ -45,7 +45,7 @@ class TaskExecutor:
         """
         # Temporairement commenté pour éviter les erreurs
         # self.world_state_manager.update_state(task, result)
-        feedback = {"task": task, "result": result}
+        feedback = {"task": task, "result": result, "text": str(result)}
         self.feedback_analyzer.analyze_feedback(feedback)
         self.task_manager.update_task_status(task['id'], 'completed')
 
