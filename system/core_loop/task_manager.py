@@ -1,28 +1,62 @@
+import uuid
+from queue import PriorityQueue
+
 class TaskManager:
     def __init__(self):
-        # Initialize task manager
-        pass
+        self.task_queue = PriorityQueue()
 
-    def create_task(self, task_type, priority, details):
+    def create_task(self, task_type, details, priority=None):
         """
         Create a new task based on the current state of the universe and system needs.
         
         :param task_type: Type of the task
-        :param priority: Priority of the task
         :param details: Additional details for the task
+        :param priority: Priority of the task (if not provided, will be assigned automatically)
         :return: Created task object
         """
-        # Implementation to be added
-        pass
+        task_id = str(uuid.uuid4())
+        task = {
+            'id': task_id,
+            'type': task_type,
+            'details': details,
+            'status': 'pending'
+        }
+        
+        if priority is None:
+            priority = self.assign_priority(task)
+        
+        task['priority'] = priority
+        self.add_task(task)
+        return task
 
     def assign_priority(self, task):
         """
         Assign priority to a task based on its importance and urgency.
         
         :param task: The task to assign priority to
-        :return: Updated task with assigned priority
+        :return: Assigned priority value
         """
-        # Implementation to be added
-        pass
+        # TODO: Implement a more sophisticated priority assignment logic
+        # For now, we'll use a simple random priority
+        import random
+        return random.randint(1, 10)
+
+    def add_task(self, task):
+        """
+        Add a task to the priority queue.
+        
+        :param task: The task to be added
+        """
+        self.task_queue.put((-task['priority'], task))
+
+    def get_next_task(self):
+        """
+        Get the next highest priority task from the queue.
+        
+        :return: The next task, or None if the queue is empty
+        """
+        if not self.task_queue.empty():
+            return self.task_queue.get()[1]
+        return None
 
 # Add more methods as needed for task management
