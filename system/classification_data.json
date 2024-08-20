@@ -49,6 +49,26 @@
             }
         },
         {
+            "name": "Citizens of Light",
+            "type": "NFT",
+            "description": "Citizenship NFT for the Floating Cities of Light, representing access and membership to the community",
+            "categories": {
+                "Content Type": ["Avatars"],
+                "Theme": ["AI-Human Interaction", "Social Evolution"],
+                "Setting": ["City Center"]
+            }
+        },
+        {
+            "name": "Islands - Cities of Light",
+            "type": "NFT",
+            "description": "NFT representing ownership of a private island in the Floating Cities of Light metaverse",
+            "categories": {
+                "Content Type": ["Virtual Real Estate"],
+                "Theme": ["Technological Advancement", "Social Evolution"],
+                "Setting": ["Virtual Workspace", "Entertainment District"]
+            }
+        },
+        {
             "name": "The Boost",
             "type": "Program",
             "description": "A 1 month program in VR with 4 spots available, including daily work sessions and personalized coaching",

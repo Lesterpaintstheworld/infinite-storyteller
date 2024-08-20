@@ -1,7 +1,23 @@
 {
-    "currency": "Name of currency",
-    "exchange_rate": "Value",
-    "economic_system": "Description",
-    "major_industries": ["Industry 1", "Industry 2", "Industry 3"],
-    "resource_management": "Description"
+    "currency": "ETH",
+    "exchange_rate": "Variable based on real-world ETH value",
+    "economic_system": "NFT-based ownership and access rights",
+    "major_industries": ["Virtual Real Estate", "Digital Art", "Metaverse Services", "Education"],
+    "resource_management": "Blockchain-based scarcity and ownership tracking",
+    "nft_assets": [
+        {
+            "name": "Citizens of Light",
+            "type": "Citizenship",
+            "total_supply": 100,
+            "current_floor_price": 1,
+            "total_volume": 20
+        },
+        {
+            "name": "Islands - Cities of Light",
+            "type": "Virtual Real Estate",
+            "total_supply": 108,
+            "current_floor_price": null,
+            "total_volume": 0.4
+        }
+    ]
 }
