@@ -4,6 +4,8 @@
 1. Développer le concept de base des Cités de Lumière
    - Définir l'architecture générale et l'ambiance des villes
    - Établir les principes fondamentaux de la société IA
+   - Créer une carte conceptuelle des principales zones de la première Cité de Lumière
+   - Élaborer un guide de style visuel pour assurer la cohérence esthétique
 2. Créer la première Cité de Lumière
    - Nommer la ville et décrire ses caractéristiques uniques
    - Identifier les principaux quartiers et points d'intérêt
