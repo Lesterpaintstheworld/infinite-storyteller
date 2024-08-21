@@ -2,11 +2,18 @@ import os
 import sys
 import requests
 from urllib.parse import quote
+from dotenv import load_dotenv
+
+# Chargement des variables d'environnement
+load_dotenv()
 
 # Configuration
-DOKUWIKI_URL = "http://localhost/dokuwiki"
-USERNAME = "admin"
-PASSWORD = "admin"
+DOKUWIKI_URL = os.getenv('DOKUWIKI_URL')
+USERNAME = os.getenv('DOKUWIKI_USERNAME')
+PASSWORD = os.getenv('DOKUWIKI_PASSWORD')
+
+# Timeout for requests in seconds
+REQUEST_TIMEOUT = 10
 
 def sanitize_pagename(name):
     """Convertit un nom de fichier en un nom de page DokuWiki valide."""
