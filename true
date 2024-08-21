@@ -82,13 +82,21 @@ def test_connection():
     """
     
     try:
-        response = requests.post(url, data=xml_template, headers=headers, auth=(USERNAME, PASSWORD), timeout=10)
+        response = requests.post(url, data=xml_template, headers=headers, auth=(USERNAME, PASSWORD), timeout=REQUEST_TIMEOUT)
         if response.status_code == 200:
             print("Connexion au wiki réussie.")
             return True
         else:
             print(f"Échec de la connexion au wiki. Code de statut : {response.status_code}")
             return False
+    except requests.exceptions.ConnectionError:
+        print(f"Erreur de connexion : Impossible de se connecter à {DOKUWIKI_URL}")
+        print("Vérifiez que l'URL du wiki est correcte et que le serveur est en cours d'exécution.")
+        return False
+    except requests.exceptions.Timeout:
+        print(f"Erreur de connexion : Le délai d'attente de {REQUEST_TIMEOUT} secondes a été dépassé.")
+        print("Le serveur wiki pourrait être surchargé ou inaccessible.")
+        return False
     except requests.exceptions.RequestException as e:
         print(f"Erreur lors de la connexion au wiki : {str(e)}")
         return False
@@ -135,6 +143,11 @@ def create_index_page(directory, wiki_namespace=''):
     create_or_update_page(f"{wiki_namespace}:index" if wiki_namespace else 'index', index_content)
 
 if __name__ == "__main__":
+    if not all([DOKUWIKI_URL, USERNAME, PASSWORD]):
+        print("Erreur : Les informations de connexion au wiki sont manquantes dans le fichier .env")
+        print("Assurez-vous que DOKUWIKI_URL, DOKUWIKI_USERNAME et DOKUWIKI_PASSWORD sont définis.")
+        sys.exit(1)
+
     if len(sys.argv) != 2:
         print("Usage: python sync_wiki.py <chemin_du_dossier>")
         print("Ce script synchronise le contenu du dossier spécifié avec le wiki DokuWiki.")
