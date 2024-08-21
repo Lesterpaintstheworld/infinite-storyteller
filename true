@@ -76,14 +76,18 @@ def create_index_page(directory, wiki_namespace=''):
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
-        print("Usage: python script.py <chemin_du_dossier>")
+        print("Usage: python sync_wiki.py <chemin_du_dossier>")
+        print("Ce script synchronise le contenu du dossier spécifié avec le wiki DokuWiki.")
+        print("Il crée ou met à jour les pages du wiki pour chaque fichier dans le dossier,")
+        print("et crée des pages d'index pour chaque sous-dossier.")
         sys.exit(1)
     
     folder_path = sys.argv[1]
     if not os.path.isdir(folder_path):
-        print(f"Le chemin spécifié '{folder_path}' n'est pas un dossier valide.")
+        print(f"Erreur : Le chemin spécifié '{folder_path}' n'est pas un dossier valide.")
         sys.exit(1)
     
+    print(f"Début de la synchronisation du dossier '{folder_path}' avec le wiki...")
     process_directory(folder_path)
     create_index_page(folder_path)
-    print("Synchronisation terminée.")
+    print("Synchronisation terminée avec succès.")
