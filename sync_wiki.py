@@ -151,6 +151,19 @@ def create_index_page(directory, wiki_namespace=''):
     
     create_or_update_page(f"{wiki_namespace}:index" if wiki_namespace else 'index', index_content)
 
+def read_ignore_patterns(directory):
+    """Lit les fichiers .gitignore et .aiderignore et retourne les patterns à ignorer."""
+    ignore_patterns = []
+    ignore_files = ['.gitignore', '.aiderignore']
+    
+    for ignore_file in ignore_files:
+        file_path = os.path.join(directory, ignore_file)
+        if os.path.exists(file_path):
+            with open(file_path, 'r') as f:
+                ignore_patterns.extend(line.strip() for line in f if line.strip() and not line.startswith('#'))
+    
+    return ignore_patterns
+
 if __name__ == "__main__":
     if not all([DOKUWIKI_URL, USERNAME, PASSWORD]):
         print("Erreur : Les informations de connexion au wiki sont manquantes dans le fichier .env")
