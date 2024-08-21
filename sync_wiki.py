@@ -4,6 +4,7 @@ import requests
 from urllib.parse import quote
 from dotenv import load_dotenv
 import fnmatch
+import pathlib
 
 # Chargement des variables d'environnement
 load_dotenv()
@@ -170,7 +171,8 @@ if __name__ == "__main__":
         sys.exit(1)
     
     try:
-        process_directory(folder_path)
+        ignore_patterns = read_ignore_patterns(folder_path)
+        process_directory(folder_path, ignore_patterns=ignore_patterns)
         create_index_page(folder_path)
         print("Synchronisation terminée avec succès.")
     except Exception as e:
