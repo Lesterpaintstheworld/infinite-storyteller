@@ -18,7 +18,8 @@ REQUEST_TIMEOUT = 10
 import sys
 
 def print_flush(*args, **kwargs):
-    print(*args, **kwargs, flush=True)
+    print(*args, **kwargs)
+    sys.stdout.flush()
 
 def sanitize_pagename(name):
     """Convertit un nom de fichier en un nom de page DokuWiki valide."""
@@ -183,7 +184,7 @@ def process_directory(directory, wiki_namespace='', ignore_patterns=None, base_d
     for item in os.listdir(directory):
         item_path = os.path.join(directory, item)
         if should_ignore(item_path, ignore_patterns, base_dir):
-            print(f"Ignoré : {item_path}")
+            print_flush(f"Ignoré : {item_path}")
             continue
         
         if os.path.isfile(item_path):
@@ -193,7 +194,7 @@ def process_directory(directory, wiki_namespace='', ignore_patterns=None, base_d
             if content is not None:
                 create_or_update_page(pagename, content)
             else:
-                print(f"Impossible de traiter le fichier {item_path}. Il sera ignoré.")
+                print_flush(f"Impossible de traiter le fichier {item_path}. Il sera ignoré.")
         elif os.path.isdir(item_path):
             new_namespace = f"{wiki_namespace}:{sanitize_pagename(item)}" if wiki_namespace else sanitize_pagename(item)
             process_directory(item_path, new_namespace, ignore_patterns, base_dir)
@@ -232,17 +233,17 @@ if __name__ == "__main__":
         print_flush(f"Erreur : Le chemin spécifié '{folder_path}' n'est pas un dossier valide.")
         sys.exit(1)
     
-    print("Test de la connexion au wiki...")
+    print_flush("Test de la connexion au wiki...")
     if not test_connection():
-        print("Impossible de se connecter au wiki. Vérifiez vos paramètres de connexion et l'état du serveur.")
+        print_flush("Impossible de se connecter au wiki. Vérifiez vos paramètres de connexion et l'état du serveur.")
         sys.exit(1)
     
-    print(f"Début de la synchronisation du dossier '{folder_path}' avec le wiki...")
+    print_flush(f"Début de la synchronisation du dossier '{folder_path}' avec le wiki...")
     try:
         ignore_patterns = read_ignore_patterns(folder_path)
         process_directory(folder_path, ignore_patterns=ignore_patterns, base_dir=folder_path)
         create_index_page(folder_path)
-        print("Synchronisation terminée avec succès.")
+        print_flush("Synchronisation terminée avec succès.")
     except Exception as e:
-        print(f"Une erreur est survenue lors de la synchronisation : {str(e)}")
+        print_flush(f"Une erreur est survenue lors de la synchronisation : {str(e)}")
         sys.exit(1)
