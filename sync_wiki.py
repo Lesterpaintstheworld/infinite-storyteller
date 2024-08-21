@@ -143,7 +143,7 @@ def process_directory(directory, wiki_namespace='', ignore_patterns=None):
         relative_path = os.path.relpath(item_path, directory)
 
         if any(fnmatch.fnmatch(relative_path, pattern) for pattern in ignore_patterns):
-            print(f"Ignoré : {item_path}")
+            print_flush(f"Ignoré : {item_path}")
             continue
 
         if os.path.isfile(item_path):
@@ -153,7 +153,7 @@ def process_directory(directory, wiki_namespace='', ignore_patterns=None):
             if content is not None:
                 create_or_update_page(pagename, content)
             else:
-                print(f"Impossible de traiter le fichier {item_path}. Il sera ignoré.")
+                print_flush(f"Impossible de traiter le fichier {item_path}. Il sera ignoré.")
         elif os.path.isdir(item_path):
             new_namespace = f"{wiki_namespace}:{sanitize_pagename(item)}" if wiki_namespace else sanitize_pagename(item)
             process_directory(item_path, new_namespace, ignore_patterns)
@@ -197,24 +197,24 @@ if __name__ == "__main__":
         sys.exit(1)
 
     folder_path = os.path.dirname(os.path.abspath(__file__))
-    print(f"Début de la synchronisation du dossier '{folder_path}' avec le wiki...")
+    print_flush(f"Début de la synchronisation du dossier '{folder_path}' avec le wiki...")
     print(f"URL du wiki : {DOKUWIKI_URL}")
     print(f"Utilisateur : {USERNAME}")
     
-    print("Test de la connexion au wiki...")
+    print_flush("Test de la connexion au wiki...")
     if not test_connection():
-        print("Impossible de se connecter au wiki. Vérifiez vos paramètres de connexion et l'état du serveur.")
+        print_flush("Impossible de se connecter au wiki. Vérifiez vos paramètres de connexion et l'état du serveur.")
         sys.exit(1)
     
     try:
         ignore_patterns = read_ignore_patterns(folder_path)
         process_directory(folder_path, ignore_patterns=ignore_patterns)
         create_index_page(folder_path)
-        print("Synchronisation terminée avec succès.")
+        print_flush("Synchronisation terminée avec succès.")
     except UnicodeEncodeError as e:
         print(f"Une erreur d'encodage est survenue lors de la synchronisation : {str(e)}")
         print("Certains caractères ne peuvent pas être encodés correctement.")
         sys.exit(1)
     except Exception as e:
-        print(f"Une erreur est survenue lors de la synchronisation : {str(e)}")
+        print_flush(f"Une erreur est survenue lors de la synchronisation : {str(e)}")
         sys.exit(1)
