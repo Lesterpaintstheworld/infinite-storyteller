@@ -18,8 +18,7 @@ REQUEST_TIMEOUT = 10
 import sys
 
 def print_flush(*args, **kwargs):
-    print(*args, **kwargs)
-    sys.stdout.flush()
+    print(*args, **kwargs, flush=True)
 
 def sanitize_pagename(name):
     """Convertit un nom de fichier en un nom de page DokuWiki valide."""
@@ -217,20 +216,20 @@ def create_index_page(directory, wiki_namespace=''):
 
 if __name__ == "__main__":
     if not all([DOKUWIKI_URL, DOKUWIKI_TOKEN]):
-        print("Erreur : Les informations de connexion au wiki sont manquantes dans le fichier .env")
-        print("Assurez-vous que DOKUWIKI_URL et DOKUWIKI_TOKEN sont définis.")
+        print_flush("Erreur : Les informations de connexion au wiki sont manquantes dans le fichier .env")
+        print_flush("Assurez-vous que DOKUWIKI_URL et DOKUWIKI_TOKEN sont définis.")
         sys.exit(1)
 
     if len(sys.argv) != 2:
-        print("Usage: python sync_wiki.py <chemin_du_dossier>")
-        print("Ce script synchronise le contenu du dossier spécifié avec le wiki DokuWiki.")
-        print("Il crée ou met à jour les pages du wiki pour chaque fichier dans le dossier,")
-        print("et crée des pages d'index pour chaque sous-dossier.")
+        print_flush("Usage: python sync_wiki.py <chemin_du_dossier>")
+        print_flush("Ce script synchronise le contenu du dossier spécifié avec le wiki DokuWiki.")
+        print_flush("Il crée ou met à jour les pages du wiki pour chaque fichier dans le dossier,")
+        print_flush("et crée des pages d'index pour chaque sous-dossier.")
         sys.exit(1)
     
     folder_path = sys.argv[1]
     if not os.path.isdir(folder_path):
-        print(f"Erreur : Le chemin spécifié '{folder_path}' n'est pas un dossier valide.")
+        print_flush(f"Erreur : Le chemin spécifié '{folder_path}' n'est pas un dossier valide.")
         sys.exit(1)
     
     print("Test de la connexion au wiki...")
