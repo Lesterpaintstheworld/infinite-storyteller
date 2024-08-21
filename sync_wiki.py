@@ -3,6 +3,7 @@ import sys
 import requests
 from urllib.parse import quote
 from dotenv import load_dotenv
+import fnmatch
 
 # Chargement des variables d'environnement
 load_dotenv()
