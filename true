@@ -143,7 +143,11 @@ def create_namespace(namespace):
     for part in parts:
         current_namespace = f"{current_namespace}:{part}" if current_namespace else part
         if not page_exists(current_namespace):
-            create_or_update_page(current_namespace, f"====== {part.capitalize()} ======\n\nCette page est un espace de noms.")
+            content = f"====== {part.capitalize()} ======\n\n"
+            content += "Cette page est un espace de noms.\n\n"
+            content += "{{indexmenu>:@ns}}\n\n"
+            content += "{{changes>ns={{CURRENTNS}}}}\n"
+            create_or_update_page(current_namespace, content)
 
 def read_ignore_patterns(directory):
     """Lit les fichiers .gitignore et .aiderignore et retourne les patterns à ignorer."""
