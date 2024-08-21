@@ -3,6 +3,10 @@ import sys
 import requests
 from urllib.parse import quote
 from dotenv import load_dotenv
+import io
+
+# Désactiver la mise en mémoire tampon de la sortie standard
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', line_buffering=True)
 import fnmatch
 import pathlib
 import base64
