@@ -1,11 +1,16 @@
 import requests
 import json
+import os
+from dotenv import load_dotenv
+
+# Charger les variables d'environnement
+load_dotenv()
 
 # Informations de connexion
-DOKUWIKI_URL = "http://wiki.nlr.ai/dokuwiki"
+DOKUWIKI_URL = os.getenv("DOKUWIKI_URL")
 API_URL = f"{DOKUWIKI_URL}/lib/exe/xmlrpc.php"
-USERNAME = "your_username"
-PASSWORD = "your_password"
+USERNAME = os.getenv("DOKUWIKI_USERNAME")
+PASSWORD = os.getenv("DOKUWIKI_PASSWORD")
 
 def get_session_cookie():
     """Se connecte à DokuWiki et retourne le cookie de session."""
