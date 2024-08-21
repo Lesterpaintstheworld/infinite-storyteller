@@ -9,8 +9,7 @@ load_dotenv()
 
 # Configuration
 DOKUWIKI_URL = os.getenv('DOKUWIKI_URL')
-USERNAME = os.getenv('DOKUWIKI_USERNAME')
-PASSWORD = os.getenv('DOKUWIKI_PASSWORD')
+DOKUWIKI_TOKEN = os.getenv('DOKUWIKI_TOKEN')
 
 # Timeout for requests in seconds
 REQUEST_TIMEOUT = 10
@@ -27,7 +26,10 @@ def get_file_content(file_path):
 def page_exists(pagename):
     """Vérifie si une page existe déjà sur le wiki."""
     url = f"{DOKUWIKI_URL}/lib/exe/xmlrpc.php"
-    headers = {'Content-Type': 'application/xml'}
+    headers = {
+        'Content-Type': 'application/xml',
+        'Authorization': f'Bearer {DOKUWIKI_TOKEN}'
+    }
     
     xml_template = f"""
     <?xml version="1.0"?>
@@ -39,13 +41,16 @@ def page_exists(pagename):
     </methodCall>
     """
     
-    response = requests.post(url, data=xml_template, headers=headers, auth=(USERNAME, PASSWORD))
+    response = requests.post(url, data=xml_template, headers=headers)
     return response.status_code == 200 and response.text.strip() != ''
 
 def create_or_update_page(pagename, content):
     """Crée ou met à jour une page sur le wiki."""
     url = f"{DOKUWIKI_URL}/lib/exe/xmlrpc.php"
-    headers = {'Content-Type': 'application/xml'}
+    headers = {
+        'Content-Type': 'application/xml',
+        'Authorization': f'Bearer {DOKUWIKI_TOKEN}'
+    }
     
     action = "mise à jour" if page_exists(pagename) else "création"
     
@@ -67,7 +72,7 @@ def create_or_update_page(pagename, content):
     """
     
     try:
-        response = requests.post(url, data=xml_template, headers=headers, auth=(USERNAME, PASSWORD), timeout=10)
+        response = requests.post(url, data=xml_template, headers=headers, timeout=10)
         if response.status_code == 200:
             print(f"Page '{pagename}' {action} avec succès.")
             # Vérification supplémentaire
@@ -88,7 +93,10 @@ def create_or_update_page(pagename, content):
 def test_connection():
     """Teste la connexion au wiki."""
     url = f"{DOKUWIKI_URL}/lib/exe/xmlrpc.php"
-    headers = {'Content-Type': 'application/xml'}
+    headers = {
+        'Content-Type': 'application/xml',
+        'Authorization': f'Bearer {DOKUWIKI_TOKEN}'
+    }
     
     xml_template = """
     <?xml version="1.0"?>
@@ -98,7 +106,7 @@ def test_connection():
     """
     
     try:
-        response = requests.post(url, data=xml_template, headers=headers, auth=(USERNAME, PASSWORD), timeout=REQUEST_TIMEOUT)
+        response = requests.post(url, data=xml_template, headers=headers, timeout=REQUEST_TIMEOUT)
         if response.status_code == 200:
             print(f"Connexion au wiki réussie. URL: {DOKUWIKI_URL}")
             return True
@@ -201,9 +209,9 @@ def create_index_page(directory, wiki_namespace=''):
     create_or_update_page(f"{wiki_namespace}:index" if wiki_namespace else 'index', index_content)
 
 if __name__ == "__main__":
-    if not all([DOKUWIKI_URL, USERNAME, PASSWORD]):
+    if not all([DOKUWIKI_URL, DOKUWIKI_TOKEN]):
         print("Erreur : Les informations de connexion au wiki sont manquantes dans le fichier .env")
-        print("Assurez-vous que DOKUWIKI_URL, DOKUWIKI_USERNAME et DOKUWIKI_PASSWORD sont définis.")
+        print("Assurez-vous que DOKUWIKI_URL et DOKUWIKI_TOKEN sont définis.")
         sys.exit(1)
 
     if len(sys.argv) != 2:
