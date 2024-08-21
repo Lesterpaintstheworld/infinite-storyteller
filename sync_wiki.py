@@ -6,6 +6,8 @@ from dotenv import load_dotenv
 import fnmatch
 import pathlib
 import base64
+import io
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
 # Chargement des variables d'environnement
 load_dotenv()
@@ -110,7 +112,10 @@ def create_or_update_page(pagename, content):
         response = requests.post(url, data=xml_template, headers=headers, auth=(USERNAME, PASSWORD))
         response.raise_for_status()
         print(f"Page '{pagename}' {action} avec succès.")
-        print(f"Contenu de la page (premiers 100 caractères) : {content[:100]}...")
+        try:
+            print(f"Contenu de la page (premiers 100 caractères) : {content[:100]}...")
+        except UnicodeEncodeError:
+            print("Impossible d'afficher le contenu de la page en raison de caractères non encodables.")
     except requests.exceptions.RequestException as e:
         print(f"Erreur lors de la {action} de la page '{pagename}': {str(e)}")
     print(f"URL de la page : {DOKUWIKI_URL}/doku.php?id={quote(pagename)}")
@@ -206,6 +211,10 @@ if __name__ == "__main__":
         process_directory(folder_path, ignore_patterns=ignore_patterns)
         create_index_page(folder_path)
         print("Synchronisation terminée avec succès.")
+    except UnicodeEncodeError as e:
+        print(f"Une erreur d'encodage est survenue lors de la synchronisation : {str(e)}")
+        print("Certains caractères ne peuvent pas être encodés correctement.")
+        sys.exit(1)
     except Exception as e:
         print(f"Une erreur est survenue lors de la synchronisation : {str(e)}")
         sys.exit(1)
