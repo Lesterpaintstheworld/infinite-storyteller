@@ -14,6 +14,13 @@ DOKUWIKI_TOKEN = os.getenv('DOKUWIKI_TOKEN')
 # Timeout for requests in seconds
 REQUEST_TIMEOUT = 10
 
+# Configuration pour l'affichage immédiat des logs
+import sys
+
+def print_flush(*args, **kwargs):
+    print(*args, **kwargs)
+    sys.stdout.flush()
+
 def sanitize_pagename(name):
     """Convertit un nom de fichier en un nom de page DokuWiki valide."""
     return name.replace(' ', '_').lower()
@@ -74,21 +81,21 @@ def create_or_update_page(pagename, content):
     try:
         response = requests.post(url, data=xml_template, headers=headers, timeout=10)
         if response.status_code == 200:
-            print(f"Page '{pagename}' {action} avec succès.")
+            print_flush(f"Page '{pagename}' {action} avec succès.")
             # Vérification supplémentaire
             if page_exists(pagename):
-                print(f"Vérification réussie : La page '{pagename}' existe sur le wiki.")
+                print_flush(f"Vérification réussie : La page '{pagename}' existe sur le wiki.")
             else:
-                print(f"Avertissement : La page '{pagename}' n'existe pas après la {action}.")
+                print_flush(f"Avertissement : La page '{pagename}' n'existe pas après la {action}.")
         else:
-            print(f"Erreur lors de la {action} de la page '{pagename}': {response.status_code}")
-            print(f"Réponse du serveur: {response.text}")
+            print_flush(f"Erreur lors de la {action} de la page '{pagename}': {response.status_code}")
+            print_flush(f"Réponse du serveur: {response.text}")
     except requests.exceptions.RequestException as e:
-        print(f"Erreur lors de la {action} de la page '{pagename}': {str(e)}")
+        print_flush(f"Erreur lors de la {action} de la page '{pagename}': {str(e)}")
     
     # Affichage de l'URL de la page
     page_url = f"{DOKUWIKI_URL}/doku.php?id={quote(pagename.replace(':', '%3A'))}"
-    print(f"URL de la page : {page_url}")
+    print_flush(f"URL de la page : {page_url}")
 
 def test_connection():
     """Teste la connexion au wiki."""
@@ -108,25 +115,25 @@ def test_connection():
     try:
         response = requests.post(url, data=xml_template, headers=headers, timeout=REQUEST_TIMEOUT)
         if response.status_code == 200:
-            print(f"Connexion au wiki réussie. URL: {DOKUWIKI_URL}")
+            print_flush(f"Connexion au wiki réussie. URL: {DOKUWIKI_URL}")
             return True
         else:
-            print(f"Échec de la connexion au wiki. Code de statut : {response.status_code}")
-            print(f"URL tentée : {DOKUWIKI_URL}")
+            print_flush(f"Échec de la connexion au wiki. Code de statut : {response.status_code}")
+            print_flush(f"URL tentée : {DOKUWIKI_URL}")
             return False
     except requests.exceptions.ConnectionError as e:
-        print(f"Erreur de connexion : Impossible de se connecter à {DOKUWIKI_URL}")
-        print(f"Détails de l'erreur : {str(e)}")
-        print("Vérifiez que l'URL du wiki est correcte et que le serveur est en cours d'exécution.")
+        print_flush(f"Erreur de connexion : Impossible de se connecter à {DOKUWIKI_URL}")
+        print_flush(f"Détails de l'erreur : {str(e)}")
+        print_flush("Vérifiez que l'URL du wiki est correcte et que le serveur est en cours d'exécution.")
         return False
     except requests.exceptions.Timeout:
-        print(f"Erreur de connexion : Le délai d'attente de {REQUEST_TIMEOUT} secondes a été dépassé.")
-        print(f"URL tentée : {DOKUWIKI_URL}")
-        print("Le serveur wiki pourrait être surchargé ou inaccessible.")
+        print_flush(f"Erreur de connexion : Le délai d'attente de {REQUEST_TIMEOUT} secondes a été dépassé.")
+        print_flush(f"URL tentée : {DOKUWIKI_URL}")
+        print_flush("Le serveur wiki pourrait être surchargé ou inaccessible.")
         return False
     except requests.exceptions.RequestException as e:
-        print(f"Erreur lors de la connexion au wiki : {str(e)}")
-        print(f"URL tentée : {DOKUWIKI_URL}")
+        print_flush(f"Erreur lors de la connexion au wiki : {str(e)}")
+        print_flush(f"URL tentée : {DOKUWIKI_URL}")
         return False
 
 def create_namespace(namespace):
