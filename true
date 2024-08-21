@@ -59,12 +59,39 @@ def create_or_update_page(pagename, content):
     </methodCall>
     """
     
-    response = requests.post(url, data=xml_template, headers=headers, auth=(USERNAME, PASSWORD))
-    if response.status_code == 200:
-        print(f"Page '{pagename}' {action} avec succès.")
-    else:
-        print(f"Erreur lors de la {action} de la page '{pagename}': {response.status_code}")
-        print(f"Réponse du serveur: {response.text}")
+    try:
+        response = requests.post(url, data=xml_template, headers=headers, auth=(USERNAME, PASSWORD), timeout=10)
+        if response.status_code == 200:
+            print(f"Page '{pagename}' {action} avec succès.")
+        else:
+            print(f"Erreur lors de la {action} de la page '{pagename}': {response.status_code}")
+            print(f"Réponse du serveur: {response.text}")
+    except requests.exceptions.RequestException as e:
+        print(f"Erreur lors de la {action} de la page '{pagename}': {str(e)}")
+
+def test_connection():
+    """Teste la connexion au wiki."""
+    url = f"{DOKUWIKI_URL}/lib/exe/xmlrpc.php"
+    headers = {'Content-Type': 'application/xml'}
+    
+    xml_template = """
+    <?xml version="1.0"?>
+    <methodCall>
+      <methodName>wiki.getVersion</methodName>
+    </methodCall>
+    """
+    
+    try:
+        response = requests.post(url, data=xml_template, headers=headers, auth=(USERNAME, PASSWORD), timeout=10)
+        if response.status_code == 200:
+            print("Connexion au wiki réussie.")
+            return True
+        else:
+            print(f"Échec de la connexion au wiki. Code de statut : {response.status_code}")
+            return False
+    except requests.exceptions.RequestException as e:
+        print(f"Erreur lors de la connexion au wiki : {str(e)}")
+        return False
 
 def create_namespace(namespace):
     """Crée une structure de namespace si elle n'existe pas."""
@@ -118,6 +145,11 @@ if __name__ == "__main__":
     folder_path = sys.argv[1]
     if not os.path.isdir(folder_path):
         print(f"Erreur : Le chemin spécifié '{folder_path}' n'est pas un dossier valide.")
+        sys.exit(1)
+    
+    print("Test de la connexion au wiki...")
+    if not test_connection():
+        print("Impossible de se connecter au wiki. Vérifiez vos paramètres de connexion et l'état du serveur.")
         sys.exit(1)
     
     print(f"Début de la synchronisation du dossier '{folder_path}' avec le wiki...")
