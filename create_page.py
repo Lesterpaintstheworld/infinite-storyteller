@@ -1,8 +1,12 @@
 import os
 
+# URL de base pour accéder aux pages
+BASE_URL = "http://example.com/pages/"
+
 def create_page(title, content):
     """
     Crée une nouvelle page avec le titre et le contenu spécifiés.
+    Retourne l'URL de la page créée ou None si la création a échoué.
     """
     # Nettoyer le titre pour l'utiliser comme nom de fichier
     filename = title.lower().replace(" ", "_") + ".txt"
@@ -10,7 +14,7 @@ def create_page(title, content):
     # Vérifier si le fichier existe déjà
     if os.path.exists(filename):
         print(f"La page '{title}' existe déjà.")
-        return False
+        return None
     
     # Créer le fichier et écrire le contenu
     with open(filename, 'w', encoding='utf-8') as file:
@@ -18,7 +22,7 @@ def create_page(title, content):
         file.write(content)
     
     print(f"La page '{title}' a été créée avec succès.")
-    return True
+    return BASE_URL + filename
 
 def read_page(title):
     """
@@ -49,7 +53,9 @@ if __name__ == "__main__":
         if choice == '1':
             titre = input("Entrez le titre de la nouvelle page : ")
             contenu = input("Entrez le contenu de la page : ")
-            create_page(titre, contenu)
+            url = create_page(titre, contenu)
+            if url:
+                print(f"L'URL de la page créée est : {url}")
         elif choice == '2':
             titre = input("Entrez le titre de la page à lire : ")
             read_page(titre)
