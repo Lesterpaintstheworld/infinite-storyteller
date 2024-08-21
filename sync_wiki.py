@@ -100,12 +100,16 @@ def create_or_update_page(pagename, content):
     </methodCall>
     """
     
+    print(f"Tentative de {action} de la page '{pagename}'...")
     response = requests.post(url, data=xml_template, headers=headers, auth=(USERNAME, PASSWORD))
     if response.status_code == 200:
         print(f"Page '{pagename}' {action} avec succès.")
+        print(f"Contenu de la page (premiers 100 caractères) : {content[:100]}...")
     else:
         print(f"Erreur lors de la {action} de la page '{pagename}': {response.status_code}")
         print(f"Réponse du serveur: {response.text}")
+    print(f"URL de la page : {DOKUWIKI_URL}/doku.php?id={quote(pagename)}")
+    print("-" * 50)
 
 def create_namespace(namespace):
     """Crée une structure de namespace si elle n'existe pas."""
