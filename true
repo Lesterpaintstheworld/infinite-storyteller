@@ -59,7 +59,15 @@ def create_or_update_page(pagename, content):
         'Authorization': f'Bearer {DOKUWIKI_TOKEN}'
     }
     
-    action = "mise à jour" if page_exists(pagename) else "création"
+    # Vérifier si la page existe et obtenir son contenu actuel
+    existing_content = get_page_content(pagename) if page_exists(pagename) else ""
+    
+    # Si la page existe et fait plus de 100k caractères, ne pas la mettre à jour
+    if existing_content and len(existing_content) > 100000:
+        print_flush(f"La page '{pagename}' dépasse 100k caractères. Mise à jour ignorée.")
+        return
+    
+    action = "mise à jour" if existing_content else "création"
     
     xml_template = f"""
     <?xml version="1.0"?>
@@ -305,3 +313,35 @@ if __name__ == "__main__":
     except Exception as e:
         print_flush(f"Une erreur est survenue lors de la synchronisation : {str(e)}")
         sys.exit(1)
+def get_page_content(pagename):
+    """Récupère le contenu d'une page du wiki."""
+    url = f"{DOKUWIKI_URL}/lib/exe/xmlrpc.php"
+    headers = {
+        'Content-Type': 'application/xml',
+        'Authorization': f'Bearer {DOKUWIKI_TOKEN}'
+    }
+    
+    xml_template = f"""
+    <?xml version="1.0"?>
+    <methodCall>
+      <methodName>wiki.getPage</methodName>
+      <params>
+        <param><value><string>{pagename}</string></value></param>
+      </params>
+    </methodCall>
+    """
+    
+    try:
+        response = requests.post(url, data=xml_template, headers=headers, timeout=10)
+        if response.status_code == 200:
+            # Extraire le contenu de la réponse XML
+            from xml.etree import ElementTree
+            root = ElementTree.fromstring(response.content)
+            content = root.find('.//string').text
+            return content
+        else:
+            print_flush(f"Erreur lors de la récupération du contenu de la page '{pagename}': {response.status_code}")
+            return None
+    except requests.exceptions.RequestException as e:
+        print_flush(f"Erreur lors de la récupération du contenu de la page '{pagename}': {str(e)}")
+        return None
