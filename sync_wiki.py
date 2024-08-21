@@ -116,13 +116,22 @@ def create_namespace(namespace):
         if not page_exists(current_namespace):
             create_or_update_page(current_namespace, f"====== {part.capitalize()} ======\n\nCette page est un espace de noms.")
 
-def process_directory(directory, wiki_namespace=''):
+def process_directory(directory, wiki_namespace='', ignore_patterns=None):
     """Parcourt récursivement le répertoire et crée/met à jour les pages correspondantes."""
+    if ignore_patterns is None:
+        ignore_patterns = read_ignore_patterns(directory)
+
     if wiki_namespace:
         create_namespace(wiki_namespace)
     
     for item in os.listdir(directory):
         item_path = os.path.join(directory, item)
+        relative_path = os.path.relpath(item_path, directory)
+
+        if any(fnmatch.fnmatch(relative_path, pattern) for pattern in ignore_patterns):
+            print(f"Ignoré : {item_path}")
+            continue
+
         if os.path.isfile(item_path):
             file_name, file_extension = os.path.splitext(item)
             pagename = sanitize_pagename(f"{wiki_namespace}:{file_name}" if wiki_namespace else file_name)
@@ -133,7 +142,7 @@ def process_directory(directory, wiki_namespace=''):
                 print(f"Impossible de traiter le fichier {item_path}. Il sera ignoré.")
         elif os.path.isdir(item_path):
             new_namespace = f"{wiki_namespace}:{sanitize_pagename(item)}" if wiki_namespace else sanitize_pagename(item)
-            process_directory(item_path, new_namespace)
+            process_directory(item_path, new_namespace, ignore_patterns)
 
 def create_index_page(directory, wiki_namespace=''):
     """Crée une page d'index pour le dossier courant."""
