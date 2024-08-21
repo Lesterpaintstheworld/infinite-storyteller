@@ -231,9 +231,12 @@ def process_directory(directory, wiki_namespace='', ignore_patterns=None, base_d
         
         if os.path.isfile(item_path):
             file_name, file_extension = os.path.splitext(item)
-            # Ignorer les fichiers image
-            if file_extension.lower() in ['.jpg', '.jpeg', '.png', '.gif', '.bmp']:
-                print_flush(f"Image ignorée : {item_path}")
+            # Ignorer les fichiers image et binaires
+            if file_extension.lower() in ['.jpg', '.jpeg', '.png', '.gif', '.bmp', '.exe', '.dll', '.so', '.pyc']:
+                print_flush(f"Fichier ignoré : {item_path}")
+                continue
+            if not is_text_file(item_path):
+                print_flush(f"Fichier binaire ignoré : {item_path}")
                 continue
             pagename = sanitize_pagename(f"{wiki_namespace}:{file_name}" if wiki_namespace else file_name)
             content = get_file_content(item_path)
@@ -244,6 +247,15 @@ def process_directory(directory, wiki_namespace='', ignore_patterns=None, base_d
         elif os.path.isdir(item_path):
             new_namespace = f"{wiki_namespace}:{sanitize_pagename(item)}" if wiki_namespace else sanitize_pagename(item)
             process_directory(item_path, new_namespace, ignore_patterns, base_dir)
+
+def is_text_file(file_path, sample_size=8192):
+    """Vérifie si un fichier est un fichier texte."""
+    try:
+        with open(file_path, 'rb') as file:
+            sample = file.read(sample_size)
+            return not bool(sample.translate(None, bytearray({7,8,9,10,12,13,27} | set(range(0x20, 0x100)) - {0x7f})))
+    except:
+        return False
 
 def create_index_page(directory, wiki_namespace=''):
     """Crée une page d'index pour le dossier courant."""
