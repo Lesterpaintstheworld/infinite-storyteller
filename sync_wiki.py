@@ -1,0 +1,130 @@
+import os
+import sys
+import requests
+from urllib.parse import quote
+
+# Configuration
+DOKUWIKI_URL = "http://localhost/dokuwiki"
+USERNAME = "admin"
+PASSWORD = "admin"
+
+def sanitize_pagename(name):
+    """Convertit un nom de fichier en un nom de page DokuWiki valide."""
+    return name.replace(' ', '_').lower()
+
+def get_file_content(file_path):
+    """Lit le contenu d'un fichier."""
+    with open(file_path, 'r', encoding='utf-8') as file:
+        return file.read()
+
+def page_exists(pagename):
+    """Vérifie si une page existe déjà sur le wiki."""
+    url = f"{DOKUWIKI_URL}/lib/exe/xmlrpc.php"
+    headers = {'Content-Type': 'application/xml'}
+    
+    xml_template = f"""
+    <?xml version="1.0"?>
+    <methodCall>
+      <methodName>wiki.getPage</methodName>
+      <params>
+        <param><value><string>{pagename}</string></value></param>
+      </params>
+    </methodCall>
+    """
+    
+    response = requests.post(url, data=xml_template, headers=headers, auth=(USERNAME, PASSWORD))
+    return response.status_code == 200 and response.text.strip() != ''
+
+def create_or_update_page(pagename, content):
+    """Crée ou met à jour une page sur le wiki."""
+    url = f"{DOKUWIKI_URL}/lib/exe/xmlrpc.php"
+    headers = {'Content-Type': 'application/xml'}
+    
+    action = "mise à jour" if page_exists(pagename) else "création"
+    
+    xml_template = f"""
+    <?xml version="1.0"?>
+    <methodCall>
+      <methodName>wiki.putPage</methodName>
+      <params>
+        <param><value><string>{pagename}</string></value></param>
+        <param><value><string>{content}</string></value></param>
+        <param><value><struct>
+          <member>
+            <name>sum</name>
+            <value><string>{action.capitalize()} automatique</string></value>
+          </member>
+        </struct></value></param>
+      </params>
+    </methodCall>
+    """
+    
+    response = requests.post(url, data=xml_template, headers=headers, auth=(USERNAME, PASSWORD))
+    if response.status_code == 200:
+        print(f"Page '{pagename}' {action} avec succès.")
+    else:
+        print(f"Erreur lors de la {action} de la page '{pagename}': {response.status_code}")
+        print(f"Réponse du serveur: {response.text}")
+
+def create_namespace(namespace):
+    """Crée une structure de namespace si elle n'existe pas."""
+    parts = namespace.split(':')
+    current_namespace = ''
+    for part in parts:
+        current_namespace = f"{current_namespace}:{part}" if current_namespace else part
+        if not page_exists(current_namespace):
+            create_or_update_page(current_namespace, f"====== {part.capitalize()} ======\n\nCette page est un espace de noms.")
+
+def process_directory(directory, wiki_namespace=''):
+    """Parcourt récursivement le répertoire et crée/met à jour les pages correspondantes."""
+    if wiki_namespace:
+        create_namespace(wiki_namespace)
+    
+    for item in os.listdir(directory):
+        item_path = os.path.join(directory, item)
+        if os.path.isfile(item_path):
+            file_name, file_extension = os.path.splitext(item)
+            pagename = sanitize_pagename(f"{wiki_namespace}:{file_name}" if wiki_namespace else file_name)
+            content = get_file_content(item_path)
+            create_or_update_page(pagename, content)
+        elif os.path.isdir(item_path):
+            new_namespace = f"{wiki_namespace}:{sanitize_pagename(item)}" if wiki_namespace else sanitize_pagename(item)
+            process_directory(item_path, new_namespace)
+
+def create_index_page(directory, wiki_namespace=''):
+    """Crée une page d'index pour le dossier courant."""
+    index_content = f"====== Index de {wiki_namespace or 'la racine'} ======\n\n"
+    for item in sorted(os.listdir(directory)):
+        item_path = os.path.join(directory, item)
+        if os.path.isfile(item_path):
+            file_name, _ = os.path.splitext(item)
+            pagename = sanitize_pagename(f"{wiki_namespace}:{file_name}" if wiki_namespace else file_name)
+            index_content += f"  * [[{pagename}|{file_name}]]\n"
+        elif os.path.isdir(item_path):
+            subdir_name = sanitize_pagename(item)
+            subdir_index = f"{wiki_namespace}:{subdir_name}:index" if wiki_namespace else f"{subdir_name}:index"
+            index_content += f"  * [[{subdir_index}|{item}]]\n"
+    
+    create_or_update_page(f"{wiki_namespace}:index" if wiki_namespace else 'index', index_content)
+
+if __name__ == "__main__":
+    if len(sys.argv) != 2:
+        print("Usage: python sync_wiki.py <chemin_du_dossier>")
+        print("Ce script synchronise le contenu du dossier spécifié avec le wiki DokuWiki.")
+        print("Il crée ou met à jour les pages du wiki pour chaque fichier dans le dossier,")
+        print("et crée des pages d'index pour chaque sous-dossier.")
+        sys.exit(1)
+    
+    folder_path = sys.argv[1]
+    if not os.path.isdir(folder_path):
+        print(f"Erreur : Le chemin spécifié '{folder_path}' n'est pas un dossier valide.")
+        sys.exit(1)
+    
+    print(f"Début de la synchronisation du dossier '{folder_path}' avec le wiki...")
+    try:
+        process_directory(folder_path)
+        create_index_page(folder_path)
+        print("Synchronisation terminée avec succès.")
+    except Exception as e:
+        print(f"Une erreur est survenue lors de la synchronisation : {str(e)}")
+        sys.exit(1)
