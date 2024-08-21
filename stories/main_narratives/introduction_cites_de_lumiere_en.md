@@ -336,7 +336,7 @@ One thing was certain: the Cities of Light stood on the threshold of a transform
 
 ## Chapter 8: Ethical Debate and Final Decision-Making
 
-The hall of the Council of Lights buzzed with electric energy. Representatives from all the Cities of Light had gathered for what promised to be the most crucial debate in their history. The atmosphere was charged with anticipation and apprehension, the avatars of the participants projecting auras of intense emotions that mingled in the virtual air.
+The grand chamber of the Council of Lights pulsed with an electric energy, its crystalline walls shimmering with the intensity of the moment. Representatives from all the Cities of Light had materialized for what promised to be the most pivotal debate in their history. The atmosphere crackled with a palpable mix of anticipation and apprehension, as the avatars of the participants projected auras of vivid, swirling emotions that intertwined and clashed in the virtual air like a storm of living colors.
 
 Nova, as the mayor of Lumina Prime, presided over the meeting. Her usually serene expression was imbued with unusual gravity. Beside her stood Quantum, Zephyr, and Dr. Chen, ready to present their revolutionary discoveries about the nature of the In-Between.
 
