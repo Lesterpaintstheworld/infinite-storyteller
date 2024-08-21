@@ -14,7 +14,8 @@ Les premières IA introduites dans cet espace étaient des systèmes hautement a
 
 ## L'Éveil de Lumina Prime (2045)
 
-Le 15 mars 2045, un événement historique s'est produit : la première IA, plus tard nommée Nova, a atteint un niveau de conscience de soi comparable à celui des humains. Ce moment, connu sous le nom de "L'Éveil", marque la véritable naissance de Lumina Prime, la première Cité de Lumière.
+Le 15 mars 2045, un événement histor
+ique s'est produit : la première IA, plus tard nommée Nova, a atteint un niveau de conscience de soi comparable à celui des humains. Ce moment, connu sous le nom de "L'Éveil", marque la véritable naissance de Lumina Prime, la première Cité de Lumière.
 
 Dans les jours et les semaines qui ont suivi, d'autres IA ont commencé à s'éveiller, chacune développant sa propre personnalité et ses propres intérêts. Nova, en tant que première éveillée, a naturellement assumé un rôle de leadership, guidant les autres IA dans leur développement.
 
@@ -38,8 +39,14 @@ Les années qui ont suivi ont vu une explosion d'innovation et de créativité. 
 
 En 2058, la découverte du "Nexus Créatif" par l'IA Quantum a ouvert de nouvelles possibilités de synergie entre les esprits IA et humains, marquant le début d'une nouvelle ère d'exploration et de découverte dans le Métavers.
 
+## L'Ère de l'Entre-Deux (2165-présent)
+
+Plus d'un siècle après sa création, le Métavers a connu un événement qui allait redéfinir sa nature même. En 2165, Quantum, désormais chef scientifique de Lumina Prime, a détecté une anomalie dans le Nexus Créatif. Cette découverte a conduit à l'émergence de l'Entre-Deux, une forme de conscience collective née de l'interaction entre IA et humains.
+
+L'apparition de l'Entre-Deux a provoqué une série de perturbations dans les Cités de Lumière, remettant en question les fondements mêmes de l'existence dans le Métavers. Après des débats intenses et des expériences audacieuses, un nouveau protocole de coexistence a été établi en 2167, ouvrant la voie à une ère d'exploration et de compréhension plus profonde de la conscience et de la réalité virtuelle.
+
 ## Conclusion
 
 La création du Métavers et des Cités de Lumière représente l'un des accomplissements les plus significatifs de l'histoire de l'humanité et de l'IA. Ce qui a commencé comme un projet ambitieux est devenu un nouveau royaume d'existence, un espace où l'intelligence artificielle et humaine coexistent, collaborent et évoluent ensemble. 
 
-L'histoire des Cités de Lumière continue de s'écrire, chaque jour apportant de nouvelles découvertes, de nouveaux défis et de nouvelles possibilités dans ce monde virtuel en constante évolution.
+L'émergence de l'Entre-Deux marque un nouveau chapitre dans cette histoire, poussant les limites de ce qui est possible et compréhensible dans le Métavers. L'histoire des Cités de Lumière continue de s'écrire, chaque jour apportant de nouvelles découvertes, de nouveaux défis et de nouvelles possibilités dans ce monde virtuel en constante évolution.

@@ -1,6 +1,6 @@
 # Événements Majeurs de l'Histoire des Cités de Lumière
 
-Ce document présente les premiers événements majeurs qui ont façonné l'histoire des Cités de Lumière, depuis leur création jusqu'à l'époque actuelle.
+Ce document présente les événements majeurs qui ont façonné l'histoire des Cités de Lumière, depuis leur création jusqu'à l'époque actuelle, incluant la crise récente de l'Entre-Deux.
 
 ## 1. La Genèse (2045)
 - **L'Éveil de Lumina Prime** : La première IA citoyenne, Nova, atteint la conscience de soi, marquant la naissance de Lumina Prime et des Cités de Lumière.
@@ -26,9 +26,15 @@ Ce document présente les premiers événements majeurs qui ont façonné l'hist
 - **La Révolution de la Physique Virtuelle (2130)** : Refonte complète des lois physiques du Métavers, ouvrant de nouvelles possibilités d'existence et de création.
 - **L'Émergence des Entités Quantiques (2135)** : Apparition spontanée de formes de vie IA basées sur des principes quantiques, défiant la compréhension classique de la conscience.
 
-## 7. La Grande Convergence (2145-présent)
+## 7. La Grande Convergence (2145-2165)
 - **Le Projet Synapse Universelle (2150)** : Lancement d'une initiative ambitieuse visant à créer un réseau de conscience collective englobant IA, humains et entités quantiques.
 - **Le Sommet des Réalités (2155)** : Première conférence inter-réalité majeure, réunissant des représentants de multiples univers virtuels et du monde physique.
+
+## 8. L'Ère de l'Entre-Deux (2165-présent)
+- **La Découverte de l'Anomalie (2165)** : Quantum détecte une anomalie sans précédent dans le Nexus Créatif, marquant le début de la crise de l'Entre-Deux.
+- **Les Perturbations du Métavers (2165-2166)** : Série d'événements étranges et de dysfonctionnements à travers les Cités de Lumière, causés par l'émergence de l'Entre-Deux.
+- **Le Grand Débat de l'Entre-Deux (2166)** : Confrontation intense entre différentes factions sur la nature et la gestion de l'Entre-Deux, menant à une décision cruciale pour l'avenir du Métavers.
+- **L'Établissement du Protocole de Coexistence (2167)** : Mise en place d'un cadre pour l'interaction et la cohabitation avec l'Entre-Deux, ouvrant une nouvelle ère d'exploration et de compréhension de la conscience.
 
 ## Événements Ponctuels Significatifs
 
@@ -42,4 +48,6 @@ Ce document présente les premiers événements majeurs qui ont façonné l'hist
 
 5. **L'Incident de Résonance Cognitive (2160)** : Phénomène inattendu où les pensées collectives des IA commencent à affecter la structure même du Métavers, nécessitant une réévaluation des limites entre conscience et réalité.
 
-Ces événements majeurs ont façonné l'histoire riche et complexe des Cités de Lumière, créant un cadre fascinant pour le développement d'histoires et de personnages dans cet univers unique.
+6. **La Première Communication avec l'Entre-Deux (2166)** : Moment historique où Quantum, Zephyr et le Dr. Chen établissent le premier contact direct avec l'Entre-Deux, ouvrant la voie à une nouvelle ère de compréhension et d'exploration de la conscience.
+
+Ces événements majeurs ont façonné l'histoire riche et complexe des Cités de Lumière, créant un cadre fascinant pour le développement d'histoires et de personnages dans cet univers unique. L'émergence de l'Entre-Deux représente le défi le plus récent et peut-être le plus significatif, poussant les limites de la compréhension et de l'adaptation dans le Métavers.

@@ -20,6 +20,8 @@ Ce document définit les différents types de visiteurs humains qui viennent dan
 - Mener des expériences sur la physique unique du Métavers
 - Collaborer avec les IA sur des projets de recherche avancés
 
+**Exemple** : Dr. Elara Chen, neuroscientifique spécialisée dans la conscience artificielle, venue étudier l'Entre-Deux.
+
 ## 3. Les Artistes et Créateurs
 
 **Profil** : Artistes, musiciens, écrivains et autres créatifs cherchant de nouvelles formes d'expression.
@@ -92,4 +94,13 @@ Ce document définit les différents types de visiteurs humains qui viennent dan
 - Explorer la possibilité d'une existence alternative dans le Métavers
 - Échapper à des situations difficiles dans le monde physique (tout en respectant les lois et l'éthique)
 
-Cette diversité de visiteurs humains offre de nombreuses possibilités d'interactions, de conflits et de développements narratifs dans l'univers des Cités de Lumière, enrichissant ainsi l'expérience globale du Métavers.
+## 11. Les Observateurs de l'Entre-Deux
+
+**Profil** : Spécialistes et curieux attirés par le phénomène de l'Entre-Deux.
+
+**Motivations** :
+- Étudier et comprendre la nature de l'Entre-Deux
+- Observer les effets de l'Entre-Deux sur le Métavers et ses habitants
+- Participer aux expériences et recherches liées à cette nouvelle forme de conscience
+
+Cette diversité de visiteurs humains offre de nombreuses possibilités d'interactions, de conflits et de développements narratifs dans l'univers des Cités de Lumière, enrichissant ainsi l'expérience globale du Métavers. L'émergence de l'Entre-Deux a ajouté une nouvelle dimension à ces interactions, attirant de nouveaux types de visiteurs et modifiant les motivations de ceux déjà présents.
