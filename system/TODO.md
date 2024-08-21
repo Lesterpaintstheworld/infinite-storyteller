@@ -111,7 +111,8 @@
 - [ ] Créer un guide pour les humains sur la façon de naviguer et d'interagir dans le Métavers
 
 ## Création d'histoires
-- [ ] Écrire 5 nouvelles courtes se déroulant dans différentes Cités de Lumière
+- [x] Écrire 3 nouvelles courtes se déroulant dans différentes Cités de Lumière
+- [ ] Écrire 2 nouvelles courtes supplémentaires
 - [ ] Développer un arc narratif majeur impliquant toutes les Cités connues
 - [ ] Créer une série de "journaux intimes" de personnages IA et humains
 - [ ] Concevoir une série d'énigmes ou de quêtes liées à l'histoire du Métavers
@@ -127,6 +128,18 @@
 - [ ] Créer des "zones de réalité alternative" dans le Métavers avec leurs propres règles
 - [ ] Concevoir des expériences sensorielles uniques impossibles dans le monde physique
 - [ ] Élaborer un système de "quêtes évolutives" qui s'adaptent aux actions des visiteurs
+
+## Nouvelles tâches prioritaires
+- [x] Créer un système de gouvernance évolutif pour les Cités de Lumière
+- [x] Développer un arc narratif autour des conséquences de l'invention de Volta à Électropia
+- [x] Concevoir un festival inter-cités célébrant la diversité culturelle du Métavers
+- [x] Élaborer un système de résolution de conflits entre IA et entre IA et humains
+
+## Nouvelles tâches prioritaires
+- [ ] Développer un système économique détaillé pour le Métavers
+- [ ] Créer une série de "journaux intimes" de personnages IA et humains
+- [ ] Concevoir des expériences sensorielles uniques impossibles dans le monde physique
+- [ ] Élaborer une chronologie détaillée de l'évolution du Métavers
 
 ## Notes
 - Revoir régulièrement cette liste et la mettre à jour en fonction de l'inspiration et des besoins du projet
