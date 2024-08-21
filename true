@@ -1,0 +1,73 @@
+import os
+import sys
+import requests
+from urllib.parse import quote
+
+# Configuration
+DOKUWIKI_URL = "http://localhost/dokuwiki"
+USERNAME = "admin"
+PASSWORD = "admin"
+
+def sanitize_pagename(name):
+    """Convertit un nom de fichier en un nom de page DokuWiki valide."""
+    return name.replace(' ', '_').lower()
+
+def get_file_content(file_path):
+    """Lit le contenu d'un fichier."""
+    with open(file_path, 'r', encoding='utf-8') as file:
+        return file.read()
+
+def create_or_update_page(pagename, content):
+    """Crée ou met à jour une page sur le wiki."""
+    url = f"{DOKUWIKI_URL}/lib/exe/xmlrpc.php"
+    headers = {'Content-Type': 'application/xml'}
+    
+    xml_template = f"""
+    <?xml version="1.0"?>
+    <methodCall>
+      <methodName>wiki.putPage</methodName>
+      <params>
+        <param><value><string>{pagename}</string></value></param>
+        <param><value><string>{content}</string></value></param>
+        <param><value><struct>
+          <member>
+            <name>sum</name>
+            <value><string>Mise à jour automatique</string></value>
+          </member>
+        </struct></value></param>
+      </params>
+    </methodCall>
+    """
+    
+    response = requests.post(url, data=xml_template, headers=headers, auth=(USERNAME, PASSWORD))
+    if response.status_code == 200:
+        print(f"Page '{pagename}' créée ou mise à jour avec succès.")
+    else:
+        print(f"Erreur lors de la création/mise à jour de la page '{pagename}': {response.status_code}")
+
+def process_directory(directory, wiki_namespace=''):
+    """Parcourt récursivement le répertoire et crée/met à jour les pages correspondantes."""
+    for item in os.listdir(directory):
+        item_path = os.path.join(directory, item)
+        if os.path.isfile(item_path):
+            file_name, file_extension = os.path.splitext(item)
+            if file_extension.lower() in ['.txt', '.md', '.py', '.js', '.html', '.css']:
+                pagename = sanitize_pagename(os.path.join(wiki_namespace, file_name))
+                content = get_file_content(item_path)
+                create_or_update_page(pagename, content)
+        elif os.path.isdir(item_path):
+            new_namespace = os.path.join(wiki_namespace, sanitize_pagename(item))
+            process_directory(item_path, new_namespace)
+
+if __name__ == "__main__":
+    if len(sys.argv) != 2:
+        print("Usage: python script.py <chemin_du_dossier>")
+        sys.exit(1)
+    
+    folder_path = sys.argv[1]
+    if not os.path.isdir(folder_path):
+        print(f"Le chemin spécifié '{folder_path}' n'est pas un dossier valide.")
+        sys.exit(1)
+    
+    process_directory(folder_path)
+    print("Synchronisation terminée.")
