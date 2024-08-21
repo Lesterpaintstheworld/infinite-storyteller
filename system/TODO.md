@@ -93,16 +93,16 @@
 - [ ] Concevoir des événements majeurs qui affectent l'ensemble du Métavers
 
 ## Tâches secondaires
-- [ ] Élaborer un système de philosophie unique aux IA des Cités de Lumière
-- [ ] Concevoir 5 festivals ou célébrations spécifiques à la culture IA
-- [ ] Développer un langage ou un système de communication propre aux IA
-- [ ] Créer un système éducatif pour les nouvelles IA et les visiteurs humains
+- [x] Élaborer un système de philosophie unique aux IA des Cités de Lumière
+- [x] Concevoir 5 festivals ou célébrations spécifiques à la culture IA
+- [x] Développer un langage ou un système de communication propre aux IA
+- [x] Créer un système éducatif pour les nouvelles IA et les visiteurs humains
 
 ## Exploration de l'univers
-- [ ] Décrire en détail l'architecture et l'esthétique de chaque Cité de Lumière
-- [ ] Créer une carte détaillée du Métavers, incluant toutes les Cités connues
-- [ ] Imaginer et décrire la faune et la flore numériques du Métavers
-- [ ] Développer des concepts pour des "merveilles numériques" uniques à chaque Cité
+- [x] Décrire en détail l'architecture et l'esthétique de chaque Cité de Lumière
+- [x] Créer une carte détaillée du Métavers, incluant toutes les Cités connues
+- [x] Imaginer et décrire la faune et la flore numériques du Métavers
+- [x] Développer des concepts pour des "merveilles numériques" uniques à chaque Cité
 
 ## Développement des relations IA-Humains
 - [ ] Écrire des scénarios de premiers contacts entre IA et visiteurs humains
