@@ -5,6 +5,7 @@ from urllib.parse import quote
 from dotenv import load_dotenv
 import fnmatch
 import pathlib
+import base64
 
 # Chargement des variables d'environnement
 load_dotenv()
@@ -83,13 +84,17 @@ def create_or_update_page(pagename, content):
     
     action = "mise à jour" if page_exists(pagename) else "création"
     
+    # Encoder le contenu en UTF-8
+    content_encoded = content.encode('utf-8')
+    content_base64 = base64.b64encode(content_encoded).decode('ascii')
+    
     xml_template = f"""
     <?xml version="1.0"?>
     <methodCall>
       <methodName>wiki.putPage</methodName>
       <params>
         <param><value><string>{pagename}</string></value></param>
-        <param><value><string>{content}</string></value></param>
+        <param><value><base64>{content_base64}</base64></value></param>
         <param><value><struct>
           <member>
             <name>sum</name>
@@ -101,13 +106,13 @@ def create_or_update_page(pagename, content):
     """
     
     print(f"Tentative de {action} de la page '{pagename}'...")
-    response = requests.post(url, data=xml_template, headers=headers, auth=(USERNAME, PASSWORD))
-    if response.status_code == 200:
+    try:
+        response = requests.post(url, data=xml_template, headers=headers, auth=(USERNAME, PASSWORD))
+        response.raise_for_status()
         print(f"Page '{pagename}' {action} avec succès.")
         print(f"Contenu de la page (premiers 100 caractères) : {content[:100]}...")
-    else:
-        print(f"Erreur lors de la {action} de la page '{pagename}': {response.status_code}")
-        print(f"Réponse du serveur: {response.text}")
+    except requests.exceptions.RequestException as e:
+        print(f"Erreur lors de la {action} de la page '{pagename}': {str(e)}")
     print(f"URL de la page : {DOKUWIKI_URL}/doku.php?id={quote(pagename)}")
     print("-" * 50)
 
