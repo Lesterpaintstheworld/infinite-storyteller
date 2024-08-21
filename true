@@ -1,10 +1,10 @@
-# Ce fichier n'est plus utilisé pour la synchronisation avec le wiki.
-# Le contenu est maintenant automatiquement publié par GitBook.
+# This file is no longer used for wiki synchronization.
+# The content is now automatically published by GitBook.
 
 def main():
-    print("Ce script n'est plus utilisé pour la synchronisation avec le wiki.")
-    print("Le contenu est maintenant automatiquement publié par GitBook.")
-    print("Veuillez utiliser les outils GitBook appropriés pour gérer le contenu.")
+    print("This script is no longer used for wiki synchronization.")
+    print("The content is now automatically published by GitBook.")
+    print("Please use the appropriate GitBook tools to manage the content.")
 
 if __name__ == "__main__":
     main()
