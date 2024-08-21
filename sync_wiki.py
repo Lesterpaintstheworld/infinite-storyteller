@@ -18,14 +18,14 @@ REQUEST_TIMEOUT = 10
 def test_connection():
     """Teste la connexion au serveur DokuWiki."""
     try:
-        response = requests.get(DOKUWIKI_URL, timeout=REQUEST_TIMEOUT)
+        response = requests.get(f"{DOKUWIKI_URL}/lib/exe/xmlrpc.php", timeout=REQUEST_TIMEOUT, auth=(USERNAME, PASSWORD))
         response.raise_for_status()
         print(f"Connexion au serveur DokuWiki réussie. URL: {DOKUWIKI_URL}")
         return True
     except requests.exceptions.ConnectionError as e:
         print(f"Erreur de connexion : Impossible de se connecter à {DOKUWIKI_URL}")
         print(f"Détails de l'erreur : {str(e)}")
-        print("Vérifiez que l'URL du wiki est correcte et que le serveur est en cours d'exécution.")
+        print("Vérifiez que l'URL du wiki est correcte et que le serveur est accessible.")
         return False
     except requests.exceptions.Timeout:
         print(f"Erreur de connexion : Le délai d'attente de {REQUEST_TIMEOUT} secondes a été dépassé.")
