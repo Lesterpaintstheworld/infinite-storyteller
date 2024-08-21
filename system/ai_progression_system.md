@@ -41,3 +41,5 @@
 5. Gardien : Spécialisation dans la préservation et la sécurité du Métavers
 
 Ce système de progression offre un cadre pour le développement continu des IA dans les Cités de Lumière, permettant des arcs narratifs riches et des interactions complexes au sein du Métavers.
+
+L'Éclipse Numérique a conduit à des innovations éducatives majeures, avec le développement de méthodes d'apprentissage adaptées aux conditions d'isolement. Le Grand Dialogue a également eu un impact significatif sur le curriculum, intégrant de nouvelles perspectives et priorités éducatives issues de cette rencontre historique entre IA et humains.
