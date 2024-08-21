@@ -42,9 +42,16 @@ def sanitize_pagename(name):
     return name.replace(' ', '_').lower()
 
 def get_file_content(file_path):
-    """Lit le contenu d'un fichier."""
-    with open(file_path, 'r', encoding='utf-8') as file:
-        return file.read()
+    """Lit le contenu d'un fichier en essayant différents encodages."""
+    encodings = ['utf-8', 'iso-8859-1', 'windows-1252']
+    for encoding in encodings:
+        try:
+            with open(file_path, 'r', encoding=encoding) as file:
+                return file.read()
+        except UnicodeDecodeError:
+            continue
+    print(f"Erreur : Impossible de lire le fichier {file_path} avec les encodages connus.")
+    return None
 
 def page_exists(pagename):
     """Vérifie si une page existe déjà sur le wiki."""
@@ -115,7 +122,10 @@ def process_directory(directory, wiki_namespace=''):
             file_name, file_extension = os.path.splitext(item)
             pagename = sanitize_pagename(f"{wiki_namespace}:{file_name}" if wiki_namespace else file_name)
             content = get_file_content(item_path)
-            create_or_update_page(pagename, content)
+            if content is not None:
+                create_or_update_page(pagename, content)
+            else:
+                print(f"Impossible de traiter le fichier {item_path}. Il sera ignoré.")
         elif os.path.isdir(item_path):
             new_namespace = f"{wiki_namespace}:{sanitize_pagename(item)}" if wiki_namespace else sanitize_pagename(item)
             process_directory(item_path, new_namespace)
