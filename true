@@ -82,11 +82,16 @@ def create_or_update_page(pagename, content):
         response = requests.post(url, data=xml_template, headers=headers, timeout=10)
         if response.status_code == 200:
             print_flush(f"Page '{pagename}' {action} avec succès.")
-            # Vérification supplémentaire
-            if page_exists(pagename):
-                print_flush(f"Vérification réussie : La page '{pagename}' existe sur le wiki.")
+            # Vérification du contenu après création/mise à jour
+            downloaded_content = get_page_content(pagename)
+            if downloaded_content == content:
+                print_flush(f"Vérification réussie : Le contenu de la page '{pagename}' correspond à ce qui a été envoyé.")
             else:
-                print_flush(f"Avertissement : La page '{pagename}' n'existe pas après la {action}.")
+                print_flush(f"Avertissement : Le contenu de la page '{pagename}' ne correspond pas à ce qui a été envoyé.")
+                print_flush("Contenu envoyé :")
+                print_flush(content)
+                print_flush("Contenu téléchargé :")
+                print_flush(downloaded_content)
         else:
             print_flush(f"Erreur lors de la {action} de la page '{pagename}': {response.status_code}")
             print_flush(f"Réponse du serveur: {response.text}")
@@ -96,6 +101,39 @@ def create_or_update_page(pagename, content):
     # Affichage de l'URL de la page
     page_url = f"{DOKUWIKI_URL}/doku.php?id={quote(pagename.replace(':', '%3A'))}"
     print_flush(f"URL de la page : {page_url}")
+
+def get_page_content(pagename):
+    """Récupère le contenu d'une page du wiki."""
+    url = f"{DOKUWIKI_URL}/lib/exe/xmlrpc.php"
+    headers = {
+        'Content-Type': 'application/xml',
+        'Authorization': f'Bearer {DOKUWIKI_TOKEN}'
+    }
+    
+    xml_template = f"""
+    <?xml version="1.0"?>
+    <methodCall>
+      <methodName>wiki.getPage</methodName>
+      <params>
+        <param><value><string>{pagename}</string></value></param>
+      </params>
+    </methodCall>
+    """
+    
+    try:
+        response = requests.post(url, data=xml_template, headers=headers, timeout=10)
+        if response.status_code == 200:
+            # Extraire le contenu de la réponse XML
+            from xml.etree import ElementTree
+            root = ElementTree.fromstring(response.content)
+            content = root.find('.//string').text
+            return content
+        else:
+            print_flush(f"Erreur lors de la récupération du contenu de la page '{pagename}': {response.status_code}")
+            return None
+    except requests.exceptions.RequestException as e:
+        print_flush(f"Erreur lors de la récupération du contenu de la page '{pagename}': {str(e)}")
+        return None
 
 def test_connection():
     """Teste la connexion au wiki."""
@@ -193,6 +231,10 @@ def process_directory(directory, wiki_namespace='', ignore_patterns=None, base_d
         
         if os.path.isfile(item_path):
             file_name, file_extension = os.path.splitext(item)
+            # Ignorer les fichiers image
+            if file_extension.lower() in ['.jpg', '.jpeg', '.png', '.gif', '.bmp']:
+                print_flush(f"Image ignorée : {item_path}")
+                continue
             pagename = sanitize_pagename(f"{wiki_namespace}:{file_name}" if wiki_namespace else file_name)
             content = get_file_content(item_path)
             if content is not None:
