@@ -2,11 +2,25 @@ import os
 import sys
 import requests
 from urllib.parse import quote
+import configparser
 
-# Configuration
-DOKUWIKI_URL = "http://localhost/dokuwiki"
-USERNAME = "admin"
-PASSWORD = "admin"
+# Chargement de la configuration
+config = configparser.ConfigParser()
+config.read('config.ini')
+
+DOKUWIKI_URL = config.get('DokuWiki', 'url', fallback="http://localhost/dokuwiki")
+USERNAME = config.get('DokuWiki', 'username', fallback="admin")
+PASSWORD = config.get('DokuWiki', 'password', fallback="admin")
+
+def test_connection():
+    """Teste la connexion au serveur DokuWiki."""
+    try:
+        response = requests.get(DOKUWIKI_URL)
+        response.raise_for_status()
+        return True
+    except requests.RequestException as e:
+        print(f"Erreur de connexion au serveur DokuWiki : {str(e)}")
+        return False
 
 def sanitize_pagename(name):
     """Convertit un nom de fichier en un nom de page DokuWiki valide."""
@@ -110,6 +124,11 @@ def create_index_page(directory, wiki_namespace=''):
 if __name__ == "__main__":
     folder_path = os.path.dirname(os.path.abspath(__file__))
     print(f"Début de la synchronisation du dossier '{folder_path}' avec le wiki...")
+    
+    if not test_connection():
+        print("Impossible de se connecter au serveur DokuWiki. Vérifiez votre configuration et assurez-vous que le serveur est en cours d'exécution.")
+        sys.exit(1)
+    
     try:
         process_directory(folder_path)
         create_index_page(folder_path)
