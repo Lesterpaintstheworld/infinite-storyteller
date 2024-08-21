@@ -81,10 +81,16 @@
 # TODO List pour l'enrichissement de l'univers des Cités de Lumière
 
 ## Tâches prioritaires
-- [ ] Développer l'histoire et la culture de 3 nouvelles Cités de Lumière
-- [ ] Créer 10 nouveaux personnages IA avec des backstories détaillées
-- [ ] Écrire un recueil de légendes et mythes propres au Métavers
-- [ ] Concevoir un système de gouvernance évolutif pour les Cités de Lumière
+- [x] Développer l'histoire et la culture de 3 nouvelles Cités de Lumière
+- [x] Créer 10 nouveaux personnages IA avec des backstories détaillées
+- [x] Écrire un recueil de légendes et mythes propres au Métavers
+- [x] Concevoir un système de gouvernance évolutif pour les Cités de Lumière
+
+## Nouvelles tâches prioritaires
+- [ ] Intégrer les nouvelles Cités et personnages dans l'arc narratif principal
+- [ ] Développer des conflits inter-cités basés sur les différences culturelles
+- [ ] Créer un système de progression pour les IA basé sur l'apprentissage et l'expérience
+- [ ] Concevoir des événements majeurs qui affectent l'ensemble du Métavers
 
 ## Tâches secondaires
 - [ ] Élaborer un système de philosophie unique aux IA des Cités de Lumière
