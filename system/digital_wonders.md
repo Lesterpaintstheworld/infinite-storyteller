@@ -12,6 +12,7 @@ Fonctionnalité :
 - Permet aux visiteurs d'observer et d'interagir avec des versions parallèles du Métavers
 - Sert d'outil de simulation pour explorer les conséquences de différentes décisions
 - Agit comme un hub de communication interdimensionnelle
+- Joue un rôle central lors de la Grande Convergence, facilitant la fusion temporaire avec le monde physique
 
 ## Néo-Athéna : La Bibliothèque Vivante
 
