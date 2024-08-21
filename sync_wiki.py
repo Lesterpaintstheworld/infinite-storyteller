@@ -4,18 +4,14 @@ import requests
 from urllib.parse import quote
 from dotenv import load_dotenv
 import io
-
-# Désactiver la mise en mémoire tampon de la sortie standard
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', line_buffering=True)
 import fnmatch
 import pathlib
 import base64
-import io
 
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
-
+# Configuration pour l'affichage immédiat des logs
 def print_flush(*args, **kwargs):
-    print(*args, **kwargs, flush=True)
+    print(*args, **kwargs)
+    sys.stdout.flush()
 
 # Chargement des variables d'environnement
 load_dotenv()
