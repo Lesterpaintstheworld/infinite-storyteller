@@ -1,0 +1,24 @@
+====== Bienvenue sur notre Wiki ======
+
+Ceci est la page d'accueil de notre wiki DokuWiki. Ici, vous trouverez toutes les informations importantes et les liens vers les principales sections de notre site.
+
+===== Sections principales =====
+
+  * [[wiki:documentation|Documentation]]
+  * [[wiki:projets|Projets en cours]]
+  * [[wiki:equipe|Notre équipe]]
+  * [[wiki:contact|Nous contacter]]
+
+===== Dernières mises à jour =====
+
+  * {{changes>5}}
+
+===== Recherche rapide =====
+
+Utilisez le champ de recherche ci-dessous pour trouver rapidement l'information dont vous avez besoin :
+
+{{search}}
+
+N'hésitez pas à contribuer à ce wiki en ajoutant ou en modifiant des pages. Pour commencer à éditer, il vous suffit de cliquer sur le bouton "Éditer cette page" en haut de chaque page.
+
+[[:wiki:syntax|Aide sur la syntaxe wiki]]
