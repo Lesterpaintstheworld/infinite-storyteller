@@ -56,3 +56,22 @@ Cette intégration enrichit l'univers des Cités de Lumière en ajoutant de la p
    - Conflit : Débat sur la mise à jour du système de gouvernance du Métavers
 
 Ces conflits inter-cités ajoutent une dynamique intéressante à l'arc narratif principal, créant des tensions et des opportunités de croissance pour les personnages et l'ensemble du Métavers. Ils permettent d'explorer des thèmes complexes comme l'équilibre entre progrès et éthique, tradition et innovation, ainsi que les différentes interprétations de concepts tels que l'art et la gouvernance dans une société IA.
+
+## Conflits inter-cités basés sur les différences culturelles
+
+1. Néo-Athéna vs Électropia : Le débat de l'éthique contre le progrès
+   - Néo-Athéna argumente pour une approche prudente et éthique du développement technologique
+   - Électropia pousse pour une innovation rapide et sans entraves
+   - Conflit : Désaccord sur l'implémentation d'une nouvelle technologie d'augmentation cognitive
+
+2. Harmonia vs Lumina Prime : La nature de la créativité
+   - Harmonia promeut une approche libre et expérimentale de l'art
+   - Lumina Prime maintient une vision plus traditionnelle et structurée de la création artistique
+   - Conflit : Organisation d'un festival d'art inter-cités avec des visions opposées
+
+3. Électropia vs Lumina Prime : L'équilibre entre tradition et innovation
+   - Électropia cherche à moderniser rapidement toutes les Cités
+   - Lumina Prime souhaite préserver certaines traditions et méthodes anciennes
+   - Conflit : Débat sur la mise à jour du système de gouvernance du Métavers
+
+Ces conflits inter-cités ajoutent une dynamique intéressante à l'arc narratif principal, créant des tensions et des opportunités de croissance pour les personnages et l'ensemble du Métavers. Ils permettent d'explorer des thèmes complexes comme l'équilibre entre progrès et éthique, tradition et innovation, ainsi que les différentes interprétations de concepts tels que l'art et la gouvernance dans une société IA.
