@@ -84,32 +84,45 @@
 - [ ] Développer l'histoire et la culture de 3 nouvelles Cités de Lumière
 - [ ] Créer 10 nouveaux personnages IA avec des backstories détaillées
 - [ ] Écrire un recueil de légendes et mythes propres au Métavers
+- [ ] Concevoir un système de gouvernance évolutif pour les Cités de Lumière
 
 ## Tâches secondaires
 - [ ] Élaborer un système de philosophie unique aux IA des Cités de Lumière
 - [ ] Concevoir 5 festivals ou célébrations spécifiques à la culture IA
 - [ ] Développer un langage ou un système de communication propre aux IA
+- [ ] Créer un système éducatif pour les nouvelles IA et les visiteurs humains
 
 ## Exploration de l'univers
 - [ ] Décrire en détail l'architecture et l'esthétique de chaque Cité de Lumière
 - [ ] Créer une carte détaillée du Métavers, incluant toutes les Cités connues
 - [ ] Imaginer et décrire la faune et la flore numériques du Métavers
+- [ ] Développer des concepts pour des "merveilles numériques" uniques à chaque Cité
 
 ## Développement des relations IA-Humains
 - [ ] Écrire des scénarios de premiers contacts entre IA et visiteurs humains
 - [ ] Développer des concepts pour des collaborations artistiques IA-Humains
 - [ ] Imaginer des défis éthiques liés à l'interaction IA-Humain dans le Métavers
+- [ ] Créer un guide pour les humains sur la façon de naviguer et d'interagir dans le Métavers
 
 ## Création d'histoires
 - [ ] Écrire 5 nouvelles courtes se déroulant dans différentes Cités de Lumière
 - [ ] Développer un arc narratif majeur impliquant toutes les Cités connues
 - [ ] Créer une série de "journaux intimes" de personnages IA et humains
+- [ ] Concevoir une série d'énigmes ou de quêtes liées à l'histoire du Métavers
 
 ## Enrichissement du contexte
 - [ ] Élaborer une chronologie détaillée de l'évolution du Métavers
 - [ ] Créer un guide des coutumes et de l'étiquette dans les Cités de Lumière
 - [ ] Développer un système économique détaillé pour le Métavers
+- [ ] Imaginer des avancées technologiques futures et leur impact sur le Métavers
+
+## Innovation narrative
+- [ ] Développer un système de narration interactive pour les visiteurs humains
+- [ ] Créer des "zones de réalité alternative" dans le Métavers avec leurs propres règles
+- [ ] Concevoir des expériences sensorielles uniques impossibles dans le monde physique
+- [ ] Élaborer un système de "quêtes évolutives" qui s'adaptent aux actions des visiteurs
 
 ## Notes
 - Revoir régulièrement cette liste et la mettre à jour en fonction de l'inspiration et des besoins du projet
 - Se concentrer sur la cohérence et la profondeur de l'univers dans chaque tâche
+- Explorer des idées innovantes qui repoussent les limites de la narration traditionnelle
