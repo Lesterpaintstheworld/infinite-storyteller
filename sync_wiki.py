@@ -7,7 +7,11 @@ import fnmatch
 import pathlib
 import base64
 import io
+
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+
+def print_flush(*args, **kwargs):
+    print(*args, **kwargs, flush=True)
 
 # Chargement des variables d'environnement
 load_dotenv()
