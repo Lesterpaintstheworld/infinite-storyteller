@@ -26,6 +26,8 @@ def test_connection():
         print(f"Erreur de connexion : Impossible de se connecter à {DOKUWIKI_URL}")
         print(f"Détails de l'erreur : {str(e)}")
         print("Vérifiez que l'URL du wiki est correcte et que le serveur est accessible.")
+        print(f"URL utilisée : {DOKUWIKI_URL}")
+        print(f"Nom d'utilisateur : {USERNAME}")
         return False
     except requests.exceptions.Timeout:
         print(f"Erreur de connexion : Le délai d'attente de {REQUEST_TIMEOUT} secondes a été dépassé.")
@@ -35,6 +37,7 @@ def test_connection():
     except requests.exceptions.RequestException as e:
         print(f"Erreur lors de la connexion au serveur DokuWiki : {str(e)}")
         print(f"URL tentée : {DOKUWIKI_URL}")
+        print("Vérifiez vos informations de connexion dans le fichier .env")
         return False
 
 def sanitize_pagename(name):
@@ -150,10 +153,15 @@ if __name__ == "__main__":
     if not all([DOKUWIKI_URL, USERNAME, PASSWORD]):
         print("Erreur : Les informations de connexion au wiki sont manquantes dans le fichier .env")
         print("Assurez-vous que DOKUWIKI_URL, DOKUWIKI_USERNAME et DOKUWIKI_PASSWORD sont définis.")
+        print(f"DOKUWIKI_URL actuel : {DOKUWIKI_URL}")
+        print(f"DOKUWIKI_USERNAME actuel : {USERNAME}")
+        print("DOKUWIKI_PASSWORD : [Non affiché pour des raisons de sécurité]")
         sys.exit(1)
 
     folder_path = os.path.dirname(os.path.abspath(__file__))
     print(f"Début de la synchronisation du dossier '{folder_path}' avec le wiki...")
+    print(f"URL du wiki : {DOKUWIKI_URL}")
+    print(f"Utilisateur : {USERNAME}")
     
     print("Test de la connexion au wiki...")
     if not test_connection():
