@@ -2,24 +2,39 @@ import os
 import sys
 import requests
 from urllib.parse import quote
-import configparser
+from dotenv import load_dotenv
 
-# Chargement de la configuration
-config = configparser.ConfigParser()
-config.read('config.ini')
+# Chargement des variables d'environnement
+load_dotenv()
 
-DOKUWIKI_URL = config.get('DokuWiki', 'url', fallback="http://localhost/dokuwiki")
-USERNAME = config.get('DokuWiki', 'username', fallback="admin")
-PASSWORD = config.get('DokuWiki', 'password', fallback="admin")
+# Configuration
+DOKUWIKI_URL = os.getenv('DOKUWIKI_URL')
+USERNAME = os.getenv('DOKUWIKI_USERNAME')
+PASSWORD = os.getenv('DOKUWIKI_PASSWORD')
+
+# Timeout for requests in seconds
+REQUEST_TIMEOUT = 10
 
 def test_connection():
     """Teste la connexion au serveur DokuWiki."""
     try:
-        response = requests.get(DOKUWIKI_URL)
+        response = requests.get(DOKUWIKI_URL, timeout=REQUEST_TIMEOUT)
         response.raise_for_status()
+        print(f"Connexion au serveur DokuWiki réussie. URL: {DOKUWIKI_URL}")
         return True
-    except requests.RequestException as e:
-        print(f"Erreur de connexion au serveur DokuWiki : {str(e)}")
+    except requests.exceptions.ConnectionError as e:
+        print(f"Erreur de connexion : Impossible de se connecter à {DOKUWIKI_URL}")
+        print(f"Détails de l'erreur : {str(e)}")
+        print("Vérifiez que l'URL du wiki est correcte et que le serveur est en cours d'exécution.")
+        return False
+    except requests.exceptions.Timeout:
+        print(f"Erreur de connexion : Le délai d'attente de {REQUEST_TIMEOUT} secondes a été dépassé.")
+        print(f"URL tentée : {DOKUWIKI_URL}")
+        print("Le serveur wiki pourrait être surchargé ou inaccessible.")
+        return False
+    except requests.exceptions.RequestException as e:
+        print(f"Erreur lors de la connexion au serveur DokuWiki : {str(e)}")
+        print(f"URL tentée : {DOKUWIKI_URL}")
         return False
 
 def sanitize_pagename(name):
@@ -122,11 +137,17 @@ def create_index_page(directory, wiki_namespace=''):
     create_or_update_page(f"{wiki_namespace}:index" if wiki_namespace else 'index', index_content)
 
 if __name__ == "__main__":
+    if not all([DOKUWIKI_URL, USERNAME, PASSWORD]):
+        print("Erreur : Les informations de connexion au wiki sont manquantes dans le fichier .env")
+        print("Assurez-vous que DOKUWIKI_URL, DOKUWIKI_USERNAME et DOKUWIKI_PASSWORD sont définis.")
+        sys.exit(1)
+
     folder_path = os.path.dirname(os.path.abspath(__file__))
     print(f"Début de la synchronisation du dossier '{folder_path}' avec le wiki...")
     
+    print("Test de la connexion au wiki...")
     if not test_connection():
-        print("Impossible de se connecter au serveur DokuWiki. Vérifiez votre configuration et assurez-vous que le serveur est en cours d'exécution.")
+        print("Impossible de se connecter au wiki. Vérifiez vos paramètres de connexion et l'état du serveur.")
         sys.exit(1)
     
     try:
