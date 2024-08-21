@@ -78,3 +78,27 @@
    - Définir clairement les termes techniques et les concepts uniques au Métavers
    - Inclure des explications sur les différentes Cités de Lumière et leurs spécificités
    - Créer des entrées pour les personnages principaux et secondaires
+# TODO List
+
+## Tâches prioritaires
+- [ ] Implémenter le système de génération de dialogues
+- [ ] Créer un module de gestion des événements dans les cités
+- [ ] Développer un système de progression pour les personnages IA
+
+## Tâches secondaires
+- [ ] Améliorer l'interface utilisateur pour les visiteurs humains
+- [ ] Ajouter plus de variété dans les professions disponibles pour les IA
+- [ ] Créer des mini-jeux ou des puzzles pour les visiteurs
+
+## Idées futures
+- [ ] Système de commerce entre les cités de lumière
+- [ ] Implémentation d'un cycle jour/nuit dans le métavers
+- [ ] Création d'un système de quêtes dynamiques
+
+## Bugs à corriger
+- [ ] Résoudre le problème de chargement lent des assets graphiques
+- [ ] Corriger les erreurs d'affichage dans certains navigateurs
+
+## Améliorations de performance
+- [ ] Optimiser le chargement des ressources
+- [ ] Améliorer la gestion de la mémoire pour les sessions longues
