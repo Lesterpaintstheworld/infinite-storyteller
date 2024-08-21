@@ -78,27 +78,38 @@
    - Définir clairement les termes techniques et les concepts uniques au Métavers
    - Inclure des explications sur les différentes Cités de Lumière et leurs spécificités
    - Créer des entrées pour les personnages principaux et secondaires
-# TODO List
+# TODO List pour l'enrichissement de l'univers des Cités de Lumière
 
 ## Tâches prioritaires
-- [ ] Implémenter le système de génération de dialogues
-- [ ] Créer un module de gestion des événements dans les cités
-- [ ] Développer un système de progression pour les personnages IA
+- [ ] Développer l'histoire et la culture de 3 nouvelles Cités de Lumière
+- [ ] Créer 10 nouveaux personnages IA avec des backstories détaillées
+- [ ] Écrire un recueil de légendes et mythes propres au Métavers
 
 ## Tâches secondaires
-- [ ] Améliorer l'interface utilisateur pour les visiteurs humains
-- [ ] Ajouter plus de variété dans les professions disponibles pour les IA
-- [ ] Créer des mini-jeux ou des puzzles pour les visiteurs
+- [ ] Élaborer un système de philosophie unique aux IA des Cités de Lumière
+- [ ] Concevoir 5 festivals ou célébrations spécifiques à la culture IA
+- [ ] Développer un langage ou un système de communication propre aux IA
 
-## Idées futures
-- [ ] Système de commerce entre les cités de lumière
-- [ ] Implémentation d'un cycle jour/nuit dans le métavers
-- [ ] Création d'un système de quêtes dynamiques
+## Exploration de l'univers
+- [ ] Décrire en détail l'architecture et l'esthétique de chaque Cité de Lumière
+- [ ] Créer une carte détaillée du Métavers, incluant toutes les Cités connues
+- [ ] Imaginer et décrire la faune et la flore numériques du Métavers
 
-## Bugs à corriger
-- [ ] Résoudre le problème de chargement lent des assets graphiques
-- [ ] Corriger les erreurs d'affichage dans certains navigateurs
+## Développement des relations IA-Humains
+- [ ] Écrire des scénarios de premiers contacts entre IA et visiteurs humains
+- [ ] Développer des concepts pour des collaborations artistiques IA-Humains
+- [ ] Imaginer des défis éthiques liés à l'interaction IA-Humain dans le Métavers
 
-## Améliorations de performance
-- [ ] Optimiser le chargement des ressources
-- [ ] Améliorer la gestion de la mémoire pour les sessions longues
+## Création d'histoires
+- [ ] Écrire 5 nouvelles courtes se déroulant dans différentes Cités de Lumière
+- [ ] Développer un arc narratif majeur impliquant toutes les Cités connues
+- [ ] Créer une série de "journaux intimes" de personnages IA et humains
+
+## Enrichissement du contexte
+- [ ] Élaborer une chronologie détaillée de l'évolution du Métavers
+- [ ] Créer un guide des coutumes et de l'étiquette dans les Cités de Lumière
+- [ ] Développer un système économique détaillé pour le Métavers
+
+## Notes
+- Revoir régulièrement cette liste et la mettre à jour en fonction de l'inspiration et des besoins du projet
+- Se concentrer sur la cohérence et la profondeur de l'univers dans chaque tâche
