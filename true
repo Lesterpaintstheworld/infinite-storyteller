@@ -71,6 +71,24 @@ def get_files_in_directory(
     Returns:
         List[Tuple[str, int, str]]: A list of tuples containing file paths, their sizes, and file types.
     """
+    """
+    Recursively get all files in a directory, applying various filters.
+
+    Args:
+        directory (str): The directory to scan.
+        exclude_dirs (Set[str], optional): Set of directory names to exclude.
+        exclude_extensions (Set[str], optional): Set of file extensions to exclude.
+        include_extensions (Set[str], optional): Set of file extensions to include.
+        exclude_dir_patterns (Set[str], optional): Set of regex patterns for directories to exclude.
+        include_dir_patterns (Set[str], optional): Set of regex patterns for directories to include.
+        exclude_file_patterns (Set[str], optional): Set of regex patterns for files to exclude.
+        include_file_patterns (Set[str], optional): Set of regex patterns for files to include.
+        min_file_size (int, optional): Minimum file size in bytes.
+        max_file_size (int, optional): Maximum file size in bytes.
+
+    Returns:
+        List[Tuple[str, int, str]]: A list of tuples containing file paths, their sizes, and file types.
+    """
     exclude_dirs = exclude_dirs or set()
     exclude_extensions = exclude_extensions or set()
     include_extensions = include_extensions or set()
@@ -84,7 +102,7 @@ def get_files_in_directory(
     
     with tqdm(total=total_files, desc="Scanning files", unit="file") as pbar:
         for root, dirs, filenames in os.walk(directory):
-            dirs[:] = [d for d in dirs if d not in exclude_dirs]
+            dirs[:] = [d for d in dirs if d not in (exclude_dirs or set())]
             
             # Apply directory pattern filters
             if include_dir_patterns:
@@ -98,12 +116,14 @@ def get_files_in_directory(
                 file_size = os.path.getsize(file_path)
                 
                 # Apply file filters
-                if (not exclude_extensions or file_type not in exclude_extensions) and \
-                   (not include_extensions or file_type in include_extensions) and \
-                   (not min_file_size or file_size >= min_file_size) and \
-                   (not max_file_size or file_size <= max_file_size) and \
-                   (not include_file_patterns or any(re.search(pattern, filename) for pattern in include_file_patterns)) and \
-                   (not exclude_file_patterns or not any(re.search(pattern, filename) for pattern in exclude_file_patterns)):
+                if all([
+                    not exclude_extensions or file_type not in exclude_extensions,
+                    not include_extensions or file_type in include_extensions,
+                    not min_file_size or file_size >= min_file_size,
+                    not max_file_size or file_size <= max_file_size,
+                    not include_file_patterns or any(re.search(pattern, filename) for pattern in include_file_patterns),
+                    not exclude_file_patterns or not any(re.search(pattern, filename) for pattern in exclude_file_patterns)
+                ]):
                     files.append((file_path, file_size, file_type))
                 pbar.update(1)
     
@@ -198,6 +218,7 @@ def main() -> int:
     parser.add_argument("--exclude-dir-patterns", type=str, help="Comma-separated list of directory regex patterns to exclude")
     parser.add_argument("--include-file-patterns", type=str, help="Comma-separated list of file regex patterns to include")
     parser.add_argument("--exclude-file-patterns", type=str, help="Comma-separated list of file regex patterns to exclude")
+    parser.add_argument("--exclude-dirs", type=str, help="Comma-separated list of directory names to exclude")
     args = parser.parse_args()
 
     try:
