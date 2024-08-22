@@ -1,8 +1,12 @@
 # Writing Schedule for Infinite Storyteller
 
-## Phase 1: Planning and Research (4 weeks)
+## Phase 1: Planning and Research (4 weeks) - COMPLETED
 - Week 1-2: In-depth research on AI, metaverse technologies, and interactive storytelling
 - Week 3-4: Detailed outlining and character development
+- Status: Completed on [Insert Date]
+
+## Phase 2: First Draft (14 weeks) - IN PROGRESS
+- Current Task: Begin writing Chapter 1 (Weeks 5-6)
 
 ## Phase 2: First Draft (14 weeks)
 - Chapter 1: Weeks 5-6
