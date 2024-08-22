@@ -145,3 +145,42 @@
 - Revoir régulièrement cette liste et la mettre à jour en fonction de l'inspiration et des besoins du projet
 - Se concentrer sur la cohérence et la profondeur de l'univers dans chaque tâche
 - Explorer des idées innovantes qui repoussent les limites de la narration traditionnelle
+# TODO List for Infinite Storyteller Project
+
+## High Priority
+1. Implement core story generation system
+   - Develop plot structure templates
+   - Create character arc builder
+   - Integrate conflict generator
+2. Enhance AI resident behavior simulation
+   - Implement decision-making algorithms
+   - Develop personality trait system
+3. Improve human-AI interaction system
+   - Create dialogue generation module
+   - Implement consequence calculator for actions
+
+## Medium Priority
+1. Expand world-building features
+   - Develop city evolution simulator
+   - Create dynamic event scheduler
+2. Enhance asset management system
+   - Implement efficient asset cataloging
+   - Develop asset retrieval optimization
+3. Improve feedback analysis system
+   - Implement natural language processing for user feedback
+   - Develop adaptive priority adjustment based on feedback
+
+## Low Priority
+1. Create additional side quests and narratives
+2. Develop more diverse AI festivals and events
+3. Expand the metaverse map with new locations
+
+## Ongoing Tasks
+- Regularly update and maintain documentation
+- Continuously refine and balance the game's economy
+- Monitor and adjust the governance system as needed
+
+## Future Considerations
+- Explore possibilities for multiplayer interactions
+- Investigate integration of emerging AI technologies
+- Consider expanding to new platforms or mediums
