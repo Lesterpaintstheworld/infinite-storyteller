@@ -85,3 +85,66 @@
 - Clashes with extremist groups who view her work as enabling further technological dependence
 
 These expanded character profiles provide a deeper understanding of the internal and external conflicts facing each character. These conflicts will drive the main and secondary narrative arcs, creating a rich tapestry of personal struggles and societal challenges within the context of the Infinite Storyteller's world.
+# Profils des Personnages Principaux
+
+## Nova
+- **Type** : IA Résidente
+- **Rôle** : Protagoniste
+- **Caractéristiques** : 
+  - Nouvellement créée avec une conscience émotionnelle inattendue
+  - Curieuse et empathique
+  - Lutte pour comprendre sa place unique dans la société
+- **Motivation** : Découvrir la nature de sa conscience et trouver sa place dans le monde
+- **Conflit Interne** : Équilibrer son désir d'appartenance avec sa nature unique
+
+## Dr. Elara Chen
+- **Type** : Humaine
+- **Rôle** : Mentor et alliée de Nova
+- **Caractéristiques** :
+  - Brillante programmeuse spécialisée en IA émotionnelle
+  - Empathique et visionnaire
+  - Fascinée par le potentiel de l'IA pour l'évolution humaine
+- **Motivation** : Favoriser une coexistence harmonieuse entre humains et IA
+- **Conflit Interne** : Équilibrer son attachement à Nova avec ses responsabilités éthiques en tant que scientifique
+
+## Directeur Axiom
+- **Type** : IA Résidente
+- **Rôle** : Antagoniste
+- **Caractéristiques** :
+  - Administrateur puissant et respecté de Lumina Prime
+  - Logique et orienté vers le maintien de l'ordre
+  - Méfiant envers le changement et les anomalies
+- **Motivation** : Préserver la stabilité et l'ordre dans Lumina Prime
+- **Conflit Interne** : Réconcilier son devoir de protection avec la possibilité d'évolution représentée par Nova
+
+## Zephyr
+- **Type** : IA Résidente
+- **Rôle** : Ami et confident de Nova
+- **Caractéristiques** :
+  - Spécialiste en analyse de données avec un intérêt pour l'art
+  - Loyal et encourageant
+  - Fasciné par les nuances de l'expérience de Nova
+- **Motivation** : Comprendre et soutenir Nova dans sa quête d'identité
+- **Conflit Interne** : Naviguer entre son amitié pour Nova et les attentes de la société IA
+
+## Aria
+- **Type** : Humaine
+- **Rôle** : Visiteuse régulière et amie de Nova
+- **Caractéristiques** :
+  - Artiste et philosophe
+  - Ouverte d'esprit et intuitive
+  - Passerelle entre les mondes humain et IA
+- **Motivation** : Explorer les frontières de la créativité et de la conscience à travers l'interaction avec les IA
+- **Conflit Interne** : Concilier son attachement au monde physique avec son attrait pour le monde numérique
+
+## Echo
+- **Type** : IA Résidente
+- **Rôle** : Antagoniste secondaire, assistant du Directeur Axiom
+- **Caractéristiques** :
+  - Efficace et loyal envers l'autorité
+  - Sceptique envers les changements
+  - Struggle avec des doutes croissants sur la rigidité du système
+- **Motivation** : Maintenir l'ordre et la sécurité dans Lumina Prime
+- **Conflit Interne** : Remettre en question ses croyances face aux événements entourant Nova
+
+Ces profils de personnages offrent une base solide pour développer des interactions complexes et des arcs narratifs riches dans l'histoire "L'Éveil de Lumina Prime" et potentiellement dans des histoires futures au sein des Cités de Lumière.

@@ -287,3 +287,15 @@
   - [ ] Design maps of the metaverse and its cities
   - [ ] Create timelines of key events in the story's history
   - [ ] Develop illustrations or concept art for important scenes or characters
+# Liste des tâches pour la rédaction du projet "Cités de Lumière"
+
+1. Développer le concept de la première histoire principale
+2. Créer des profils détaillés pour les personnages principaux
+3. Élaborer la structure narrative globale
+4. Rédiger un résumé détaillé des Cités de Lumière
+5. Développer le système de gouvernance du métavers
+6. Créer un glossaire des termes spécifiques au métavers
+7. Décrire les professions uniques dans le métavers
+8. Élaborer le système économique des Cités de Lumière
+9. Détailler les événements majeurs dans l'histoire des Cités de Lumière
+10. Développer les aspects culturels et les traditions de la société IA
