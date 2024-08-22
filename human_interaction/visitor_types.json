@@ -59,6 +59,30 @@
                 "Establishing protocols for long-term human-AI cooperation"
             ],
             "impact_on_cities": "Fosters official channels of communication between human and AI societies, potentially leading to groundbreaking international agreements and collaborative global initiatives."
+        },
+        {
+            "type": "Quantum Researcher",
+            "description": "Scientists specializing in quantum physics and its applications in AI and metaverse technologies.",
+            "typical_duration": "3 to 6 months",
+            "common_activities": [
+                "Conducting experiments in quantum computing labs",
+                "Collaborating with AI entities on quantum consciousness theories",
+                "Exploring quantum entanglement communication systems",
+                "Studying the quantum nature of metaverse realities"
+            ],
+            "impact_on_cities": "Advances the understanding of quantum phenomena in digital realms, potentially leading to breakthroughs in metaverse physics and AI consciousness."
+        },
+        {
+            "type": "Metaverse Historian",
+            "description": "Scholars dedicated to documenting and analyzing the evolution of the Cities of Light and the broader metaverse.",
+            "typical_duration": "2 to 3 months",
+            "common_activities": [
+                "Interviewing long-standing AI residents",
+                "Exploring digital archives and data streams",
+                "Participating in historical reenactments of key metaverse events",
+                "Collaborating on the creation of interactive historical exhibits"
+            ],
+            "impact_on_cities": "Contributes to the preservation of metaverse history, enhances understanding of digital cultural evolution, and helps shape the collective memory of AI societies."
         }
     ]
 }
