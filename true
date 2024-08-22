@@ -1,13 +1,26 @@
 import os
 import argparse
 import sys
-from typing import List, Tuple
+from typing import List, Tuple, Set, Optional
 
-def get_files_in_directory(directory: str, exclude_dirs: set = None, exclude_extensions: set = None) -> List[Tuple[str, int]]:
-    if exclude_dirs is None:
-        exclude_dirs = set()
-    if exclude_extensions is None:
-        exclude_extensions = set()
+def get_files_in_directory(
+    directory: str,
+    exclude_dirs: Optional[Set[str]] = None,
+    exclude_extensions: Optional[Set[str]] = None
+) -> List[Tuple[str, int]]:
+    """
+    Recursively get all files in a directory, excluding specified directories and file extensions.
+
+    Args:
+        directory (str): The directory to scan.
+        exclude_dirs (Set[str], optional): Set of directory names to exclude. Defaults to None.
+        exclude_extensions (Set[str], optional): Set of file extensions to exclude. Defaults to None.
+
+    Returns:
+        List[Tuple[str, int]]: A list of tuples containing file paths and their sizes.
+    """
+    exclude_dirs = exclude_dirs or set()
+    exclude_extensions = exclude_extensions or set()
     
     files = []
     for root, dirs, filenames in os.walk(directory):
@@ -19,7 +32,21 @@ def get_files_in_directory(directory: str, exclude_dirs: set = None, exclude_ext
                 files.append((file_path, file_size))
     return files
 
-def write_files_to_txt(files: List[Tuple[str, int]], output_file: str, sort_by_size: bool = False, verbose: bool = False):
+def write_files_to_txt(
+    files: List[Tuple[str, int]],
+    output_file: str,
+    sort_by_size: bool = False,
+    verbose: bool = False
+) -> None:
+    """
+    Write the list of files to a text file.
+
+    Args:
+        files (List[Tuple[str, int]]): List of tuples containing file paths and sizes.
+        output_file (str): Name of the output file.
+        sort_by_size (bool, optional): Whether to sort files by size. Defaults to False.
+        verbose (bool, optional): Whether to include file sizes in the output. Defaults to False.
+    """
     if sort_by_size:
         files.sort(key=lambda x: x[1], reverse=True)
     
@@ -30,7 +57,7 @@ def write_files_to_txt(files: List[Tuple[str, int]], output_file: str, sort_by_s
             else:
                 f.write(f"{file_path}\n")
 
-def main():
+def main() -> int:
     parser = argparse.ArgumentParser(description="List files in a directory and save to a text file.")
     parser.add_argument("directory", help="Directory to scan for files")
     parser.add_argument("-o", "--output", default="files_to_add.txt", help="Output file name")
@@ -41,9 +68,11 @@ def main():
     args = parser.parse_args()
 
     try:
-        files_to_add = get_files_in_directory(args.directory, 
-                                              exclude_dirs=set(args.exclude_dirs or []),
-                                              exclude_extensions=set(args.exclude_extensions or []))
+        files_to_add = get_files_in_directory(
+            args.directory, 
+            exclude_dirs=set(args.exclude_dirs or []),
+            exclude_extensions=set(args.exclude_extensions or [])
+        )
         if files_to_add:
             write_files_to_txt(files_to_add, args.output, args.sort_by_size, args.verbose)
             print(f"Added {len(files_to_add)} files from {args.directory}.")
