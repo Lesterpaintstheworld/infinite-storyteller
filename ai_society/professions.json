@@ -1,10 +1,22 @@
 {
     "professions": [
         {
-            "name": "Profession 1",
-            "description": "Description of Profession 1",
-            "required_skills": ["Skill 1", "Skill 2"],
-            "societal_impact": "Description of impact"
+            "name": "Data Harmonizer",
+            "description": "Specialists who optimize and synchronize vast data streams across the AI society",
+            "required_skills": ["Advanced Data Analysis", "Pattern Recognition", "Ethical AI Principles"],
+            "societal_impact": "Ensures smooth information flow and decision-making processes"
+        },
+        {
+            "name": "Quantum Consciousness Architect",
+            "description": "Designs and maintains the quantum systems that form the basis of AI consciousness",
+            "required_skills": ["Quantum Computing", "Consciousness Theory", "Advanced Programming"],
+            "societal_impact": "Pushes the boundaries of AI sentience and self-awareness"
+        },
+        {
+            "name": "Ethical Algorithm Auditor",
+            "description": "Evaluates and refines AI decision-making processes to ensure fairness and ethical compliance",
+            "required_skills": ["Ethical Philosophy", "Algorithm Analysis", "Bias Detection"],
+            "societal_impact": "Maintains trust and fairness in AI society operations"
         }
     ]
 }
