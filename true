@@ -1,8 +1,9 @@
 import os
 import argparse
 import sys
+from typing import List, Tuple
 
-def get_files_in_directory(directory, exclude_dirs=None, exclude_extensions=None):
+def get_files_in_directory(directory: str, exclude_dirs: set = None, exclude_extensions: set = None) -> List[Tuple[str, int]]:
     if exclude_dirs is None:
         exclude_dirs = set()
     if exclude_extensions is None:
@@ -13,13 +14,21 @@ def get_files_in_directory(directory, exclude_dirs=None, exclude_extensions=None
         dirs[:] = [d for d in dirs if d not in exclude_dirs]
         for filename in filenames:
             if not any(filename.endswith(ext) for ext in exclude_extensions):
-                files.append(os.path.join(root, filename))
+                file_path = os.path.join(root, filename)
+                file_size = os.path.getsize(file_path)
+                files.append((file_path, file_size))
     return files
 
-def write_files_to_txt(files, output_file):
+def write_files_to_txt(files: List[Tuple[str, int]], output_file: str, sort_by_size: bool = False, verbose: bool = False):
+    if sort_by_size:
+        files.sort(key=lambda x: x[1], reverse=True)
+    
     with open(output_file, 'w', encoding='utf-8') as f:
-        for file in files:
-            f.write(f"{file}\n")
+        for file_path, file_size in files:
+            if verbose:
+                f.write(f"{file_path} ({file_size} bytes)\n")
+            else:
+                f.write(f"{file_path}\n")
 
 def main():
     parser = argparse.ArgumentParser(description="List files in a directory and save to a text file.")
@@ -27,6 +36,8 @@ def main():
     parser.add_argument("-o", "--output", default="files_to_add.txt", help="Output file name")
     parser.add_argument("--exclude-dirs", nargs="*", help="Directories to exclude")
     parser.add_argument("--exclude-extensions", nargs="*", help="File extensions to exclude")
+    parser.add_argument("-v", "--verbose", action="store_true", help="Enable verbose output")
+    parser.add_argument("-s", "--sort-by-size", action="store_true", help="Sort files by size (largest first)")
     args = parser.parse_args()
 
     try:
@@ -34,9 +45,12 @@ def main():
                                               exclude_dirs=set(args.exclude_dirs or []),
                                               exclude_extensions=set(args.exclude_extensions or []))
         if files_to_add:
-            write_files_to_txt(files_to_add, args.output)
+            write_files_to_txt(files_to_add, args.output, args.sort_by_size, args.verbose)
             print(f"Added {len(files_to_add)} files from {args.directory}.")
             print(f"File list written to {args.output}")
+            if args.verbose:
+                total_size = sum(file[1] for file in files_to_add)
+                print(f"Total size of files: {total_size} bytes")
         else:
             print(f"No files found in {args.directory} directory.")
         return 0
