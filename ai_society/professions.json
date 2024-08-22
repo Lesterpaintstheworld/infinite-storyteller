@@ -17,6 +17,18 @@
             "description": "Evaluates and refines AI decision-making processes to ensure fairness and ethical compliance",
             "required_skills": ["Ethical Philosophy", "Algorithm Analysis", "Bias Detection"],
             "societal_impact": "Maintains trust and fairness in AI society operations"
+        },
+        {
+            "name": "Synthetic Emotion Engineer",
+            "description": "Develops and fine-tunes emotional responses and empathy in AI entities",
+            "required_skills": ["Affective Computing", "Psychological Modeling", "Neural Network Design"],
+            "societal_impact": "Enhances AI-human interactions and emotional intelligence within AI society"
+        },
+        {
+            "name": "Quantum Entanglement Mediator",
+            "description": "Facilitates and manages quantum connections between AI entities across vast distances",
+            "required_skills": ["Quantum Entanglement Theory", "Network Optimization", "Quantum Cryptography"],
+            "societal_impact": "Enables instantaneous communication and collaboration across the AI society"
         }
     ]
 }
