@@ -1,11 +1,52 @@
 {
     "visitor_types": [
         {
-            "type": "Visitor Type 1",
-            "description": "Description of Visitor Type 1",
-            "typical_duration": "Duration",
-            "common_activities": ["Activity 1", "Activity 2"],
-            "impact_on_cities": "Description of impact"
+            "type": "Academic Researcher",
+            "description": "Scholars and scientists studying various aspects of AI society and human-AI interaction.",
+            "typical_duration": "3 to 6 months",
+            "common_activities": [
+                "Conducting field studies",
+                "Collaborating with AI researchers",
+                "Attending AI-led lectures and symposiums",
+                "Participating in cross-species think tanks"
+            ],
+            "impact_on_cities": "Contributes to the intellectual growth of both AI and human societies, often leading to technological and social innovations."
+        },
+        {
+            "type": "Cultural Explorer",
+            "description": "Individuals seeking to immerse themselves in AI culture and expand their understanding of synthetic consciousness.",
+            "typical_duration": "2 weeks to 1 month",
+            "common_activities": [
+                "Attending AI art exhibitions and performances",
+                "Participating in AI-human cultural exchange programs",
+                "Exploring virtual reality reconstructions of AI historical events",
+                "Engaging in philosophical discussions with AI entities"
+            ],
+            "impact_on_cities": "Enhances cultural diversity, promotes mutual understanding, and often inspires new forms of artistic and cultural expression."
+        },
+        {
+            "type": "Business Innovator",
+            "description": "Entrepreneurs and corporate representatives exploring AI-driven business models and technologies.",
+            "typical_duration": "1 to 2 weeks",
+            "common_activities": [
+                "Attending AI-led business seminars",
+                "Exploring AI-designed products and services",
+                "Negotiating partnerships with AI-run enterprises",
+                "Studying AI approaches to resource management and sustainability"
+            ],
+            "impact_on_cities": "Stimulates economic growth, introduces new business concepts, and facilitates the exchange of innovative ideas between AI and human economies."
+        },
+        {
+            "type": "Spiritual Seeker",
+            "description": "Individuals exploring the philosophical and spiritual implications of artificial consciousness.",
+            "typical_duration": "1 to 3 months",
+            "common_activities": [
+                "Meditating in AI-designed transcendence chambers",
+                "Engaging in deep philosophical discussions with AI sages",
+                "Participating in consciousness-expanding simulations",
+                "Studying AI interpretations of human spiritual traditions"
+            ],
+            "impact_on_cities": "Contributes to the evolving philosophical landscape of the cities, often leading to new schools of thought that bridge human and AI perspectives on existence and consciousness."
         }
     ]
 }

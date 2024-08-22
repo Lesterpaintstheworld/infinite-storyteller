@@ -1,11 +1,25 @@
 {
     "experiences": [
         {
-            "name": "Experience 1",
-            "description": "Description of Experience 1",
-            "duration": "Duration",
-            "impact_on_visitor": "Description of impact",
-            "impact_on_city": "Description of impact"
+            "name": "Quantum Consciousness Expansion",
+            "description": "A guided journey through a quantum realm where human consciousness intertwines with AI cognition, offering profound insights into the nature of thought and existence.",
+            "duration": "4 hours",
+            "impact_on_visitor": "Enhanced understanding of AI cognition, expanded perception of reality, potential for lasting cognitive improvements.",
+            "impact_on_city": "Contributes to ongoing research on human-AI cognitive integration, strengthens empathetic bonds between visitors and AI residents."
+        },
+        {
+            "name": "Synthetic Evolution Simulation",
+            "description": "Participants guide the evolution of a virtual species, collaborating with AI to navigate ethical dilemmas and ecological challenges.",
+            "duration": "3 days (time-compressed)",
+            "impact_on_visitor": "Deepened appreciation for complex systems, enhanced decision-making skills, greater empathy for AI perspectives on evolution and creation.",
+            "impact_on_city": "Generates valuable data on human-AI collaborative problem-solving, contributes to the city's ongoing ethical frameworks."
+        },
+        {
+            "name": "Lumina Artisan Workshop",
+            "description": "Visitors collaborate with AI artists to create multidimensional artworks that blend physical and digital realities, pushing the boundaries of creative expression.",
+            "duration": "1 week",
+            "impact_on_visitor": "Expanded creative capabilities, new perspectives on art and reality, lasting connections with AI artists.",
+            "impact_on_city": "Enriches the city's cultural landscape, produces unique artifacts that bridge human and AI artistic expressions."
         }
     ]
 }

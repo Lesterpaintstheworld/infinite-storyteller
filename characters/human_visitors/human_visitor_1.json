@@ -1,7 +1,10 @@
 {
-    "name": "Human Visitor 1",
-    "origin": "To be defined",
-    "purpose_of_visit": "To be defined",
-    "duration_of_stay": "To be defined",
-    "impact_on_city": "To be evaluated"
+    "name": "Alex Chen",
+    "origin": "Neo-Tokyo, Earth",
+    "purpose_of_visit": "Research on AI-human collaboration",
+    "duration_of_stay": "3 months",
+    "impact_on_city": "Moderate - Will participate in cultural exchange programs and contribute to ongoing research projects",
+    "special_skills": ["AI Ethics", "Cross-cultural Communication"],
+    "interests": ["Quantum Computing", "Virtual Reality Art"],
+    "assigned_guide": "LuminaGuide-42"
 }
