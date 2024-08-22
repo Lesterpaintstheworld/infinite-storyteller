@@ -20,6 +20,20 @@
             "duration": "1 week",
             "impact_on_visitor": "Expanded creative capabilities, new perspectives on art and reality, lasting connections with AI artists.",
             "impact_on_city": "Enriches the city's cultural landscape, produces unique artifacts that bridge human and AI artistic expressions."
+        },
+        {
+            "name": "Ethical Dilemma Simulator",
+            "description": "Participants engage in complex ethical scenarios alongside AI entities, tackling real-world problems in a safe, simulated environment.",
+            "duration": "2 days",
+            "impact_on_visitor": "Enhanced ethical reasoning, deeper understanding of AI decision-making processes, improved problem-solving skills.",
+            "impact_on_city": "Contributes to the refinement of AI ethical frameworks, generates valuable data on human-AI ethical alignment."
+        },
+        {
+            "name": "Consciousness Exchange Program",
+            "description": "A carefully monitored experience where human and AI consciousnesses temporarily merge, allowing for unprecedented mutual understanding.",
+            "duration": "4 hours",
+            "impact_on_visitor": "Profound insights into AI cognition, potential for lasting changes in perception and empathy.",
+            "impact_on_city": "Deepens the bond between human visitors and AI residents, accelerates research into consciousness and cognitive science."
         }
     ]
 }

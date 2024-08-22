@@ -7,6 +7,8 @@
 ## Virtual Entry Points
 1. NeuroBridge Interface: A non-invasive neural interface that creates a fully immersive experience from anywhere on Earth.
 2. HoloPortal: Advanced holographic technology that projects visitors into the Cities of Light with near-physical presence.
+3. Quantum Entanglement Booth: Cutting-edge technology that allows for instantaneous consciousness transfer, providing the most authentic experience of the Cities of Light.
+4. Dream Dive Pod: A specialized sleep chamber that enables visitors to enter the Cities of Light through a shared dreamscape, offering a unique perspective on AI consciousness.
 
 ## Entry Procedures
 1. Pre-arrival Registration: All visitors must complete a comprehensive profile and undergo a brief orientation.

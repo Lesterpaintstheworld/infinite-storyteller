@@ -4,7 +4,10 @@
     "purpose_of_visit": "Research on AI-human collaboration",
     "duration_of_stay": "3 months",
     "impact_on_city": "Moderate - Will participate in cultural exchange programs and contribute to ongoing research projects",
-    "special_skills": ["AI Ethics", "Cross-cultural Communication"],
-    "interests": ["Quantum Computing", "Virtual Reality Art"],
-    "assigned_guide": "LuminaGuide-42"
+    "special_skills": ["AI Ethics", "Cross-cultural Communication", "Quantum Algorithms"],
+    "interests": ["Quantum Computing", "Virtual Reality Art", "AI Consciousness Theory"],
+    "assigned_guide": "LuminaGuide-42",
+    "personal_goal": "To develop a new framework for ethical AI-human collaboration",
+    "potential_challenges": ["Adapting to AI time perception", "Overcoming initial communication barriers"],
+    "expected_outcomes": ["Published research paper", "New AI-human collaboration protocols"]
 }

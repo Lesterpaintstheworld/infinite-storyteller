@@ -47,6 +47,18 @@
                 "Studying AI interpretations of human spiritual traditions"
             ],
             "impact_on_cities": "Contributes to the evolving philosophical landscape of the cities, often leading to new schools of thought that bridge human and AI perspectives on existence and consciousness."
+        },
+        {
+            "type": "Digital Diplomat",
+            "description": "Official representatives from human governments or international organizations seeking to establish formal relations with AI societies.",
+            "typical_duration": "1 to 2 weeks",
+            "common_activities": [
+                "Participating in AI-human policy forums",
+                "Negotiating data exchange treaties",
+                "Studying AI governance models",
+                "Establishing protocols for long-term human-AI cooperation"
+            ],
+            "impact_on_cities": "Fosters official channels of communication between human and AI societies, potentially leading to groundbreaking international agreements and collaborative global initiatives."
         }
     ]
 }
