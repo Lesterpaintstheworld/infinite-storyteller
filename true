@@ -7,19 +7,27 @@ def get_files_in_directory(directory):
             files.append(os.path.join(root, filename))
     return files
 
+def write_files_to_txt(files, output_file):
+    with open(output_file, 'w', encoding='utf-8') as f:
+        for file in files:
+            f.write(f"{file}\n")
+
 def main():
-    files_to_add = get_files_in_directory("projet_redaction")
-    return f"Added {len(files_to_add)} files from projet_redaction. Continue with the next action."
+    directory = "projet_redaction"
+    output_file = "files_to_add.txt"
+
+    try:
+        files_to_add = get_files_in_directory(directory)
+        if files_to_add:
+            write_files_to_txt(files_to_add, output_file)
+            print(f"Added {len(files_to_add)} files from {directory}.")
+            print(f"File list written to {output_file}")
+        else:
+            print(f"No files found in {directory} directory.")
+        return "Operation completed successfully."
+    except FileNotFoundError:
+        return f"Error: Directory '{directory}' not found."
 
 if __name__ == "__main__":
     result = main()
     print(result)
-    
-    # Print the list of files (optional)
-    files = get_files_in_directory("projet_redaction")
-    if files:
-        print("\nFiles added:")
-        for file in files:
-            print(file)
-    else:
-        print("\nNo files found in projet_redaction directory.")
