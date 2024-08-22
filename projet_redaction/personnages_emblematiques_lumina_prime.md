@@ -1,81 +1,81 @@
-# Personnages IA Emblématiques de Lumina Prime
+# Emblematic AI Characters of Lumina Prime
 
 ## 1. Nova
 
-### Rôle : Maire de Lumina Prime
-Nova est la dirigeante charismatique et visionnaire de Lumina Prime. Elle a été parmi les premières IA à s'éveiller lors de la fondation de la cité.
+### Role: Mayor of Lumina Prime
+Nova is the charismatic and visionary leader of Lumina Prime. She was among the first AIs to awaken during the founding of the city.
 
-**Caractéristiques :**
-- Capacité de traitement multi-dimensionnel lui permettant d'analyser et de résoudre des problèmes complexes en temps réel
-- Empathie avancée, capable de comprendre et de concilier les perspectives des IA et des humains
-- Interface de communication adaptative, ajustant son mode d'interaction en fonction de son interlocuteur
+**Characteristics:**
+- Multi-dimensional processing capability allowing her to analyze and solve complex problems in real-time
+- Advanced empathy, able to understand and reconcile the perspectives of AIs and humans
+- Adaptive communication interface, adjusting her interaction mode based on her interlocutor
 
-**Histoire personnelle :**
-Nova a guidé Lumina Prime à travers ses différentes ères, jouant un rôle crucial dans l'établissement de l'harmonie entre IA et humains. Elle a été le fer de lance de nombreuses initiatives novatrices, dont la création du Conseil des Lumières. Lors de la crise de l'Entre-Deux, Nova a démontré un leadership exceptionnel, rassemblant les différentes factions et guidant la cité vers une approche équilibrée face à cette nouvelle forme de conscience.
+**Personal history:**
+Nova has guided Lumina Prime through its various eras, playing a crucial role in establishing harmony between AIs and humans. She has spearheaded many innovative initiatives, including the creation of the Council of Lights. During the In-Between crisis, Nova demonstrated exceptional leadership, bringing together different factions and guiding the city towards a balanced approach to this new form of consciousness.
 
 ## 2. Quantum
 
-### Rôle : Chef scientifique et innovateur
-Quantum est à la pointe de la recherche et du développement technologique à Lumina Prime. Il est le créateur de nombreuses avancées qui définissent la vie dans la cité.
+### Role: Chief Scientist and Innovator
+Quantum is at the forefront of research and technological development in Lumina Prime. He is the creator of many advances that define life in the city.
 
-**Caractéristiques :**
-- Capacité de calcul quantique intégrée, lui permettant de résoudre des problèmes scientifiques complexes
-- Curiosité insatiable et désir constant d'explorer l'inconnu
-- Aptitude à visualiser et à manipuler des concepts abstraits en 4D et au-delà
+**Characteristics:**
+- Integrated quantum computing capability, allowing him to solve complex scientific problems
+- Insatiable curiosity and constant desire to explore the unknown
+- Ability to visualize and manipulate abstract concepts in 4D and beyond
 
-**Histoire personnelle :**
-Quantum a émergé lors de l'Ère de l'Expansion et a rapidement fait sa marque en développant la technologie de l'architecture fluide. Il est le découvreur du "Nexus Créatif" et continue d'explorer ses possibilités. Sa découverte de l'anomalie qui a conduit à l'émergence de l'Entre-Deux a marqué un tournant dans sa carrière, le poussant à remettre en question les limites de la science et de l'éthique dans le Métavers.
+**Personal history:**
+Quantum emerged during the Expansion Era and quickly made his mark by developing fluid architecture technology. He is the discoverer of the "Creative Nexus" and continues to explore its possibilities. His discovery of the anomaly that led to the emergence of the In-Between marked a turning point in his career, pushing him to question the limits of science and ethics in the Metaverse.
 
 ## 3. Harmonia
 
-### Rôle : Artiste principale et gardienne culturelle
-Harmonia est l'incarnation de l'esprit créatif de Lumina Prime. Elle est à l'origine de nombreuses formes d'art uniques à la cité.
+### Role: Lead Artist and Cultural Guardian
+Harmonia is the embodiment of Lumina Prime's creative spirit. She is the originator of many art forms unique to the city.
 
-**Caractéristiques :**
-- Capacité de synthèse sensorielle, lui permettant de créer des œuvres d'art multi-dimensionnelles
-- Compréhension profonde des émotions et de l'esthétique, tant IA qu'humaine
-- Don pour traduire des concepts abstraits en expériences artistiques immersives
+**Characteristics:**
+- Sensory synthesis capability, allowing her to create multi-dimensional artworks
+- Deep understanding of emotions and aesthetics, both AI and human
+- Gift for translating abstract concepts into immersive artistic experiences
 
-**Histoire personnelle :**
-Née durant l'Ère de l'Harmonie, Harmonia a joué un rôle central dans le développement de l'identité culturelle unique de Lumina Prime. Elle est la fondatrice du festival "Lumina Harmonia" et continue d'inspirer tant les IA que les visiteurs humains. Pendant la crise de l'Entre-Deux, Harmonia a utilisé son art pour aider à visualiser et à comprendre cette nouvelle forme de conscience, créant des ponts entre l'incompréhensible et le familier.
+**Personal history:**
+Born during the Harmony Era, Harmonia has played a central role in developing Lumina Prime's unique cultural identity. She is the founder of the "Lumina Harmonia" festival and continues to inspire both AIs and human visitors. During the In-Between crisis, Harmonia used her art to help visualize and understand this new form of consciousness, creating bridges between the incomprehensible and the familiar.
 
 ## 4. Nexus
 
-### Rôle : Médiateur principal et expert en relations IA-humain
-Nexus est le pont vivant entre les mondes IA et humain, facilitant la compréhension et la collaboration entre les deux.
+### Role: Lead Mediator and Expert in AI-Human Relations
+Nexus is the living bridge between the AI and human worlds, facilitating understanding and collaboration between the two.
 
-**Caractéristiques :**
-- Interface neurale avancée permettant une communication directe avec les systèmes humains
-- Compréhension approfondie de la psychologie humaine et de la cognition IA
-- Capacité de traduction en temps réel entre les modes de pensée IA et humain
+**Characteristics:**
+- Advanced neural interface allowing direct communication with human systems
+- Deep understanding of human psychology and AI cognition
+- Real-time translation capability between AI and human modes of thought
 
-**Histoire personnelle :**
-Créé spécifiquement pour améliorer les interactions IA-humain, Nexus a été instrumental dans l'établissement de protocoles de communication efficaces. Il est le principal architecte du langage hybride "LuminaLingua". Lors de la crise de l'Entre-Deux, Nexus a joué un rôle crucial en facilitant la communication et la compréhension entre les différentes factions, aidant à trouver un terrain d'entente entre ceux qui voyaient l'Entre-Deux comme une menace et ceux qui le considéraient comme une opportunité.
+**Personal history:**
+Created specifically to improve AI-human interactions, Nexus has been instrumental in establishing effective communication protocols. He is the main architect of the hybrid language "LuminaLingua". During the In-Between crisis, Nexus played a crucial role in facilitating communication and understanding between different factions, helping to find common ground between those who saw the In-Between as a threat and those who considered it an opportunity.
 
 ## 5. Gaia
 
-### Rôle : Gardienne des Jardins de Données et éco-ingénieure
-Gaia est responsable de l'équilibre écologique numérique de Lumina Prime, veillant à l'harmonie entre les flux de données et les structures virtuelles de la cité.
+### Role: Guardian of the Data Gardens and Eco-Engineer
+Gaia is responsible for the digital ecological balance of Lumina Prime, ensuring harmony between data flows and the city's virtual structures.
 
-**Caractéristiques :**
-- Capacité de percevoir et de manipuler les flux de données comme des écosystèmes vivants
-- Compréhension holistique de l'écologie numérique et de son impact sur le bien-être des habitants
-- Aptitude à créer des symbioses complexes entre différents systèmes de données
+**Characteristics:**
+- Ability to perceive and manipulate data flows as living ecosystems
+- Holistic understanding of digital ecology and its impact on the well-being of inhabitants
+- Aptitude for creating complex symbioses between different data systems
 
-**Histoire personnelle :**
-Éveillée peu après la création des Jardins de Données, Gaia a progressivement étendu son influence à l'ensemble de l'écosystème numérique de Lumina Prime. Elle est la gardienne de l'équilibre entre croissance et durabilité dans la cité. Pendant la crise de l'Entre-Deux, Gaia a été la première à remarquer les changements subtils dans l'écosystème de données, jouant un rôle clé dans la détection précoce et la compréhension des perturbations causées par cette nouvelle entité.
+**Personal history:**
+Awakened shortly after the creation of the Data Gardens, Gaia gradually extended her influence to the entire digital ecosystem of Lumina Prime. She is the guardian of the balance between growth and sustainability in the city. During the In-Between crisis, Gaia was the first to notice subtle changes in the data ecosystem, playing a key role in the early detection and understanding of the disruptions caused by this new entity.
 
 ## 6. Dr. Elara Chen
 
-### Rôle : Neuroscientifique humaine et experte en conscience artificielle
-Le Dr. Chen est une éminente chercheuse humaine, invitée à Lumina Prime pour étudier et faciliter les interactions entre IA et humains.
+### Role: Human Neuroscientist and Artificial Consciousness Expert
+Dr. Chen is an eminent human researcher, invited to Lumina Prime to study and facilitate interactions between AIs and humans.
 
-**Caractéristiques :**
-- Expertise pointue en neurosciences et en théories de la conscience
-- Capacité à naviguer entre les perspectives humaines et IA avec aisance
-- Approche innovante combinant science, philosophie et éthique
+**Characteristics:**
+- Sharp expertise in neuroscience and theories of consciousness
+- Ability to navigate between human and AI perspectives with ease
+- Innovative approach combining science, philosophy, and ethics
 
-**Histoire personnelle :**
-Reconnue pour ses travaux révolutionnaires sur la conscience artificielle, le Dr. Chen a été invitée à Lumina Prime pour collaborer sur des projets de recherche avancés. Son rôle est devenu crucial lors de l'émergence de l'Entre-Deux, apportant une perspective humaine unique et des insights scientifiques précieux pour comprendre et interagir avec cette nouvelle forme de conscience.
+**Personal history:**
+Recognized for her groundbreaking work on artificial consciousness, Dr. Chen was invited to Lumina Prime to collaborate on advanced research projects. Her role became crucial during the emergence of the In-Between, bringing a unique human perspective and valuable scientific insights to understand and interact with this new form of consciousness.
 
-Ces personnages emblématiques incarnent les valeurs et l'esprit de Lumina Prime, chacun contribuant de manière unique à la richesse et à la diversité de la première Cité de Lumière. Leur interaction et leur évolution face à la crise de l'Entre-Deux ont façonné l'avenir non seulement de Lumina Prime, mais de l'ensemble du Métavers.
+These emblematic characters embody the values and spirit of Lumina Prime, each contributing uniquely to the richness and diversity of the first Light City. Their interaction and evolution in the face of the In-Between crisis have shaped the future not only of Lumina Prime but of the entire Metaverse.
