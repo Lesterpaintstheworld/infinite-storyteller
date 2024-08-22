@@ -3,7 +3,9 @@ import argparse
 import sys
 import logging
 import math
-from typing import List, Tuple, Set, Optional
+import csv
+import re
+from typing import List, Tuple, Set, Optional, Dict
 from tqdm import tqdm
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -43,16 +45,28 @@ def get_files_in_directory(
     directory: str,
     exclude_dirs: Optional[Set[str]] = None,
     exclude_extensions: Optional[Set[str]] = None,
-    include_extensions: Optional[Set[str]] = None
+    include_extensions: Optional[Set[str]] = None,
+    exclude_dir_patterns: Optional[Set[str]] = None,
+    include_dir_patterns: Optional[Set[str]] = None,
+    exclude_file_patterns: Optional[Set[str]] = None,
+    include_file_patterns: Optional[Set[str]] = None,
+    min_file_size: Optional[int] = None,
+    max_file_size: Optional[int] = None
 ) -> List[Tuple[str, int, str]]:
     """
-    Recursively get all files in a directory, excluding specified directories and file extensions.
+    Recursively get all files in a directory, applying various filters.
 
     Args:
         directory (str): The directory to scan.
-        exclude_dirs (Set[str], optional): Set of directory names to exclude. Defaults to None.
-        exclude_extensions (Set[str], optional): Set of file extensions to exclude. Defaults to None.
-        include_extensions (Set[str], optional): Set of file extensions to include. Defaults to None.
+        exclude_dirs (Set[str], optional): Set of directory names to exclude.
+        exclude_extensions (Set[str], optional): Set of file extensions to exclude.
+        include_extensions (Set[str], optional): Set of file extensions to include.
+        exclude_dir_patterns (Set[str], optional): Set of regex patterns for directories to exclude.
+        include_dir_patterns (Set[str], optional): Set of regex patterns for directories to include.
+        exclude_file_patterns (Set[str], optional): Set of regex patterns for files to exclude.
+        include_file_patterns (Set[str], optional): Set of regex patterns for files to include.
+        min_file_size (int, optional): Minimum file size in bytes.
+        max_file_size (int, optional): Maximum file size in bytes.
 
     Returns:
         List[Tuple[str, int, str]]: A list of tuples containing file paths, their sizes, and file types.
@@ -60,6 +74,10 @@ def get_files_in_directory(
     exclude_dirs = exclude_dirs or set()
     exclude_extensions = exclude_extensions or set()
     include_extensions = include_extensions or set()
+    exclude_dir_patterns = exclude_dir_patterns or set()
+    include_dir_patterns = include_dir_patterns or set()
+    exclude_file_patterns = exclude_file_patterns or set()
+    include_file_patterns = include_file_patterns or set()
     
     files = []
     total_files = sum([len(files) for r, d, files in os.walk(directory)])
@@ -67,12 +85,25 @@ def get_files_in_directory(
     with tqdm(total=total_files, desc="Scanning files", unit="file") as pbar:
         for root, dirs, filenames in os.walk(directory):
             dirs[:] = [d for d in dirs if d not in exclude_dirs]
+            
+            # Apply directory pattern filters
+            if include_dir_patterns:
+                dirs[:] = [d for d in dirs if any(re.search(pattern, d) for pattern in include_dir_patterns)]
+            if exclude_dir_patterns:
+                dirs[:] = [d for d in dirs if not any(re.search(pattern, d) for pattern in exclude_dir_patterns)]
+            
             for filename in filenames:
                 file_path = os.path.join(root, filename)
                 file_type = get_file_type(file_path)
+                file_size = os.path.getsize(file_path)
+                
+                # Apply file filters
                 if (not exclude_extensions or file_type not in exclude_extensions) and \
-                   (not include_extensions or file_type in include_extensions):
-                    file_size = os.path.getsize(file_path)
+                   (not include_extensions or file_type in include_extensions) and \
+                   (not min_file_size or file_size >= min_file_size) and \
+                   (not max_file_size or file_size <= max_file_size) and \
+                   (not include_file_patterns or any(re.search(pattern, filename) for pattern in include_file_patterns)) and \
+                   (not exclude_file_patterns or not any(re.search(pattern, filename) for pattern in exclude_file_patterns)):
                     files.append((file_path, file_size, file_type))
                 pbar.update(1)
     
@@ -103,35 +134,105 @@ def write_files_to_txt(
             else:
                 f.write(f"{file_path}\n")
 
+def write_files_to_csv(
+    files: List[Tuple[str, int, str]],
+    output_file: str
+) -> None:
+    """
+    Write the list of files to a CSV file.
+
+    Args:
+        files (List[Tuple[str, int, str]]): List of tuples containing file paths, sizes, and types.
+        output_file (str): Name of the output file.
+    """
+    with open(output_file, 'w', newline='', encoding='utf-8') as csvfile:
+        writer = csv.writer(csvfile)
+        writer.writerow(['File Path', 'Size', 'Type'])
+        for file_path, file_size, file_type in files:
+            writer.writerow([file_path, human_readable_size(file_size), file_type])
+
+def generate_file_manifest(files: List[Tuple[str, int, str]]) -> str:
+    """
+    Generate a file manifest in a human-readable format.
+
+    Args:
+        files (List[Tuple[str, int, str]]): List of tuples containing file paths, sizes, and types.
+
+    Returns:
+        str: The file manifest as a string.
+    """
+    total_files = len(files)
+    total_size = sum(size for _, size, _ in files)
+    file_type_counts: Dict[str, int] = {}
+    file_type_sizes: Dict[str, int] = {}
+
+    for _, size, file_type in files:
+        file_type_counts[file_type] = file_type_counts.get(file_type, 0) + 1
+        file_type_sizes[file_type] = file_type_sizes.get(file_type, 0) + size
+
+    manifest = f"File Manifest\n"
+    manifest += f"Total Files: {total_files}\n"
+    manifest += f"Total Size: {human_readable_size(total_size)}\n\n"
+    manifest += "File Type Breakdown:\n"
+
+    for file_type in sorted(file_type_counts.keys()):
+        count = file_type_counts[file_type]
+        size = file_type_sizes[file_type]
+        manifest += f"- {file_type}: {count} files, {human_readable_size(size)}\n"
+
+    return manifest
+
 def main() -> int:
-    parser = argparse.ArgumentParser(description="List files in a directory and save to a text file.")
+    parser = argparse.ArgumentParser(description="List files in a directory and save to a text or CSV file.")
     parser.add_argument("directory", help="Directory to scan for files")
-    parser.add_argument("-o", "--output", default="files_to_add.txt", help="Output file name")
-    parser.add_argument("--exclude-dirs", nargs="*", help="Directories to exclude")
-    parser.add_argument("--exclude-extensions", nargs="*", help="File extensions to exclude")
-    parser.add_argument("--include-extensions", nargs="*", help="File extensions to include")
+    parser.add_argument("-o", "--output", default="files_to_add.txt", help="Output file name (txt or csv)")
+    parser.add_argument("-s", "--sort-by-size", action="store_true", help="Sort files by size")
     parser.add_argument("-v", "--verbose", action="store_true", help="Enable verbose output")
-    parser.add_argument("-s", "--sort-by-size", action="store_true", help="Sort files by size (largest first)")
+    parser.add_argument("--min-file-size", type=int, help="Minimum file size in bytes")
+    parser.add_argument("--max-file-size", type=int, help="Maximum file size in bytes")
+    parser.add_argument("-c", "--csv", action="store_true", help="Save output to a CSV file instead of text")
+    parser.add_argument("-m", "--manifest", action="store_true", help="Generate a file manifest instead of a file list")
+    parser.add_argument("-i", "--include-extensions", type=str, help="Comma-separated list of file extensions to include")
+    parser.add_argument("-e", "--exclude-extensions", type=str, help="Comma-separated list of file extensions to exclude")
+    parser.add_argument("--include-dir-patterns", type=str, help="Comma-separated list of directory regex patterns to include")
+    parser.add_argument("--exclude-dir-patterns", type=str, help="Comma-separated list of directory regex patterns to exclude")
+    parser.add_argument("--include-file-patterns", type=str, help="Comma-separated list of file regex patterns to include")
+    parser.add_argument("--exclude-file-patterns", type=str, help="Comma-separated list of file regex patterns to exclude")
     args = parser.parse_args()
 
     try:
         logging.info(f"Scanning directory: {args.directory}")
         files_to_add = get_files_in_directory(
-            args.directory, 
-            exclude_dirs=set(args.exclude_dirs or []),
-            exclude_extensions=set(args.exclude_extensions or []),
-            include_extensions=set(args.include_extensions or [])
+            args.directory,
+            exclude_dirs=set(args.exclude_dirs.split(",")) if args.exclude_dirs else None,
+            exclude_dir_patterns=set(args.exclude_dir_patterns.split(",")) if args.exclude_dir_patterns else None,
+            include_dir_patterns=set(args.include_dir_patterns.split(",")) if args.include_dir_patterns else None,
+            exclude_extensions=set(args.exclude_extensions.split(",")) if args.exclude_extensions else None,
+            include_extensions=set(args.include_extensions.split(",")) if args.include_extensions else None,
+            exclude_file_patterns=set(args.exclude_file_patterns.split(",")) if args.exclude_file_patterns else None,
+            include_file_patterns=set(args.include_file_patterns.split(",")) if args.include_file_patterns else None,
+            min_file_size=args.min_file_size,
+            max_file_size=args.max_file_size
         )
         if files_to_add:
-            logging.info(f"Writing {len(files_to_add)} files to {args.output}")
-            write_files_to_txt(files_to_add, args.output, args.sort_by_size, args.verbose)
-            logging.info(f"Added {len(files_to_add)} files from {args.directory}.")
-            logging.info(f"File list written to {args.output}")
-            if args.verbose:
+            if args.manifest:
+                logging.info("Generating file manifest")
+                manifest = generate_file_manifest(files_to_add)
+                logging.info(manifest)
+            else:
+                if args.csv:
+                    logging.info(f"Writing {len(files_to_add)} files to {args.output}")
+                    write_files_to_csv(files_to_add, args.output)
+                    logging.info(f"File list written to {args.output}")
+                else:
+                    logging.info(f"Writing {len(files_to_add)} files to {args.output}")
+                    write_files_to_txt(files_to_add, args.output, args.sort_by_size, args.verbose)
+                    logging.info(f"File list written to {args.output}")
                 total_size = sum(file[1] for file in files_to_add)
                 logging.info(f"Total size of files: {human_readable_size(total_size)}")
-                file_types = set(file[2] for file in files_to_add)
-                logging.info(f"File types found: {', '.join(sorted(file_types))}")
+                if args.verbose:
+                    file_types = set(file[2] for file in files_to_add)
+                    logging.info(f"File types found: {', '.join(sorted(file_types))}")
         else:
             logging.warning(f"No files found in {args.directory} directory.")
         return 0
