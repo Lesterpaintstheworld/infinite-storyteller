@@ -9,11 +9,17 @@ def get_files_in_directory(directory):
 
 def main():
     files_to_add = get_files_in_directory("projet_redaction")
-    files_to_add.append("projet_redaction/todolist_redaction.md")
-    return files_to_add
+    return f"Added {len(files_to_add)} files from projet_redaction. Continue with the next action."
 
 if __name__ == "__main__":
-    files = main()
-    print("Files to add:")
-    for file in files:
-        print(file)
+    result = main()
+    print(result)
+    
+    # Print the list of files (optional)
+    files = get_files_in_directory("projet_redaction")
+    if files:
+        print("\nFiles added:")
+        for file in files:
+            print(file)
+    else:
+        print("\nNo files found in projet_redaction directory.")
