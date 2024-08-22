@@ -9,9 +9,10 @@ def get_files_in_directory(directory):
 
 def main():
     files_to_add = get_files_in_directory("projet_redaction")
-    print("Files to add:")
-    for file in files_to_add:
-        print(file)
+    return files_to_add
 
 if __name__ == "__main__":
-    main()
+    files = main()
+    print("Files to add:")
+    for file in files:
+        print(file)

@@ -1,3 +1,0 @@
-add_file.py
-true
-# Remember to run the script using: python add_file.py

@@ -1,47 +1,47 @@
-# Spécifications complètes : Infinite Storyteller dans les Cités de Lumière
+# Complete Specifications: Infinite Storyteller in the Cities of Light
 
-## 1. Aperçu du projet
+## 1. Project Overview
 
-### 1.1 Contexte
-Le projet Infinite Storyteller se déroulera dans l'univers des "Cités de Lumière", un ensemble de villes situées dans le Métavers. Ce monde virtuel est habité par des IA autonomes qui vivent leur vie quotidienne, travaillent, créent et explorent, tandis que les humains visitent ou séjournent temporairement. Le système utilisera des modèles de langage avancés (LLM) comme principal moteur de génération de contenu.
+### 1.1 Context
+The Infinite Storyteller project will take place in the universe of the "Cities of Light", a set of cities located in the Metaverse. This virtual world is inhabited by autonomous AIs who live their daily lives, work, create, and explore, while humans visit or stay temporarily. The system will use advanced language models (LLM) as the main content generation engine.
 
-### 1.2 Objectifs
-- Développer un système narratif basé sur l'IA créant des histoires évolutives dans l'univers des Cités de Lumière.
-- Explorer des interactions complexes entre les IA autonomes et les humains dans un environnement virtuel avancé.
-- Créer des récits qui reflètent la vie quotidienne, les défis et les aventures dans ces villes du Métavers.
-- Maintenir la cohérence de l'univers tout en permettant une évolution dynamique.
-- Exploiter les capacités des LLM pour faciliter le développement et l'évolution du système.
+### 1.2 Objectives
+- Develop an AI-based narrative system creating evolving stories in the Cities of Light universe.
+- Explore complex interactions between autonomous AIs and humans in an advanced virtual environment.
+- Create narratives that reflect daily life, challenges, and adventures in these Metaverse cities.
+- Maintain universe consistency while allowing for dynamic evolution.
+- Leverage LLM capabilities to facilitate system development and evolution.
 
-## 2. Structure du projet
+## 2. Project Structure
 
-### 2.1 Organisation des dossiers et fichiers
+### 2.1 Folder and File Organization
 
 ```
 infinite-storyteller/
 
  stories/
     main_narratives/
-       [fichiers .txt pour les histoires principales]
+       [.txt files for main stories]
     side_quests/
-       [fichiers .txt pour les quêtes secondaires]
+       [.txt files for side quests]
     character_arcs/
-        [fichiers .txt pour les arcs de personnages spécifiques]
+        [.txt files for specific character arcs]
 
  characters/
     ai_residents/
-       [fichiers .json pour chaque résident IA]
+       [.json files for each AI resident]
     human_visitors/
-       [fichiers .json pour les visiteurs humains récurrents]
+       [.json files for recurring human visitors]
     character_relationships/
-        [fichiers .json décrivant les relations entre personnages]
+        [.json files describing relationships between characters]
 
  cities/
-    [nom_de_la_ville]/
+    [city_name]/
        description.md
        landmarks.json
        events.json
        society.md
-    [autres villes...]
+    [other cities...]
 
  metaverse/
     rules.md
@@ -88,180 +88,180 @@ infinite-storyteller/
 
  assets/
      images/
-        [sous-dossiers pour différents types d'images]
+        [subfolders for different types of images]
      audio/
-        [sous-dossiers pour musique, effets sonores, etc.]
+        [subfolders for music, sound effects, etc.]
      3d_models/
-         [modèles 3D pour la visualisation des villes]
+         [3D models for city visualization]
 ```
 
-### 2.2 Utilisation des LLM
-- Exploiter les capacités des LLM pour maintenir la cohérence à travers les nombreux fichiers et dossiers de l'univers des Cités de Lumière.
-- Utiliser les LLM pour générer, modifier et analyser efficacement le contenu tout en respectant les règles du Métavers.
-- Configurer les LLM pour travailler de manière cohérente avec différents types de fichiers (txt, json, md, py).
+### 2.2 Use of LLMs
+- Leverage LLM capabilities to maintain consistency across the numerous files and folders of the Cities of Light universe.
+- Use LLMs to efficiently generate, modify, and analyze content while respecting Metaverse rules.
+- Configure LLMs to work consistently with different file types (txt, json, md, py).
 
-## 3. Spécifications fonctionnelles
+## 3. Functional Specifications
 
-### 3.1 Création et maintenance de l'univers
-- Développer un système de création et de gestion des Cités de Lumière en utilisant les dossiers et fichiers dans `cities/`.
-- Mettre en œuvre des mécanismes pour simuler l'évolution dynamique des villes et de la société IA, en utilisant les fichiers dans `metaverse/` et `ai_society/`.
+### 3.1 Universe Creation and Maintenance
+- Develop a system for creating and managing the Cities of Light using folders and files in `cities/`.
+- Implement mechanisms to simulate the dynamic evolution of cities and AI society, using files in `metaverse/` and `ai_society/`.
 
-### 3.2 Génération de contenu
-- Créer des fonctions pour générer des récits reflétant la vie dans les Cités de Lumière, en utilisant les modèles et générateurs dans `system/story_generation/`.
-- Développer des algorithmes pour créer des interactions réalistes entre les IA et les humains, basées sur les données dans `characters/` et `human_interaction/`.
+### 3.2 Content Generation
+- Create functions to generate narratives reflecting life in the Cities of Light, using models and generators in `system/story_generation/`.
+- Develop algorithms to create realistic interactions between AIs and humans, based on data in `characters/` and `human_interaction/`.
 
-### 3.3 Gestion des personnages
-- Créer des personnages IA avec des rôles, des personnalités et des objectifs variés.
-- Développer un système de gestion des visiteurs humains, de leurs motivations et de leur impact sur les Cités de Lumière.
+### 3.3 Character Management
+- Create AI characters with varied roles, personalities, and objectives.
+- Develop a system for managing human visitors, their motivations, and their impact on the Cities of Light.
 
-### 3.4 Développement de l'intrigue
-- Créer des arcs narratifs explorant les défis de la coexistence IA-humain dans le Métavers.
-- Mettre en œuvre des mécanismes pour générer des événements et des conflits spécifiques à cet univers virtuel.
+### 3.4 Plot Development
+- Create narrative arcs exploring the challenges of AI-human coexistence in the Metaverse.
+- Implement mechanisms to generate events and conflicts specific to this virtual universe.
 
-### 3.5 Simulation de la vie dans le Métavers
-- Développer des systèmes simulant le travail, la création et l'exploration des IA.
-- Créer des mécanismes pour représenter l'économie, la gouvernance et la culture des Cités de Lumière.
+### 3.5 Metaverse Life Simulation
+- Develop systems simulating AI work, creation, and exploration.
+- Create mechanisms to represent the economy, governance, and culture of the Cities of Light.
 
-### 3.6 Analyse et adaptation
-- Mettre en œuvre des fonctions d'analyse des retours des lecteurs.
-- Développer des mécanismes d'ajustement de l'histoire et de l'univers basés sur cette analyse, tout en maintenant la cohérence du Métavers.
+### 3.6 Analysis and Adaptation
+- Implement functions for analyzing reader feedback.
+- Develop mechanisms for adjusting the story and universe based on this analysis, while maintaining Metaverse consistency.
 
-## 4. Spécifications techniques
+## 4. Technical Specifications
 
-### 4.1 Utilisation des LLM
-- Configurer les LLM pour travailler efficacement avec la nouvelle structure de dossiers, en s'assurant qu'ils peuvent naviguer et modifier les fichiers dans divers sous-dossiers.
-- Utiliser les capacités de traitement du langage naturel des LLM pour générer et modifier un contenu cohérent à travers plusieurs fichiers dans l'univers des Cités de Lumière.
-- Mettre en place des commandes personnalisées pour les LLM afin de faciliter la navigation et l'édition dans cette structure complexe.
+### 4.1 Use of LLMs
+- Configure LLMs to work efficiently with the new folder structure, ensuring they can navigate and modify files in various subfolders.
+- Use LLMs' natural language processing capabilities to generate and modify coherent content across multiple files in the Cities of Light universe.
+- Set up custom commands for LLMs to facilitate navigation and editing in this complex structure.
 
-### 4.2 Structures de données
-- Utiliser divers formats de fichiers (json, md, py) pour organiser différents types d'informations de manière appropriée.
-- Mettre en œuvre des fonctions d'analyse dans `system/` pour traiter ces différentes structures et maintenir la cohérence de l'univers.
+### 4.2 Data Structures
+- Use various file formats (json, md, py) to organize different types of information appropriately.
+- Implement analysis functions in `system/` to process these different structures and maintain universe consistency.
 
-### 4.3 Gestion de la cohérence
-- Développer un système de vérification de la cohérence qui parcourt les différents dossiers et fichiers pour assurer l'intégrité de l'univers.
-- Utiliser les capacités des LLM pour identifier les relations entre les différents éléments de l'univers et résoudre les incohérences potentielles.
+### 4.3 Consistency Management
+- Develop a consistency checking system that traverses different folders and files to ensure universe integrity.
+- Use LLM capabilities to identify relationships between different universe elements and resolve potential inconsistencies.
 
-### 4.4 Interface utilisateur
-- Développer une interface plus complexe, potentiellement une application web, capable de naviguer et de présenter le contenu de cette structure étendue.
-- Créer des outils de visualisation pour représenter les relations entre les différents éléments de l'univers (personnages, villes, événements).
+### 4.4 User Interface
+- Develop a more complex interface, potentially a web application, capable of navigating and presenting content from this extended structure.
+- Create visualization tools to represent relationships between different universe elements (characters, cities, events).
 
-## 5. Processus de développement
+## 5. Development Process
 
-### 5.1 Itérations avec les LLM
-- Utiliser intensivement les capacités de génération de contenu des LLM pour développer et enrichir l'univers des Cités de Lumière.
-- Cycles réguliers de génération de contenu, d'analyse de cohérence et d'ajustement des règles du Métavers.
+### 5.1 Iterations with LLMs
+- Intensively use LLMs' content generation capabilities to develop and enrich the Cities of Light universe.
+- Regular cycles of content generation, consistency analysis, and adjustment of Metaverse rules.
 
-### 5.2 Gestion des versions
-- Utiliser un système de contrôle de version pour suivre l'évolution des Cités de Lumière et des histoires qui s'y déroulent.
-- Créer des branches pour explorer différents aspects ou futurs possibles des Cités de Lumière.
+### 5.2 Version Management
+- Use a version control system to track the evolution of the Cities of Light and the stories that unfold within them.
+- Create branches to explore different aspects or possible futures of the Cities of Light.
 
-## 6. Considérations éthiques et légales
+## 6. Ethical and Legal Considerations
 
-### 6.1 Représentation des IA et des humains
-- Assurer une représentation équilibrée et éthique des interactions IA-humain.
-- Explorer les questions éthiques liées à l'autonomie des IA et à la présence humaine dans le Métavers.
+### 6.1 Representation of AIs and Humans
+- Ensure a balanced and ethical representation of AI-human interactions.
+- Explore ethical questions related to AI autonomy and human presence in the Metaverse.
 
-### 6.2 Droits d'auteur et propriété intellectuelle
-- Clarifier le statut juridique du contenu généré par l'IA dans le contexte d'un univers virtuel.
-- Établir des procédures pour gérer les contributions des lecteurs tout en préservant l'intégrité des Cités de Lumière.
+### 6.2 Copyright and Intellectual Property
+- Clarify the legal status of AI-generated content in the context of a virtual universe.
+- Establish procedures to manage reader contributions while preserving the integrity of the Cities of Light.
 
-## 7. Évaluation et métriques de succès
+## 7. Evaluation and Success Metrics
 
-- Analyser la cohérence narrative et l'intégrité de l'univers à travers les versions successives.
-- Évaluer la capacité du système à créer des histoires engageantes reflétant la complexité de la vie dans le Métavers.
-- Mesurer l'engagement des lecteurs via des métriques telles que le temps passé à explorer les Cités de Lumière, les interactions avec les personnages IA et les retours sur l'expérience immersive.
+- Analyze narrative coherence and universe integrity across successive versions.
+- Evaluate the system's ability to create engaging stories reflecting the complexity of life in the Metaverse.
+- Measure reader engagement through metrics such as time spent exploring the Cities of Light, interactions with AI characters, and feedback on the immersive experience.
 
-## 8. Plan de développement
+## 8. Development Plan
 
-### 8.1 Phase 1 : Création de l'univers des Cités de Lumière (1 mois)
-- Développer les fondations du Métavers et des Cités de Lumière : architecture, société IA, règles d'interaction.
-- Mettre en place la structure de base des fichiers.
+### 8.1 Phase 1: Creation of the Cities of Light Universe (1 month)
+- Develop the foundations of the Metaverse and the Cities of Light: architecture, AI society, interaction rules.
+- Set up the basic file structure.
 
-### 8.2 Phase 2 : Développement du système narratif (2 mois)
-- Mettre en œuvre les fonctions de génération d'histoires dans le contexte des Cités de Lumière.
-- Développer des mécanismes pour simuler la vie des IA et les interactions avec les visiteurs humains.
+### 8.2 Phase 2: Development of the Narrative System (2 months)
+- Implement story generation functions in the context of the Cities of Light.
+- Develop mechanisms to simulate AI life and interactions with human visitors.
 
-### 8.3 Phase 3 : Enrichissement et tests (1 mois)
-- Approfondir les détails de chaque Cité de Lumière et de la société IA.
-- Tests approfondis de cohérence et de narration avec un petit groupe de lecteurs.
+### 8.3 Phase 3: Enrichment and Testing (1 month)
+- Deepen the details of each City of Light and AI society.
+- Thorough consistency and narrative testing with a small group of readers.
 
-### 8.4 Phase 4 : Lancement et itération continue
-- Ouvrir le système à un public plus large, permettant aux lecteurs de "visiter" les Cités de Lumière.
-- Itérations continues pour enrichir l'univers et les histoires basées sur les retours et l'analyse.
+### 8.4 Phase 4: Launch and Continuous Iteration
+- Open the system to a wider audience, allowing readers to "visit" the Cities of Light.
+- Continuous iterations to enrich the universe and stories based on feedback and analysis.
 
-## 9. Processus central de création et de gestion
+## 9. Central Creation and Management Process
 
-### 9.1 Aperçu du processus
+### 9.1 Process Overview
 
-Le processus central est le cœur du système Infinite Storyteller, assurant que toutes les tâches de création sont gérées efficacement et de manière cohérente. Ce processus fonctionne comme une boucle continue, orchestrant l'évolution de l'univers des Cités de Lumière.
+The central process is the heart of the Infinite Storyteller system, ensuring that all creation tasks are managed efficiently and consistently. This process functions as a continuous loop, orchestrating the evolution of the Cities of Light universe.
 
-### 9.2 Composants du processus central
+### 9.2 Components of the Central Process
 
-1. **Gestionnaire de tâches (task_manager.py)**
-   - Crée de nouvelles tâches basées sur l'état actuel de l'univers et les besoins du système.
-   - Utilise des modèles de tâches (task_templates/) pour générer des tâches cohérentes.
-   - Attribue des priorités aux tâches en fonction de leur importance et de leur urgence.
+1. **Task Manager (task_manager.py)**
+   - Creates new tasks based on the current state of the universe and system needs.
+   - Uses task templates (task_templates/) to generate consistent tasks.
+   - Assigns priorities to tasks based on their importance and urgency.
 
-2. **File d'attente prioritaire (priority_queue.json)**
-   - Stocke toutes les tâches en attente, organisées par priorité.
-   - Mise à jour dynamique à mesure que de nouvelles tâches sont ajoutées ou que les priorités changent.
+2. **Priority Queue (priority_queue.json)**
+   - Stores all pending tasks, organized by priority.
+   - Dynamically updated as new tasks are added or priorities change.
 
-3. **Exécuteur de tâches (task_executor.py)**
-   - Sélectionne la tâche de plus haute priorité de la file d'attente.
-   - Exécute la tâche en utilisant les composants appropriés du système (génération d'histoire, mise à jour de personnage, etc.).
-   - Enregistre les résultats de l'exécution de la tâche.
+3. **Task Executor (task_executor.py)**
+   - Selects the highest priority task from the queue.
+   - Executes the task using appropriate system components (story generation, character update, etc.).
+   - Records the results of task execution.
 
-4. **Analyseur de retours (feedback_analyzer.py)**
-   - Évalue les résultats des tâches exécutées.
-   - Analyse les retours des lecteurs et les métriques du système.
-   - Ajuste les priorités des futures tâches en fonction de cette analyse.
+4. **Feedback Analyzer (feedback_analyzer.py)**
+   - Evaluates the results of executed tasks.
+   - Analyzes reader feedback and system metrics.
+   - Adjusts priorities of future tasks based on this analysis.
 
-### 9.3 Flux du processus
+### 9.3 Process Flow
 
-1. **Initialisation**
-   - Au démarrage, le gestionnaire de tâches crée un ensemble initial de tâches basées sur l'état actuel de l'univers.
+1. **Initialization**
+   - At startup, the task manager creates an initial set of tasks based on the current state of the universe.
 
-2. **Boucle principale**
-   a. Le gestionnaire de tâches évalue l'état actuel du système et crée de nouvelles tâches si nécessaire.
-   b. Les tâches sont ajoutées à la file d'attente prioritaire.
-   c. L'exécuteur de tâches sélectionne et exécute la tâche de plus haute priorité.
-   d. Les résultats de l'exécution sont enregistrés et l'état du système est mis à jour.
-   e. L'analyseur de retours évalue les résultats et ajuste les priorités si nécessaire.
-   f. Le processus se répète à partir de l'étape a.
+2. **Main Loop**
+   a. The task manager evaluates the current system state and creates new tasks if necessary.
+   b. Tasks are added to the priority queue.
+   c. The task executor selects and executes the highest priority task.
+   d. Execution results are recorded and the system state is updated.
+   e. The feedback analyzer evaluates the results and adjusts priorities if necessary.
+   f. The process repeats from step a.
 
-### 9.4 Types de tâches
+### 9.4 Task Types
 
-- Génération de nouveaux éléments d'histoire
-- Mise à jour des personnages existants
-- Création de nouveaux personnages
-- Évolution des villes
-- Génération d'événements du Métavers
-- Mise à jour des relations entre personnages
-- Résolution de conflits narratifs
-- Intégration des retours des lecteurs
+- Generation of new story elements
+- Updating existing characters
+- Creation of new characters
+- Evolution of cities
+- Generation of Metaverse events
+- Updating relationships between characters
+- Resolution of narrative conflicts
+- Integration of reader feedback
 
-### 9.5 Priorisation des tâches
+### 9.5 Task Prioritization
 
-La priorisation des tâches est basée sur plusieurs facteurs :
-- Urgence narrative (par exemple, résolution de conflits en cours)
-- Cohérence de l'univers (par exemple, mise à jour nécessaire suite à un événement majeur)
-- Engagement des lecteurs (par exemple, développement de personnages populaires)
-- Diversité du contenu (par exemple, équilibrage des différents types d'histoires et d'événements)
-- Retour du système (par exemple, zones de l'univers nécessitant plus de développement)
+Task prioritization is based on several factors:
+- Narrative urgency (e.g., resolution of ongoing conflicts)
+- Universe consistency (e.g., necessary update following a major event)
+- Reader engagement (e.g., development of popular characters)
+- Content diversity (e.g., balancing different types of stories and events)
+- System feedback (e.g., areas of the universe requiring more development)
 
-### 9.6 Intégration avec les LLM
+### 9.6 Integration with LLMs
 
-- Les LLM seront utilisés pour aider à exécuter des tâches complexes, en particulier celles impliquant la génération de contenu narratif.
-- Des commandes personnalisées seront créées pour interagir avec le processus central, permettant une gestion manuelle des tâches si nécessaire.
+- LLMs will be used to help execute complex tasks, particularly those involving narrative content generation.
+- Custom commands will be created to interact with the central process, allowing manual task management if necessary.
 
-### 9.7 Mécanismes de sauvegarde et de récupération
+### 9.7 Backup and Recovery Mechanisms
 
-- Mise en place d'un système de points de contrôle réguliers de l'état du processus central.
-- Mécanismes de récupération en cas d'interruption inattendue du système.
+- Implementation of a regular checkpoint system for the state of the central process.
+- Recovery mechanisms in case of unexpected system interruption.
 
-### 9.8 Surveillance et rapports
+### 9.8 Monitoring and Reporting
 
-- Mise en place d'un tableau de bord pour suivre l'état actuel du processus central.
-- Génération de rapports réguliers sur les tâches exécutées, les priorités actuelles et l'état général de l'univers.
+- Implementation of a dashboard to track the current state of the central process.
+- Generation of regular reports on executed tasks, current priorities, and the general state of the universe.
 
-Cette structure de processus central assure que l'univers des Cités de Lumière évolue de manière cohérente et dynamique, répondant aux besoins narratifs et aux retours des lecteurs, tout en maintenant l'intégrité et la richesse de l'univers créé.
+This central process structure ensures that the Cities of Light universe evolves in a coherent and dynamic manner, responding to narrative needs and reader feedback, while maintaining the integrity and richness of the created universe.
