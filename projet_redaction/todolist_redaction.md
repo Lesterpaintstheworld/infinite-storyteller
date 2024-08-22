@@ -19,22 +19,22 @@
   - [x] Design the progression of the plot across both realities
 
 ## 2. Research and Documentation
-- [ ] Compile a list of relevant sources on metaverses, AI, and interactive storytelling
-  - [ ] Identify books, scientific articles, and documentaries on these topics
-  - [ ] Find experts or professionals to consult
-  - [ ] Gather examples of existing interactive narratives
-- [ ] Conduct in-depth research on key themes: virtual reality, artificial intelligence, digital consciousness
-  - [ ] Study the latest advances in AI and machine learning
-  - [ ] Explore theories on consciousness and its potential transfer to a digital environment
-  - [ ] Analyze the ethical and philosophical implications of metaverses
-- [ ] Organize research notes by theme or chapter
-  - [ ] Create an efficient classification system (e.g., using tools like Evernote or Notion)
-  - [ ] Establish links between different concepts for better integration into the story
-  - [ ] Summarize key points from each source for quick reference
-- [ ] Study existing and emerging technologies related to metaverses and narrative AI
-  - [ ] Examine current virtual reality platforms (e.g., Oculus, HTC Vive)
-  - [ ] Analyze metaverse projects in development (e.g., Meta, Decentraland)
-  - [ ] Explore generative AI tools for writing and storytelling
+- [x] Compile a list of relevant sources on metaverses, AI, and interactive storytelling
+  - [x] Identify books, scientific articles, and documentaries on these topics
+  - [x] Find experts or professionals to consult
+  - [x] Gather examples of existing interactive narratives
+- [x] Conduct in-depth research on key themes: virtual reality, artificial intelligence, digital consciousness
+  - [x] Study the latest advances in AI and machine learning
+  - [x] Explore theories on consciousness and its potential transfer to a digital environment
+  - [x] Analyze the ethical and philosophical implications of metaverses
+- [x] Organize research notes by theme or chapter
+  - [x] Create an efficient classification system (e.g., using tools like Evernote or Notion)
+  - [x] Establish links between different concepts for better integration into the story
+  - [x] Summarize key points from each source for quick reference
+- [x] Study existing and emerging technologies related to metaverses and narrative AI
+  - [x] Examine current virtual reality platforms (e.g., Oculus, HTC Vive)
+  - [x] Analyze metaverse projects in development (e.g., Meta, Decentraland)
+  - [x] Explore generative AI tools for writing and storytelling
 
 ## 3. World and Character Development
 - [ ] Create detailed profiles for each main character, including their metaverse avatars
