@@ -1,7 +1,11 @@
 import os
 import argparse
 import sys
+import logging
 from typing import List, Tuple, Set, Optional
+from tqdm import tqdm
+
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 def get_files_in_directory(
     directory: str,
@@ -23,13 +27,18 @@ def get_files_in_directory(
     exclude_extensions = exclude_extensions or set()
     
     files = []
-    for root, dirs, filenames in os.walk(directory):
-        dirs[:] = [d for d in dirs if d not in exclude_dirs]
-        for filename in filenames:
-            if not any(filename.endswith(ext) for ext in exclude_extensions):
-                file_path = os.path.join(root, filename)
-                file_size = os.path.getsize(file_path)
-                files.append((file_path, file_size))
+    total_files = sum([len(files) for r, d, files in os.walk(directory)])
+    
+    with tqdm(total=total_files, desc="Scanning files", unit="file") as pbar:
+        for root, dirs, filenames in os.walk(directory):
+            dirs[:] = [d for d in dirs if d not in exclude_dirs]
+            for filename in filenames:
+                if not any(filename.endswith(ext) for ext in exclude_extensions):
+                    file_path = os.path.join(root, filename)
+                    file_size = os.path.getsize(file_path)
+                    files.append((file_path, file_size))
+                pbar.update(1)
+    
     return files
 
 def write_files_to_txt(
@@ -53,7 +62,7 @@ def write_files_to_txt(
     with open(output_file, 'w', encoding='utf-8') as f:
         for file_path, file_size in files:
             if verbose:
-                f.write(f"{file_path} ({file_size} bytes)\n")
+                f.write(f"{file_path} ({human_readable_size(file_size)})\n")
             else:
                 f.write(f"{file_path}\n")
 
@@ -68,29 +77,34 @@ def main() -> int:
     args = parser.parse_args()
 
     try:
+        logging.info(f"Scanning directory: {args.directory}")
         files_to_add = get_files_in_directory(
             args.directory, 
             exclude_dirs=set(args.exclude_dirs or []),
             exclude_extensions=set(args.exclude_extensions or [])
         )
         if files_to_add:
+            logging.info(f"Writing {len(files_to_add)} files to {args.output}")
             write_files_to_txt(files_to_add, args.output, args.sort_by_size, args.verbose)
-            print(f"Added {len(files_to_add)} files from {args.directory}.")
-            print(f"File list written to {args.output}")
+            logging.info(f"Added {len(files_to_add)} files from {args.directory}.")
+            logging.info(f"File list written to {args.output}")
             if args.verbose:
                 total_size = sum(file[1] for file in files_to_add)
-                print(f"Total size of files: {total_size} bytes")
+                logging.info(f"Total size of files: {human_readable_size(total_size)}")
         else:
-            print(f"No files found in {args.directory} directory.")
+            logging.warning(f"No files found in {args.directory} directory.")
         return 0
     except FileNotFoundError:
-        print(f"Error: Directory '{args.directory}' not found.", file=sys.stderr)
+        logging.error(f"Directory '{args.directory}' not found.")
         return 1
     except PermissionError:
-        print(f"Error: Permission denied when accessing '{args.directory}'.", file=sys.stderr)
+        logging.error(f"Permission denied when accessing '{args.directory}'.")
         return 1
     except IOError as e:
-        print(f"Error writing to file: {e}", file=sys.stderr)
+        logging.error(f"Error writing to file: {e}")
+        return 1
+    except Exception as e:
+        logging.exception(f"An unexpected error occurred: {e}")
         return 1
 
 if __name__ == "__main__":
