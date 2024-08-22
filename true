@@ -8,6 +8,19 @@ from tqdm import tqdm
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
+def get_file_type(file_path: str) -> str:
+    """
+    Get the file type based on its extension.
+
+    Args:
+        file_path (str): Path to the file.
+
+    Returns:
+        str: File type (extension without the dot).
+    """
+    _, extension = os.path.splitext(file_path)
+    return extension[1:].lower() if extension else "unknown"
+
 def human_readable_size(size_bytes: int) -> str:
     """
     Convert file size in bytes to a human-readable format.
@@ -29,8 +42,9 @@ def human_readable_size(size_bytes: int) -> str:
 def get_files_in_directory(
     directory: str,
     exclude_dirs: Optional[Set[str]] = None,
-    exclude_extensions: Optional[Set[str]] = None
-) -> List[Tuple[str, int]]:
+    exclude_extensions: Optional[Set[str]] = None,
+    include_extensions: Optional[Set[str]] = None
+) -> List[Tuple[str, int, str]]:
     """
     Recursively get all files in a directory, excluding specified directories and file extensions.
 
@@ -38,12 +52,14 @@ def get_files_in_directory(
         directory (str): The directory to scan.
         exclude_dirs (Set[str], optional): Set of directory names to exclude. Defaults to None.
         exclude_extensions (Set[str], optional): Set of file extensions to exclude. Defaults to None.
+        include_extensions (Set[str], optional): Set of file extensions to include. Defaults to None.
 
     Returns:
-        List[Tuple[str, int]]: A list of tuples containing file paths and their sizes.
+        List[Tuple[str, int, str]]: A list of tuples containing file paths, their sizes, and file types.
     """
     exclude_dirs = exclude_dirs or set()
     exclude_extensions = exclude_extensions or set()
+    include_extensions = include_extensions or set()
     
     files = []
     total_files = sum([len(files) for r, d, files in os.walk(directory)])
@@ -52,16 +68,18 @@ def get_files_in_directory(
         for root, dirs, filenames in os.walk(directory):
             dirs[:] = [d for d in dirs if d not in exclude_dirs]
             for filename in filenames:
-                if not any(filename.endswith(ext) for ext in exclude_extensions):
-                    file_path = os.path.join(root, filename)
+                file_path = os.path.join(root, filename)
+                file_type = get_file_type(file_path)
+                if (not exclude_extensions or file_type not in exclude_extensions) and \
+                   (not include_extensions or file_type in include_extensions):
                     file_size = os.path.getsize(file_path)
-                    files.append((file_path, file_size))
+                    files.append((file_path, file_size, file_type))
                 pbar.update(1)
     
     return files
 
 def write_files_to_txt(
-    files: List[Tuple[str, int]],
+    files: List[Tuple[str, int, str]],
     output_file: str,
     sort_by_size: bool = False,
     verbose: bool = False
@@ -70,18 +88,18 @@ def write_files_to_txt(
     Write the list of files to a text file.
 
     Args:
-        files (List[Tuple[str, int]]): List of tuples containing file paths and sizes.
+        files (List[Tuple[str, int, str]]): List of tuples containing file paths, sizes, and types.
         output_file (str): Name of the output file.
         sort_by_size (bool, optional): Whether to sort files by size. Defaults to False.
-        verbose (bool, optional): Whether to include file sizes in the output. Defaults to False.
+        verbose (bool, optional): Whether to include file sizes and types in the output. Defaults to False.
     """
     if sort_by_size:
         files.sort(key=lambda x: x[1], reverse=True)
     
     with open(output_file, 'w', encoding='utf-8') as f:
-        for file_path, file_size in files:
+        for file_path, file_size, file_type in files:
             if verbose:
-                f.write(f"{file_path} ({human_readable_size(file_size)})\n")
+                f.write(f"{file_path} ({human_readable_size(file_size)}, {file_type})\n")
             else:
                 f.write(f"{file_path}\n")
 
@@ -91,6 +109,7 @@ def main() -> int:
     parser.add_argument("-o", "--output", default="files_to_add.txt", help="Output file name")
     parser.add_argument("--exclude-dirs", nargs="*", help="Directories to exclude")
     parser.add_argument("--exclude-extensions", nargs="*", help="File extensions to exclude")
+    parser.add_argument("--include-extensions", nargs="*", help="File extensions to include")
     parser.add_argument("-v", "--verbose", action="store_true", help="Enable verbose output")
     parser.add_argument("-s", "--sort-by-size", action="store_true", help="Sort files by size (largest first)")
     args = parser.parse_args()
@@ -100,7 +119,8 @@ def main() -> int:
         files_to_add = get_files_in_directory(
             args.directory, 
             exclude_dirs=set(args.exclude_dirs or []),
-            exclude_extensions=set(args.exclude_extensions or [])
+            exclude_extensions=set(args.exclude_extensions or []),
+            include_extensions=set(args.include_extensions or [])
         )
         if files_to_add:
             logging.info(f"Writing {len(files_to_add)} files to {args.output}")
@@ -110,6 +130,8 @@ def main() -> int:
             if args.verbose:
                 total_size = sum(file[1] for file in files_to_add)
                 logging.info(f"Total size of files: {human_readable_size(total_size)}")
+                file_types = set(file[2] for file in files_to_add)
+                logging.info(f"File types found: {', '.join(sorted(file_types))}")
         else:
             logging.warning(f"No files found in {args.directory} directory.")
         return 0
