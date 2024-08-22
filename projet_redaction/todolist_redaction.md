@@ -63,10 +63,10 @@
   - [x] Create a captivating hook to grab the reader's attention
   - [x] Introduce the metaverse and narrative AI concepts in an accessible way
   - [x] Present the main character(s) and initial conflict
-- [ ] Write chapters in order of the plan, alternating between the real world and the metaverse
-  - [ ] Start each writing session by reviewing the chapter outline
-  - [ ] Maintain a balance between action, dialogue, and description
-  - [ ] Gradually integrate worldbuilding elements throughout the story
+- [x] Write chapters in order of the plan, alternating between the real world and the metaverse
+  - [x] Start each writing session by reviewing the chapter outline
+  - [x] Maintain a balance between action, dialogue, and description
+  - [x] Gradually integrate worldbuilding elements throughout the story
 - [ ] Develop main and secondary narrative arcs, incorporating AI and metaverse-related challenges
   - [ ] Elaborate on characters' internal and external conflicts
   - [ ] Create subplots that explore different aspects of the metaverse and AI
