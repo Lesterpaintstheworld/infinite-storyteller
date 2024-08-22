@@ -1,4 +1,5 @@
 import os
+import sys
 
 def get_files_in_directory(directory):
     files = []
@@ -11,7 +12,7 @@ def main():
     files_to_add = get_files_in_directory("projet_redaction")
     return f"Added {len(files_to_add)} files from projet_redaction. Continue with the next action."
 
-if __name__ == "__main__":
+def run():
     result = main()
     print(result)
     
@@ -23,3 +24,6 @@ if __name__ == "__main__":
             print(file)
     else:
         print("\nNo files found in projet_redaction directory.")
+
+if __name__ == "__main__":
+    run()
