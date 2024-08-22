@@ -1,10 +1,19 @@
 import os
+import argparse
+import sys
 
-def get_files_in_directory(directory):
+def get_files_in_directory(directory, exclude_dirs=None, exclude_extensions=None):
+    if exclude_dirs is None:
+        exclude_dirs = set()
+    if exclude_extensions is None:
+        exclude_extensions = set()
+    
     files = []
     for root, dirs, filenames in os.walk(directory):
+        dirs[:] = [d for d in dirs if d not in exclude_dirs]
         for filename in filenames:
-            files.append(os.path.join(root, filename))
+            if not any(filename.endswith(ext) for ext in exclude_extensions):
+                files.append(os.path.join(root, filename))
     return files
 
 def write_files_to_txt(files, output_file):
@@ -13,21 +22,33 @@ def write_files_to_txt(files, output_file):
             f.write(f"{file}\n")
 
 def main():
-    directory = "projet_redaction"
-    output_file = "files_to_add.txt"
+    parser = argparse.ArgumentParser(description="List files in a directory and save to a text file.")
+    parser.add_argument("directory", help="Directory to scan for files")
+    parser.add_argument("-o", "--output", default="files_to_add.txt", help="Output file name")
+    parser.add_argument("--exclude-dirs", nargs="*", help="Directories to exclude")
+    parser.add_argument("--exclude-extensions", nargs="*", help="File extensions to exclude")
+    args = parser.parse_args()
 
     try:
-        files_to_add = get_files_in_directory(directory)
+        files_to_add = get_files_in_directory(args.directory, 
+                                              exclude_dirs=set(args.exclude_dirs or []),
+                                              exclude_extensions=set(args.exclude_extensions or []))
         if files_to_add:
-            write_files_to_txt(files_to_add, output_file)
-            print(f"Added {len(files_to_add)} files from {directory}.")
-            print(f"File list written to {output_file}")
+            write_files_to_txt(files_to_add, args.output)
+            print(f"Added {len(files_to_add)} files from {args.directory}.")
+            print(f"File list written to {args.output}")
         else:
-            print(f"No files found in {directory} directory.")
-        return "Operation completed successfully."
+            print(f"No files found in {args.directory} directory.")
+        return 0
     except FileNotFoundError:
-        return f"Error: Directory '{directory}' not found."
+        print(f"Error: Directory '{args.directory}' not found.", file=sys.stderr)
+        return 1
+    except PermissionError:
+        print(f"Error: Permission denied when accessing '{args.directory}'.", file=sys.stderr)
+        return 1
+    except IOError as e:
+        print(f"Error writing to file: {e}", file=sys.stderr)
+        return 1
 
 if __name__ == "__main__":
-    result = main()
-    print(result)
+    sys.exit(main())
