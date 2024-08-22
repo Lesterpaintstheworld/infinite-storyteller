@@ -37,26 +37,26 @@
   - [x] Explore generative AI tools for writing and storytelling
 
 ## 3. World and Character Development
-- [ ] Create detailed profiles for each main character, including their metaverse avatars
+- [x] Create detailed profiles for each main character, including their metaverse avatars
   - [x] Define their appearance, personality, and motivations in the real world
-  - [ ] Design their avatars and special abilities in the metaverse
-  - [ ] Establish their character arc throughout the story
-- [ ] Develop the history, culture, and technology of each City of Light
-  - [ ] Create a backstory for each city
-  - [ ] Define governance systems and social structures
-  - [ ] Imagine unique technological advancements for each city
-- [ ] Define the rules, physics, and limitations of the Infinite Storyteller metaverse
-  - [ ] Establish the fundamental laws governing the metaverse
-  - [ ] Determine the capabilities and limitations of avatars
-  - [ ] Design the interaction system between users and the virtual environment
-- [ ] Design the architecture and visual aesthetics of the Cities of Light
-  - [ ] Create sketches or detailed descriptions of each city
-  - [ ] Define the architectural and artistic style unique to each location
-  - [ ] Imagine landmarks or iconic places for each city
-- [ ] Elaborate on the magic or advanced technology system used in the metaverse
-  - [ ] Define the basic principles of the system (e.g., based on code, energy, thought)
-  - [ ] Create a hierarchy or classification of powers/technologies
-  - [ ] Establish the rules and limitations of this system
+  - [x] Design their avatars and special abilities in the metaverse
+  - [x] Establish their character arc throughout the story
+- [x] Develop the history, culture, and technology of each City of Light
+  - [x] Create a backstory for each city
+  - [x] Define governance systems and social structures
+  - [x] Imagine unique technological advancements for each city
+- [x] Define the rules, physics, and limitations of the Infinite Storyteller metaverse
+  - [x] Establish the fundamental laws governing the metaverse
+  - [x] Determine the capabilities and limitations of avatars
+  - [x] Design the interaction system between users and the virtual environment
+- [x] Design the architecture and visual aesthetics of the Cities of Light
+  - [x] Create sketches or detailed descriptions of each city
+  - [x] Define the architectural and artistic style unique to each location
+  - [x] Imagine landmarks or iconic places for each city
+- [x] Elaborate on the magic or advanced technology system used in the metaverse
+  - [x] Define the basic principles of the system (e.g., based on code, energy, thought)
+  - [x] Create a hierarchy or classification of powers/technologies
+  - [x] Establish the rules and limitations of this system
 
 ## 4. Writing
 - [ ] Write the first draft of the introduction, presenting the Infinite Storyteller concept
