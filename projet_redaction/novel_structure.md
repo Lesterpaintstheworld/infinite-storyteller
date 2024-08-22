@@ -3,19 +3,20 @@
 ## Part I: The Arrival (50 pages)
 
 ### Chapter 1: A New World (15 pages)
-- Introduction to the protagonist, a human visitor
+- Introduction to Aria Chen, the human protagonist
 - First impressions of Lumina Prime
-- Meeting the AI guide
+- Meeting IRIS, the AI guide
 
 ### Chapter 2: The Grand Tour (20 pages)
-- Exploration of the city's key locations
+- Exploration of Lumina Prime's key locations (Nexus of Knowledge, Chromatic Gardens, Resonance Amphitheater)
 - Introduction to the unique physics and rules of the metaverse
-- Encounter with various AI residents
+- First encounter with glitches in the system
 
 ### Chapter 3: Culture Shock (15 pages)
-- Deeper dive into AI society and customs
-- The protagonist's struggle to adapt
-- Hints of underlying tensions in the AI world
+- Deeper dive into AI society and customs (nutrition, time perception, work concepts)
+- Aria's struggle to adapt to the new environment
+- Participation in AI discussions and debates
+- Growing sense of underlying tensions in the AI world
 
 ## Part II: The Integration (50 pages)
 
