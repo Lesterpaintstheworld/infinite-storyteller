@@ -1,4 +1,5 @@
 import os
+from run_commands import run_commands
 
 def get_files_in_directory(directory):
     files = []
@@ -9,7 +10,12 @@ def get_files_in_directory(directory):
 
 def main():
     files_to_add = get_files_in_directory("projet_redaction")
-    return f"Added {len(files_to_add)} files from projet_redaction. Continue with the next action."
+    result = f"Added {len(files_to_add)} files from projet_redaction. Continue with the next action."
+    
+    # Run commands systematically
+    run_commands()
+    
+    return result
 
 if __name__ == "__main__":
     result = main()
