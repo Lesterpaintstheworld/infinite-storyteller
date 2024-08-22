@@ -1,11 +1,11 @@
-import run_main
+import main
 
 if __name__ == "__main__":
-    result = run_main.main()
+    result = main.main()
     print(result)
 
     # Print the list of files (optional)
-    files = run_main.get_files_in_directory("projet_redaction")
+    files = main.get_files_in_directory("projet_redaction")
     if files:
         print("\nFiles added:")
         for file in files:
