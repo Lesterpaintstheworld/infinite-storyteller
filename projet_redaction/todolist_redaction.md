@@ -300,7 +300,7 @@
 9. ~~Détailler les événements majeurs dans l'histoire des Cités de Lumière~~ (Complété)
 10. ~~Développer les aspects culturels et les traditions de la société IA~~ (Complété)
 11. ~~Écrire le premier chapitre~~ (Complété)
-12. Développer les arcs narratifs secondaires
+12. ~~Développer les arcs narratifs secondaires~~ (Complété)
 13. Créer une carte détaillée des Cités de Lumière
 14. Élaborer un système de magie ou de technologie avancée spécifique au métavers
 15. Développer les relations entre les différentes factions au sein des Cités de Lumière
