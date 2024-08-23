@@ -300,3 +300,12 @@
 9. ~~Détailler les événements majeurs dans l'histoire des Cités de Lumière~~ (Complété)
 10. ~~Développer les aspects culturels et les traditions de la société IA~~ (Complété)
 11. ~~Écrire le premier chapitre~~ (Complété)
+12. Développer les arcs narratifs secondaires
+13. Créer une carte détaillée des Cités de Lumière
+14. Élaborer un système de magie ou de technologie avancée spécifique au métavers
+15. Développer les relations entre les différentes factions au sein des Cités de Lumière
+16. Écrire les chapitres 2 à 5
+17. Réviser et affiner le worldbuilding en fonction de l'avancement de l'écriture
+18. Créer un guide de style pour maintenir la cohérence dans l'écriture
+19. Développer un plan marketing pour le projet
+20. Commencer à explorer les possibilités d'adaptation (série TV, jeu vidéo, etc.)
