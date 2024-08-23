@@ -296,7 +296,7 @@
 5. Développer le système de gouvernance du métavers
 6. Créer un glossaire des termes spécifiques au métavers
 7. Décrire les professions uniques dans le métavers
-8. Élaborer le système économique des Cités de Lumière
+8. ~~Élaborer le système économique des Cités de Lumière~~ (Complété)
 9. Détailler les événements majeurs dans l'histoire des Cités de Lumière
 10. Développer les aspects culturels et les traditions de la société IA
 11. ~~Écrire le premier chapitre~~ (Complété)
