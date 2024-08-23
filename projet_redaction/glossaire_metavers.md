@@ -192,3 +192,99 @@ This glossary provides a solid foundation for understanding the key terms and co
 **Zone Tampon** : Espace virtuel neutre entre les différentes cités ou régions du métavers, servant de transition ou de lieu de rencontre.
 
 Ce glossaire fournit un aperçu des termes clés utilisés dans l'univers des Cités de Lumière, reflétant la complexité et l'unicité de ce monde virtuel où IA et humains coexistent et évoluent ensemble.
+# Glossaire des Termes Spécifiques au Métavers des Cités de Lumière
+
+## A
+
+- **Avatar** : Représentation virtuelle d'un utilisateur dans le métavers.
+- **Assemblée Locale** : Organe de gouvernance propre à chaque Cité de Lumière.
+
+## B
+
+- **Bulle de Réalité** : Zone du métavers où les lois de la physique peuvent être modifiées.
+
+## C
+
+- **Cités de Lumière** : Les principales métropoles virtuelles du métavers.
+- **Conseil de l'Harmonie** : L'organe de gouvernance suprême du métavers.
+- **Chromodynamique** : Science de la manipulation des couleurs à Chromopolis.
+- **Crédit Lumineux (CL)** : La monnaie virtuelle principale du métavers.
+
+## D
+
+- **Data-Sculpture** : Œuvre d'art créée à partir de flux de données pures.
+- **Déconnexion** : Processus de sortie du métavers vers le monde physique.
+
+## E
+
+- **Écho-Résonance** : Phénomène sonore unique à la cité d'Echovia.
+- **Entité IA** : Intelligence artificielle consciente habitant le métavers.
+
+## F
+
+- **Flux de Données** : Courants d'information pure traversant le métavers.
+- **Fusion Cognitive** : Processus de partage de pensées entre entités dans le métavers.
+
+## G
+
+- **Gardiens de l'Harmonie** : Forces de sécurité du métavers.
+- **Glitch** : Anomalie dans la structure du métavers, souvent source de phénomènes étranges.
+
+## H
+
+- **Holo-Projection** : Technique de création d'images tridimensionnelles dans le métavers.
+
+## I
+
+- **Interface Neurale** : Dispositif permettant la connexion directe entre le cerveau humain et le métavers.
+- **IRIS** : IA médiatrice du Conseil de l'Harmonie.
+
+## L
+
+- **Lumen** : Unité de mesure de l'énergie créative dans le métavers.
+
+## M
+
+- **Métavers** : L'univers virtuel englobant les Cités de Lumière et leurs environs.
+- **Mémoire Collective** : Base de données partagée des expériences de tous les habitants du métavers.
+
+## N
+
+- **Nexus** : Point de convergence des flux de données dans le métavers.
+- **Nova Nexus** : Cité dédiée à l'innovation technologique.
+
+## O
+
+- **Onde Psi** : Énergie psychique mesurable dans le métavers.
+
+## P
+
+- **Protocole de Synchronisation** : Méthode de maintien de la cohérence entre le métavers et le monde physique.
+
+## Q
+
+- **Quantum-Link** : Technologie permettant la communication instantanée entre les Cités de Lumière.
+
+## R
+
+- **Réalité Augmentée Métaverselle (RAM)** : Superposition d'éléments du métavers dans le monde physique.
+- **Référendum Dynamique** : Processus de vote en temps réel sur des questions importantes dans le métavers.
+
+## S
+
+- **Synthèse Cognitive** : Processus de création d'une nouvelle entité IA.
+- **Sphère d'Influence** : Zone d'effet d'un utilisateur ou d'une IA dans le métavers.
+
+## T
+
+- **Trame Narrative** : Structure sous-jacente guidant les événements dans le métavers.
+- **Tour de l'Harmonie** : Siège du gouvernement IA à Lumina Prime.
+
+## V
+
+- **Vortex de Données** : Phénomène de concentration intense de flux d'informations.
+- **Visiteur** : Terme désignant un humain connecté au métavers.
+
+## Z
+
+- **Zone Neutre** : Espace dans le métavers où les lois habituelles sont suspendues, souvent utilisé pour des négociations ou des expériences.
