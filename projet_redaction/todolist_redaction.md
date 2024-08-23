@@ -173,8 +173,8 @@
   - [x] Look for ethical sponsorship or product placement opportunities
 
 ## 11. Expanded Character Development
-- [ ] Create detailed backstories for main characters
-  - [ ] Write short stories or vignettes exploring pivotal moments in their lives
+- [x] Create detailed backstories for main characters
+  - [x] Write short stories or vignettes exploring pivotal moments in their lives
   - [ ] Develop character-specific story arcs that intersect with the main plot
 - [ ] Design character relationship maps
   - [ ] Illustrate connections and conflicts between characters
