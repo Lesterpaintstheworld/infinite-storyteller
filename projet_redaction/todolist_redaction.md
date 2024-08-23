@@ -292,10 +292,10 @@
 1. ~~Développer le concept de la première histoire principale~~ (Complété)
 2. ~~Créer des profils détaillés pour les personnages principaux~~ (Complété)
 3. ~~Élaborer la structure narrative globale~~ (Complété)
-4. Rédiger un résumé détaillé des Cités de Lumière
-5. Développer le système de gouvernance du métavers
-6. Créer un glossaire des termes spécifiques au métavers
-7. Décrire les professions uniques dans le métavers
+4. ~~Rédiger un résumé détaillé des Cités de Lumière~~ (Complété)
+5. ~~Développer le système de gouvernance du métavers~~ (Complété)
+6. ~~Créer un glossaire des termes spécifiques au métavers~~ (Complété)
+7. ~~Décrire les professions uniques dans le métavers~~ (Complété)
 8. ~~Élaborer le système économique des Cités de Lumière~~ (Complété)
 9. Détailler les événements majeurs dans l'histoire des Cités de Lumière
 10. Développer les aspects culturels et les traditions de la société IA
