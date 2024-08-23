@@ -176,9 +176,9 @@
 - [x] Create detailed backstories for main characters
   - [x] Write short stories or vignettes exploring pivotal moments in their lives
   - [x] Develop character-specific story arcs that intersect with the main plot
-- [ ] Design character relationship maps
-  - [ ] Illustrate connections and conflicts between characters
-  - [ ] Plan how relationships evolve throughout the story
+- [x] Design character relationship maps
+  - [x] Illustrate connections and conflicts between characters
+  - [x] Plan how relationships evolve throughout the story
 
 ## 12. Metaverse Ecosystem Design
 - [ ] Develop a comprehensive economic system for the metaverse
