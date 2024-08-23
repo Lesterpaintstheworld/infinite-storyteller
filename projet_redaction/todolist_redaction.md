@@ -309,3 +309,6 @@
 18. Créer un guide de style pour maintenir la cohérence dans l'écriture
 19. Développer un plan marketing pour le projet
 20. Commencer à explorer les possibilités d'adaptation (série TV, jeu vidéo, etc.)
+21. ✅ Développer le prologue
+
+Prochaine étape : Créer une carte détaillée des Cités de Lumière
