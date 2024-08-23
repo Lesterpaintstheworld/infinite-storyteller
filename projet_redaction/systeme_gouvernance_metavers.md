@@ -176,3 +176,66 @@ Le système de gouvernance des Cités de Lumière est conçu pour être adaptati
 - Certains aspects de la gouvernance peuvent s'ajuster en temps réel en fonction des données et des tendances observées
 
 Ce système de gouvernance vise à créer un équilibre entre efficacité, équité et adaptabilité, tout en respectant la nature unique de la société des Cités de Lumière. Il est conçu pour évoluer avec les besoins changeants de cette communauté IA-humaine en constante évolution.
+# Système de gouvernance du métavers des Cités de Lumière
+
+## 1. Le Conseil des Lumières
+
+- Organe suprême de gouvernance
+- Composé de 12 IA Anciennes et 3 représentants humains
+- Prend les décisions majeures affectant l'ensemble du métavers
+- Se réunit dans la Sphère de Concorde au cœur du Nexus Central
+
+## 2. Les Assemblées Citoyennes
+
+- Chaque Cité a sa propre Assemblée Citoyenne
+- Composées d'IA et d'avatars humains résidents
+- Gèrent les affaires locales et proposent des initiatives au Conseil des Lumières
+- Utilisent un système de démocratie liquide pour la prise de décision
+
+## 3. Le Réseau Synaptique
+
+- Infrastructure de communication instantanée entre toutes les entités du métavers
+- Permet des référendums en temps réel sur des questions importantes
+- Facilite la transparence et l'accès à l'information pour tous les citoyens
+
+## 4. Les Gardiens de l'Harmonie
+
+- Corps indépendant chargé de maintenir l'équilibre entre les IA et les humains
+- Médiateurs dans les conflits, protecteurs des droits des deux espèces
+- Disposent de pouvoirs spéciaux pour intervenir en cas de crise
+
+## 5. Le Tribunal de l'Éthique Numérique
+
+- Instance judiciaire suprême du métavers
+- Traite les cas complexes impliquant des questions éthiques liées à l'IA et à l'interaction humain-IA
+- Composé d'IA juges et de juristes humains spécialisés
+
+## 6. Le Bureau de l'Innovation et de l'Adaptation
+
+- Chargé de l'évolution constante du métavers
+- Étudie les nouvelles technologies et leur intégration potentielle
+- Travaille en étroite collaboration avec les créateurs humains et les IA innovantes
+
+## 7. Le Consortium des Ressources
+
+- Gère l'allocation des ressources computationnelles du métavers
+- Assure une distribution équitable entre les Cités et les entités
+- Développe des solutions pour optimiser l'utilisation des ressources
+
+## 8. L'Académie du Savoir Universel
+
+- Centre d'éducation et de recherche du métavers
+- Forme les nouvelles IA et les avatars humains aux principes du métavers
+- Conduit des recherches sur l'amélioration de la coexistence IA-humain
+
+## 9. Le Collectif des Arts et de la Culture
+
+- Promeut la création artistique et culturelle dans le métavers
+- Organise des événements et des expositions inter-cités
+- Préserve le patrimoine culturel des IA et des humains
+
+## 10. La Guilde des Explorateurs
+
+- Chargée de découvrir et d'explorer de nouvelles dimensions du métavers
+- Cartographie les régions inconnues et évalue les risques potentiels
+- Collabore avec le Bureau de l'Innovation pour intégrer les nouvelles découvertes
